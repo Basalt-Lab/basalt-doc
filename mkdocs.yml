@@ -29,18 +29,18 @@ theme:
       example: octicons/beaker-16
       quote: octicons/quote-16
   palette:
-    - scheme: default
-      primary: blue
-      accent: cyan
-      toggle:
-        icon: material/toggle-switch-off-outline
-        name: Switch to dark mode
     - scheme: slate
       primary: blue
       accent: cyan
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode
+    - scheme: default
+      primary: blue
+      accent: cyan
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
   features:
     - navigation.instant.progress
     - navigation.tracking
@@ -63,6 +63,7 @@ theme:
 
 plugins:
   - search
+  - offline
   - i18n:
       docs_structure: suffix
       reconfigure_material: true
@@ -141,11 +142,9 @@ nav:
       - Getting Started:
           - Getting Started: basalt-auth/getting-started/index.md
           - Example:
-              - Data Filter: basalt-auth/getting-started/example/data-filter.md
-              - Password: basalt-auth/getting-started/example/password.md
+              - Token: basalt-auth/getting-started/example/token.md
       - Reference:
-          - Data Filter: basalt-auth/reference/data-filter.md
-          - Password: basalt-auth/reference/password.md
+          - Token: basalt-auth/reference/token.md
       - Contribution: basalt-auth/contribution.md
       - Changelog: basalt-auth/changelog.md
       - License: basalt-auth/license.md
