@@ -124,8 +124,11 @@ markdown_extensions:
 
 extra_css:
   - stylesheets/extra.css
+  - https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.css
 extra_javascript:
   - js/searchBar.js
+  - https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.js.iife.js
+  - js/driver.js
 
 extra:
   generator: false
