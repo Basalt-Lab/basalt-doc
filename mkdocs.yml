@@ -1,7 +1,7 @@
 site_name: Basalt
 site_url: http://localhost:8000/
 copyright: |
-  &copy; 2023-2024 Basalt
+  <div style="display: flex">Made with <div class="heart">❤️</div> with Material MkDocs</div>
 
 
 site_description: Basalt is a comprehensive suite of packages specifically designed for backend development in Node.js
@@ -42,6 +42,7 @@ theme:
         icon: material/toggle-switch-off-outline
         name: Switch to dark mode
   features:
+    - navigation
     - navigation.instant.progress
     - navigation.tracking
     - navigation.path
@@ -49,9 +50,9 @@ theme:
     - navigation.tabs.sticky
     - navigation.prune
     - navigation.footer
+    - navigation.top
     - toc.follow
     - toc.integrate
-    - navigation.top
     - search.suggest
     - search.highlight
     - search.share
@@ -121,22 +122,45 @@ markdown_extensions:
       custom_checkbox: true
   - abbr
 
+extra_css:
+  - stylesheets/extra.css
+extra_javascript:
+  - js/searchBar.js
 
+extra:
+  generator: false
 nav:
   - Basalt: index.md
-  - Basalt Core:
-      - Basalt Core: basalt-core/index.md
+  - Basalt Helper:
+      - Basalt Helper: basalt-helper/index.md
       - Getting Started:
-          - Getting Started: basalt-core/getting-started/index.md
-          - Example:
-              - Data Filter: basalt-core/getting-started/example/data-filter.md
-              - Password: basalt-core/getting-started/example/password.md
+        - Getting Started: basalt-helper/getting-started/index.md
+        - Example:
+          - Data:
+            - Filter: basalt-helper/getting-started/example/data/filter.md
+            - Transformation: basalt-helper/getting-started/example/data/transformation.md
+            - Deep Clone: basalt-helper/getting-started/example/data/deep-clone.md
+          - Security:
+            - Password: basalt-helper/getting-started/example/security/password.md
       - Reference:
-          - Data Filter: basalt-core/reference/data-filter.md
-          - Password: basalt-core/reference/password.md
-      - Contribution: basalt-core/contribution.md
-      - Changelog: basalt-core/changelog.md
-      - License: basalt-core/license.md
+        - Data:
+          - Filters:
+            - BasaltKeyExclusionFilter: basalt-helper/reference/data/filter/BasaltKeyExclusionFilter.md
+            - BasaltKeyInclusionFilter: basalt-helper/reference/data/filter/BasaltKeyInclusionFilter.md
+            - BasaltValueFilter: basalt-helper/reference/data/filter/BasaltValueFilter.md
+          - Transformations:
+              - BasaltCamelCaseTransformer: basalt-helper/reference/data/transformation/BasaltCamelCaseTransformer.md
+              - BasaltKebabCaseTransformer: basalt-helper/reference/data/transformation/BasaltKebabCaseTransformer.md
+              - BasaltPascalCaseTransformer: basalt-helper/reference/data/transformation/BasaltPascalCaseTransformer.md
+              - BasaltSnakeCaseTransformer: basalt-helper/reference/data/transformation/BasaltSnakeCaseTransformer.md
+          - Utility:
+              - BasaltDeepCloneUtility: basalt-helper/reference/data/utility/BasaltDeepCloneUtility.md
+              - BasaltKeyTransformerUtility: basalt-helper/reference/data/utility/BasaltKeyTransformerUtility.md
+        - Security:
+            - Password: basalt-helper/reference/security/password.md
+      - Contribution: basalt-helper/contribution.md
+      - Changelog: basalt-helper/changelog.md
+      - License: basalt-helper/license.md
   - Basalt Auth:
       - Basalt Auth: basalt-auth/index.md
       - Getting Started:
@@ -148,3 +172,11 @@ nav:
       - Contribution: basalt-auth/contribution.md
       - Changelog: basalt-auth/changelog.md
       - License: basalt-auth/license.md
+  - Basalt Authorization:
+      - Basalt Authorization: basalt-authorization/index.md
+  - Basalt Socket:
+      - Basalt Socket: basalt-socket/index.md
+  - Basalt HTTP:
+      - Basalt HTTP: basalt-http/index.md
+  - Basalt Message Broker:
+      - Basalt Message Broker: basalt-message-broker/index.md

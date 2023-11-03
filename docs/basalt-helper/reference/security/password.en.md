@@ -1,8 +1,8 @@
-# Class Reference for BasaltPassword
+## **Class Reference for BasaltPassword**
 
 `BasaltPassword` is a utility class providing methods for secure password management. It utilizes Argon2, a password-hashing algorithm, to perform hashing and verification operations.
 
-## Diagram
+## **Diagram**
 
 ```mermaid
 classDiagram
@@ -13,7 +13,9 @@ classDiagram
     }
 ```
 
-## Public Methods
+## **Public Methods**
+
+Below are the technical details of each public method available.
 
 ### `hashPassword`
 

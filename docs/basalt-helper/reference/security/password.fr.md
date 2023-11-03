@@ -1,8 +1,8 @@
-# Référence de la classe BasaltPassword
+# **Référence de la classe BasaltPassword**
 
 'BasaltPassword' est une classe utilitaire offrant des méthodes pour la gestion sécurisée des mots de passe. Elle utilise Argon2, un algorithme de hachage de mots de passe, pour effectuer des opérations de hachage et de vérification.
 
-## Diagramme
+## **Diagramme**
 
 ```mermaid
 classDiagram
@@ -13,7 +13,9 @@ classDiagram
     }
 ```
 
-## Méthodes publiques
+## **Méthodes publiques**
+
+Ci-dessous, vous trouverez les détails techniques de chaque méthode publique disponible.
 
 ### `hashPassword`
 
