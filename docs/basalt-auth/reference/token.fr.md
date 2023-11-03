@@ -1,8 +1,8 @@
-# **Class Reference for Token**
+## **Class Reference for Token**
 
 `BasaltToken` is a utility class designed for token management, including token generation, verification, and utility methods to get information from the token.
 
-## **Diagram**
+## **Diagramme**
 
 ```mermaid
 classDiagram
@@ -25,6 +25,8 @@ classDiagram
 ```
 
 ## **Méthodes publiques**
+
+Ci-dessous, vous trouverez les détails techniques de chaque méthode publique disponible.
 
 ### `getTokenUuid`
 
