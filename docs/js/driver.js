@@ -12,7 +12,7 @@ if (getCookie("driver") !== "true") {
                 popover: {
                     title: 'Navigation',
                     description: 'Here u can find all package of Basalt.',
-                    position: 'bottom'
+                    side: 'bottom'
                 },
             },
             {
