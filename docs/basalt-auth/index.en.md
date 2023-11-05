@@ -1,4 +1,4 @@
-# **Contributing to Basalt Auth**
+# **Basalt Auth**
 
 ## **Introduction**
 
