@@ -1,4 +1,4 @@
-# **Contribuer à Basalt Core**
+# **Contribuer à Basalt Helper**
 
 ## **Introduction**
 
@@ -67,4 +67,4 @@ Votre temps et vos compétences peuvent grandement bénéficier au projet et à 
 
 Nous sommes impatients de voir vos contributions et sommes prêts à collaborer pour intégrer de nouvelles idées ou améliorations.
 
-Merci de contribuer à rendre **Basalt Core** encore meilleur !
+Merci de contribuer à rendre **Basalt Helper** encore meilleur !
