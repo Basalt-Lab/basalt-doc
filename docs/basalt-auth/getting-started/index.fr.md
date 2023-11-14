@@ -1,6 +1,6 @@
 ## **Démarrage rapide**
 
-Bienvenue dans le guide de démarrage rapide de Basalt Auth !
+Bienvenue dans le guide de démarrage rapide de **Basalt Auth** !
 
 En quelques minutes, vous allez apprendre à intégrer et à utiliser les fonctionnalités de **Basalt Auth** dans votre projet.
 
@@ -38,7 +38,7 @@ $ npm -v
 
     Si vous utilisez JavaScript, vous pouvez ignorer les types TypeScript.
 
-Intégrer Basalt Auth dans votre projet est un jeu d'enfant.
+Intégrer **Basalt Auth** dans votre projet est un jeu d'enfant.
 
 Suivez ces étapes pour l'ajouter à votre projet :
 

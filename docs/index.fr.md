@@ -6,17 +6,15 @@ Bienvenue dans la documentation de **Basalt**.
 Élaboré en **TypeScript**, chaque module de **Basalt** a pour objectif de fournir des outils essentiels et efficaces qui simplifient la création de systèmes backend robustes et performants.
 
 ???+ warning "Attention"
-    **Avis important** : Basalt est actuellement en phase de développement actif.
-
-    Étant un projet relativement nouveau, nous souhaitons vous informer que, bien que **Basalt** soit opérationnel et prêt à l'emploi, il se peut qu'il n'ait pas encore la maturité de certaines solutions bien établies sur le marché.  
-    Nous travaillons continuellement à l'amélioration de **Basalt** et recommandons son utilisation dans des projets expérimentaux non critiques jusqu'à ce qu'il atteigne un état plus stable.
+    Bien que **Basalt** soit fonctionnel, il est important de noter que tous les packages ne sont pas encore disponibles. Actuellement, seuls certains modules de base sont opérationnels.
     
-    Si vous recherchez une solution plus éprouvée, nous vous recommandons d'explorer d'autres options telles que :
+    La documentation et les fonctionnalités vont continuer à se développer au fur et à mesure de la progression du projet.  
+    Comme c'est un projet en évolution, il peut ne pas offrir la même maturité ou la même étendue de fonctionnalités que d'autres solutions bien établies.
 
-      - [Adonis](https://learn.adonisjs.com/), un framework Node.js complet et mature.
+    Nous travaillons sans relâche pour enrichir **Basalt** et le rendre plus complet. En attendant, nous recommandons son utilisation pour des projets expérimentaux ou non critiques.  
+    Si votre projet nécessite une solution plus complète et éprouvée, nous vous suggérons d'envisager des alternatives telles que [Adonis](https://learn.adonisjs.com/).
     
-    Nous accueillons et encourageons les retours, les rapports de bugs et les suggestions de fonctionnalités pour aider à accélérer l'évolution de **Basalt**.  
-    Merci pour votre soutien et votre compréhension.
+    Vos retours, rapports de bugs, et suggestions sont essentiels pour accélérer le développement de **Basalt**. Nous apprécions votre soutien et votre compréhension.
 
 ## **Commencer avec Basalt**
 
@@ -42,3 +40,9 @@ Nous vous remercions d'explorer **Basalt** et de le considérer comme la base de
 Alors que nous sommes en pleine croissance et amélioration, votre confiance et votre patience envers nos outils sont grandement appréciées.
 
 Bon codage, et nous sommes impatients de construire ensemble l'avenir du développement backend !
+
+
+!!! warning
+    
+    Si vous voyez des erreurs, j'en suis vraiment désolé je fais de mon mieux c'est la première fois que je fais ça.  
+    N'hésitez pas si vous souhaité discuter ou participer à ce projet, je suis ouvert à toute proposition.

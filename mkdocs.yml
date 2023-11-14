@@ -30,14 +30,14 @@ theme:
       quote: octicons/quote-16
   palette:
     - scheme: slate
-      primary: blue
-      accent: cyan
+      primary: black
+      accent: indigo
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode
     - scheme: default
-      primary: blue
-      accent: cyan
+      primary: black
+      accent: indigo
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to dark mode
@@ -60,7 +60,6 @@ theme:
     - content.code.annotate
     - header.autohide
     - content.tabs.link
-
 
 plugins:
   - search
@@ -179,7 +178,13 @@ nav:
       - Basalt Authorization: basalt-authorization/index.md
   - Basalt Socket:
       - Basalt Socket: basalt-socket/index.md
+      - Getting Started:
+          - Getting Started: basalt-socket/getting-started/index.md
+          - Lifecycle: basalt-socket/getting-started/lifecycle.md
+          - Example:
+              - Server: basalt-socket/getting-started/example/server.md
+              - Client: basalt-socket/getting-started/example/client.md
+      - Contribution: basalt-socket/contribution.md
+      - License: basalt-socket/license.md
   - Basalt HTTP:
       - Basalt HTTP: basalt-http/index.md
-  - Basalt Message Broker:
-      - Basalt Message Broker: basalt-message-broker/index.md

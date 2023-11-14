@@ -1,6 +1,6 @@
 ## **Quick Start**
 
-Welcome to the quick start guide for Basalt Helper!
+Welcome to the quick start guide for **Basalt Helper**!
 
 In just a few minutes, you'll learn how to integrate and use the powerful features of **Basalt Helper** in your Node.js project.
 
@@ -40,7 +40,7 @@ $ npm -v
 
     If you're using JavaScript, you can ignore the TypeScript types.
 
-Integrating Basalt Helper into your project is a breeze.
+Integrating **Basalt Helper** into your project is a breeze.
 
 Follow these steps to add it to your Node.js project:
 

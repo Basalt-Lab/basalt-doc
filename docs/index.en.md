@@ -39,3 +39,8 @@ Please refer to our contribution guidelines for more information on how to get i
 We thank you for exploring **Basalt** and considering it as the foundation for your backend solutions. While we are in the midst of growing and improving, your trust and patience with our tools is greatly appreciated.
 
 Happy coding, and we look forward to building the future of backend development together!
+
+!!! warning
+
+    If you see any errors, I'm really sorry I'm doing my best it's the first time I've done this.  
+    Do not hesitate if you want to discuss or participate in this project, I am open to any proposal.
