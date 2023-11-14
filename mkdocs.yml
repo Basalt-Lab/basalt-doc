@@ -1,0 +1,190 @@
+site_name: Basalt
+site_url: http://localhost:8000/
+copyright: |
+  <div style="display: flex">Made with <div class="heart">❤️</div> with Material MkDocs</div>
+
+
+site_description: Basalt is a comprehensive suite of packages specifically designed for backend development in Node.js
+repo_url: https://github.com/Basalt-Lab
+repo_name: Basalt
+
+
+theme:
+  name: material
+  logo: assets/logo.png
+  favicon: assets/logo.png
+  language: en
+  icon:
+    admonition:
+      note: octicons/tag-16
+      abstract: octicons/checklist-16
+      info: octicons/info-16
+      tip: octicons/squirrel-16
+      success: octicons/check-16
+      question: octicons/question-16
+      warning: octicons/alert-16
+      failure: octicons/x-circle-16
+      danger: octicons/zap-16
+      bug: octicons/bug-16
+      example: octicons/beaker-16
+      quote: octicons/quote-16
+  palette:
+    - scheme: slate
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+    - scheme: default
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+  features:
+    - navigation
+    - navigation.instant.progress
+    - navigation.tracking
+    - navigation.path
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.prune
+    - navigation.footer
+    - navigation.top
+    - toc.follow
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+    - header.autohide
+    - content.tabs.link
+
+plugins:
+  - search
+  - offline
+  - i18n:
+      docs_structure: suffix
+      reconfigure_material: true
+      languages:
+        - locale: en
+          name: English
+          build: true
+          default: true
+        - locale: fr
+          name: Français
+          build: true
+          default: false
+  - termynal
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+
+  - attr_list
+  - md_in_html
+
+
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+
+  - pymdownx.tabbed:
+      alternate_style: true
+
+  - tables
+
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+  - footnotes
+
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - abbr
+
+extra_css:
+  - stylesheets/extra.css
+  - https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.css
+extra_javascript:
+  - js/searchBar.js
+  - https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.js.iife.js
+  - js/driver.js
+
+extra:
+  generator: false
+nav:
+  - Basalt: index.md
+  - Basalt Helper:
+      - Basalt Helper: basalt-helper/index.md
+      - Getting Started:
+        - Getting Started: basalt-helper/getting-started/index.md
+        - Example:
+          - Data:
+            - Filter: basalt-helper/getting-started/example/data/filter.md
+            - Transformation: basalt-helper/getting-started/example/data/transformation.md
+            - Deep Clone: basalt-helper/getting-started/example/data/deep-clone.md
+          - Security:
+            - Password: basalt-helper/getting-started/example/security/password.md
+      - Reference:
+        - Data:
+          - Filters:
+            - BasaltKeyExclusionFilter: basalt-helper/reference/data/filter/BasaltKeyExclusionFilter.md
+            - BasaltKeyInclusionFilter: basalt-helper/reference/data/filter/BasaltKeyInclusionFilter.md
+            - BasaltValueFilter: basalt-helper/reference/data/filter/BasaltValueFilter.md
+          - Transformations:
+              - BasaltCamelCaseTransformer: basalt-helper/reference/data/transformation/BasaltCamelCaseTransformer.md
+              - BasaltKebabCaseTransformer: basalt-helper/reference/data/transformation/BasaltKebabCaseTransformer.md
+              - BasaltPascalCaseTransformer: basalt-helper/reference/data/transformation/BasaltPascalCaseTransformer.md
+              - BasaltSnakeCaseTransformer: basalt-helper/reference/data/transformation/BasaltSnakeCaseTransformer.md
+          - Utility:
+              - BasaltDeepCloneUtility: basalt-helper/reference/data/utility/BasaltDeepCloneUtility.md
+              - BasaltKeyTransformerUtility: basalt-helper/reference/data/utility/BasaltKeyTransformerUtility.md
+        - Security:
+            - Password: basalt-helper/reference/security/password.md
+      - Contribution: basalt-helper/contribution.md
+      - Changelog: basalt-helper/changelog.md
+      - License: basalt-helper/license.md
+  - Basalt Auth:
+      - Basalt Auth: basalt-auth/index.md
+      - Getting Started:
+          - Getting Started: basalt-auth/getting-started/index.md
+          - Example:
+              - Token: basalt-auth/getting-started/example/token.md
+      - Reference:
+          - Token: basalt-auth/reference/token.md
+      - Contribution: basalt-auth/contribution.md
+      - Changelog: basalt-auth/changelog.md
+      - License: basalt-auth/license.md
+  - Basalt Authorization:
+      - Basalt Authorization: basalt-authorization/index.md
+  - Basalt Socket:
+      - Basalt Socket: basalt-socket/index.md
+      - Getting Started:
+          - Getting Started: basalt-socket/getting-started/index.md
+          - Lifecycle: basalt-socket/getting-started/lifecycle.md
+          - Example:
+              - Server: basalt-socket/getting-started/example/server.md
+              - Client: basalt-socket/getting-started/example/client.md
+      - Contribution: basalt-socket/contribution.md
+      - License: basalt-socket/license.md
+  - Basalt HTTP:
+      - Basalt HTTP: basalt-http/index.md
