@@ -185,6 +185,7 @@ nav:
               - Server: basalt-socket/getting-started/example/server.md
               - Client: basalt-socket/getting-started/example/client.md
       - Contribution: basalt-socket/contribution.md
+      - Changelog: basalt-helper/changelog.md
       - License: basalt-socket/license.md
   - Basalt HTTP:
       - Basalt HTTP: basalt-http/index.md
