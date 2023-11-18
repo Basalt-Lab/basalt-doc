@@ -125,9 +125,11 @@ extra_css:
   - stylesheets/extra.css
   - https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.css
 extra_javascript:
+  - js/three.min.js
   - js/searchBar.js
   - js/driver.js.iife.js
   - js/driver.js
+  - js/background.js
 
 
 extra:
