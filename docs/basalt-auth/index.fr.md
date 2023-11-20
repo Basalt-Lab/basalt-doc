@@ -1,5 +1,9 @@
 # **Basalt Auth**
 
+!!! warning
+
+    Basalt est actuellement à ses débuts, s'il vous plaît soyez indulgent et hésitez pas à nous faire part de vos commentaires et suggestions.
+
 ## **Introduction**
 
 **Basalt Auth** fait partie de l'écosystème Basalt, offrant une méthode pratique pour gérer l'authentification via des tokens.
