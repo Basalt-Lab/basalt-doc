@@ -1,5 +1,9 @@
 # **Basalt Socket**
 
+!!! warning
+
+    Basalt is currently in its infancy, please be indulgent and do not hesitate to give us your feedback and suggestions.
+
 ## **Introduction**
 
 **Basalt Socket** is a lightweight and high-performance library designed for creating WebSocket servers and clients within the Node.js ecosystem.  
