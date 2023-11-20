@@ -1,5 +1,9 @@
 # **Basalt Helper**
 
+!!! warning
+    
+    Basalt is currently in its infancy, please be indulgent and do not hesitate to give us your feedback and suggestions.
+
 ## **Introduction**
 
 **Basalt Helper** plays a fundamental role in the **Basalt** ecosystem, providing a collection of crucial helpers designed to simplify and accelerate backend development in Node.js.
