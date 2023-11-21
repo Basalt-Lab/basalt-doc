@@ -1,4 +1,8 @@
-# **Basalt Auth**
+# **[Basalt Auth](https://www.npmjs.com/package/@basalt-lab/basalt-auth)**
+
+!!! warning
+
+    Basalt is currently in its infancy, please be indulgent and do not hesitate to give us your feedback and suggestions.
 
 ## **Introduction**
 

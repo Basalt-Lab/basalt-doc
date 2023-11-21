@@ -1,4 +1,4 @@
-# **Contribuer à Basalt Auth**
+# **Contribuer à Basalt Logger**
 
 ## **Introduction**
 
@@ -15,8 +15,8 @@ Suivez les étapes ci-dessous pour contribuer.
 gitGraph:
 options
 {
-    "nodeSpacing": 150,
-    "nodeRadius": 10
+"nodeSpacing": 150,
+"nodeRadius": 10
 }
 end
 commit
@@ -67,4 +67,4 @@ Votre temps et vos compétences peuvent grandement bénéficier au projet et à 
 
 Nous sommes impatients de voir vos contributions et sommes prêts à collaborer pour intégrer de nouvelles idées ou améliorations.
 
-Merci de contribuer à rendre **Basalt Auth** encore meilleur !
+Merci de contribuer à rendre **Basalt Logger** encore meilleur !
