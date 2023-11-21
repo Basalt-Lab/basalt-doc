@@ -1,4 +1,4 @@
-# **Basalt Logger**
+# **[Basalt Logger](https://www.npmjs.com/package/@basalt-lab/basalt-logger)**
 
 !!! warning
 

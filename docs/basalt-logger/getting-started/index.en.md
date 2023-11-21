@@ -40,6 +40,8 @@ $ npm -v
 
 Integrating **Basalt Logger** into your project is a breeze.
 
+Package : [@basalt-lab/basalt-socket](https://www.npmjs.com/package/@basalt-lab/basalt-logger)
+
 Follow these steps to add it to your project:
 
 ```bash
