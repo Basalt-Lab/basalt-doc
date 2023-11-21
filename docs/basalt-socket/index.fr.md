@@ -1,4 +1,4 @@
-# **Basalt Socket**
+# **[Basalt Socket](https://www.npmjs.com/package/@basalt-lab/basalt-socket)**
 
 !!! warning
 

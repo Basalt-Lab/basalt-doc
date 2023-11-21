@@ -42,6 +42,8 @@ $ npm -v
 
 Intégrer **Basalt Socket** dans votre projet est un jeu d'enfant.
 
+Package : [@basalt-lab/basalt-socket](https://www.npmjs.com/package/@basalt-lab/basalt-socket)
+
 Suivez ces étapes pour l'ajouter à votre projet Node.js :
 
 ```bash
