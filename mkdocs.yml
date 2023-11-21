@@ -129,6 +129,7 @@ extra_javascript:
   - js/driver.js.iife.js
   - js/driver.js
 
+
 extra:
   generator: false
 nav:
@@ -189,3 +190,15 @@ nav:
       - License: basalt-socket/license.md
   - Basalt HTTP:
       - Basalt HTTP: basalt-http/index.md
+  - Basalt Logger:
+      - Basalt Logger: basalt-logger/index.md
+      - Getting Started:
+          - Getting Started: basalt-logger/getting-started/index.md
+          - Example:
+              - Logger: basalt-logger/getting-started/example/logger.md
+      - Reference:
+          - BasaltLogger: basalt-logger/reference/BasaltLogger.md
+      - Contribution: basalt-logger/contribution.md
+      - Changelog: basalt-logger/changelog.md
+      - License: basalt-logger/license.md
+
