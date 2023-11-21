@@ -1,3 +1,4 @@
+## **Quick Start**
 
 Welcome to the quick start guide for **Basalt Auth**!
 
