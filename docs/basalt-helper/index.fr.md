@@ -1,4 +1,4 @@
-# **Basalt Helper**
+# **[Basalt Helper](https://www.npmjs.com/package/@basalt-lab/basalt-helper)**
 
 !!! warning
 

@@ -42,6 +42,8 @@ $ npm -v
 
 Integrating **Basalt Helper** into your project is a breeze.
 
+Package : [@basalt-lab/basalt-helper](https://www.npmjs.com/package/@basalt-lab/basalt-helper)
+
 Follow these steps to add it to your Node.js project:
 
 ```bash
