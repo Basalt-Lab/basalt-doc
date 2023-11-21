@@ -1,4 +1,4 @@
-# **Basalt Auth**
+# **[Basalt Auth](https://www.npmjs.com/package/@basalt-lab/basalt-auth)**
 
 !!! warning
 

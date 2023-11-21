@@ -40,6 +40,8 @@ $ npm -v
 
 Intégrer **Basalt Auth** dans votre projet est un jeu d'enfant.
 
+Package : [@basalt-lab/basalt-auth](https://www.npmjs.com/package/@basalt-lab/basalt-auth)
+
 Suivez ces étapes pour l'ajouter à votre projet :
 
 ```bash
@@ -47,6 +49,7 @@ npm i @basalt-lab/basalt-auth
 ```
 
 <!-- termynal -->
+
 ```bash
 $ npm i @basalt-lab/basalt-auth
 ---> 100%
