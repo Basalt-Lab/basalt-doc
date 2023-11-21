@@ -1,4 +1,8 @@
-# **Basalt Socket**
+# **[Basalt Socket](https://www.npmjs.com/package/@basalt-lab/basalt-socket)**
+
+!!! warning
+
+    Basalt is currently in its infancy, please be indulgent and do not hesitate to give us your feedback and suggestions.
 
 ## **Introduction**
 

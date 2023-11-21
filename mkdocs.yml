@@ -126,43 +126,14 @@ extra_css:
   - https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.css
 extra_javascript:
   - js/searchBar.js
-  - https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.js.iife.js
+  - js/driver.js.iife.js
   - js/driver.js
+
 
 extra:
   generator: false
 nav:
   - Basalt: index.md
-  - Basalt Helper:
-      - Basalt Helper: basalt-helper/index.md
-      - Getting Started:
-        - Getting Started: basalt-helper/getting-started/index.md
-        - Example:
-          - Data:
-            - Filter: basalt-helper/getting-started/example/data/filter.md
-            - Transformation: basalt-helper/getting-started/example/data/transformation.md
-            - Deep Clone: basalt-helper/getting-started/example/data/deep-clone.md
-          - Security:
-            - Password: basalt-helper/getting-started/example/security/password.md
-      - Reference:
-        - Data:
-          - Filters:
-            - BasaltKeyExclusionFilter: basalt-helper/reference/data/filter/BasaltKeyExclusionFilter.md
-            - BasaltKeyInclusionFilter: basalt-helper/reference/data/filter/BasaltKeyInclusionFilter.md
-            - BasaltValueFilter: basalt-helper/reference/data/filter/BasaltValueFilter.md
-          - Transformations:
-              - BasaltCamelCaseTransformer: basalt-helper/reference/data/transformation/BasaltCamelCaseTransformer.md
-              - BasaltKebabCaseTransformer: basalt-helper/reference/data/transformation/BasaltKebabCaseTransformer.md
-              - BasaltPascalCaseTransformer: basalt-helper/reference/data/transformation/BasaltPascalCaseTransformer.md
-              - BasaltSnakeCaseTransformer: basalt-helper/reference/data/transformation/BasaltSnakeCaseTransformer.md
-          - Utility:
-              - BasaltDeepCloneUtility: basalt-helper/reference/data/utility/BasaltDeepCloneUtility.md
-              - BasaltKeyTransformerUtility: basalt-helper/reference/data/utility/BasaltKeyTransformerUtility.md
-        - Security:
-            - Password: basalt-helper/reference/security/password.md
-      - Contribution: basalt-helper/contribution.md
-      - Changelog: basalt-helper/changelog.md
-      - License: basalt-helper/license.md
   - Basalt Auth:
       - Basalt Auth: basalt-auth/index.md
       - Getting Started:
@@ -176,6 +147,49 @@ nav:
       - License: basalt-auth/license.md
   - Basalt Authorization:
       - Basalt Authorization: basalt-authorization/index.md
+  - Basalt Helper:
+      - Basalt Helper: basalt-helper/index.md
+      - Getting Started:
+          - Getting Started: basalt-helper/getting-started/index.md
+          - Example:
+              - Data:
+                  - Filter: basalt-helper/getting-started/example/data/filter.md
+                  - Transformation: basalt-helper/getting-started/example/data/transformation.md
+                  - Deep Clone: basalt-helper/getting-started/example/data/deep-clone.md
+              - Security:
+                  - Password: basalt-helper/getting-started/example/security/password.md
+      - Reference:
+          - Data:
+              - Filters:
+                  - BasaltKeyExclusionFilter: basalt-helper/reference/data/filter/BasaltKeyExclusionFilter.md
+                  - BasaltKeyInclusionFilter: basalt-helper/reference/data/filter/BasaltKeyInclusionFilter.md
+                  - BasaltValueFilter: basalt-helper/reference/data/filter/BasaltValueFilter.md
+              - Transformations:
+                  - BasaltCamelCaseTransformer: basalt-helper/reference/data/transformation/BasaltCamelCaseTransformer.md
+                  - BasaltKebabCaseTransformer: basalt-helper/reference/data/transformation/BasaltKebabCaseTransformer.md
+                  - BasaltPascalCaseTransformer: basalt-helper/reference/data/transformation/BasaltPascalCaseTransformer.md
+                  - BasaltSnakeCaseTransformer: basalt-helper/reference/data/transformation/BasaltSnakeCaseTransformer.md
+              - Utility:
+                  - BasaltDeepCloneUtility: basalt-helper/reference/data/utility/BasaltDeepCloneUtility.md
+                  - BasaltKeyTransformerUtility: basalt-helper/reference/data/utility/BasaltKeyTransformerUtility.md
+          - Security:
+              - Password: basalt-helper/reference/security/password.md
+      - Contribution: basalt-helper/contribution.md
+      - Changelog: basalt-helper/changelog.md
+      - License: basalt-helper/license.md
+  - Basalt HTTP:
+      - Basalt HTTP: basalt-http/index.md
+  - Basalt Logger:
+      - Basalt Logger: basalt-logger/index.md
+      - Getting Started:
+          - Getting Started: basalt-logger/getting-started/index.md
+          - Example:
+              - Logger: basalt-logger/getting-started/example/logger.md
+      - Reference:
+          - BasaltLogger: basalt-logger/reference/BasaltLogger.md
+      - Contribution: basalt-logger/contribution.md
+      - Changelog: basalt-logger/changelog.md
+      - License: basalt-logger/license.md
   - Basalt Socket:
       - Basalt Socket: basalt-socket/index.md
       - Getting Started:
@@ -187,5 +201,6 @@ nav:
       - Contribution: basalt-socket/contribution.md
       - Changelog: basalt-helper/changelog.md
       - License: basalt-socket/license.md
-  - Basalt HTTP:
-      - Basalt HTTP: basalt-http/index.md
+
+
+

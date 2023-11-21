@@ -39,7 +39,7 @@ Veuillez consulter nos directives de contribution pour plus d'informations sur l
 Nous vous remercions d'explorer **Basalt** et de le considérer comme la base de vos solutions backend.
 Alors que nous sommes en pleine croissance et amélioration, votre confiance et votre patience envers nos outils sont grandement appréciées.
 
-Bon codage, et nous sommes impatients de construire ensemble l'avenir du développement backend !
+Bon codage, et nous sommes impatients de voir ce que vous allez créer avec **Basalt** !
 
 
 !!! warning

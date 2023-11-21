@@ -1,4 +1,8 @@
-# **Basalt Helper**
+# **[Basalt Helper](https://www.npmjs.com/package/@basalt-lab/basalt-helper)**
+
+!!! warning
+
+    Basalt est actuellement à ses débuts, s'il vous plaît soyez indulgent et hésitez pas à nous faire part de vos commentaires et suggestions.
 
 ## **Introduction**
 
