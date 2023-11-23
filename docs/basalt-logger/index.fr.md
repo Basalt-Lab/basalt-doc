@@ -22,7 +22,7 @@ La facilité d'intégration de **Basalt Logger** dans vos applications TypeScrip
 ## **Caractéristiques Principales**
 
 - **Stratégies de Logging**: Intégrez facilement diverses stratégies de logging comme la journalisation dans la console.
-- **Gestion des Niveaux de Log**: Utilisez des niveaux de log (ERROR, WARN, INFO) pour filtrer et catégoriser les messages de log.
+- **Gestion des Niveaux de Log**: Utilisez des niveaux de log (LOG, DEBUG, ERROR, WARN, INFO) pour filtrer et catégoriser les messages de log.
 - **Gestion des Erreurs**: Traitez les erreurs spécifiques au logging avec `BasaltLoggerError`, une extension personnalisée de la classe Error.
 
 ## **Conclusion**
