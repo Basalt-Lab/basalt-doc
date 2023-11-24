@@ -7,7 +7,7 @@
 ```mermaid
 classDiagram
     class BasaltLogger {
-        -_strategies Map~string, ILoggerStrategy~
+        -_strategies Map<string, ILoggerStrategy>
         -_logStream Writable
         +addStrategy(name, strategy) void
         +addStrategies(strategies) void
