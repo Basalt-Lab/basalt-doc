@@ -1,4 +1,4 @@
-## **Création d'un serveur**
+## **Lancer le serveur**
 
 === "TypeScript"
 
@@ -25,7 +25,82 @@ $ node server.js
 Listening to port 3000
 ```
 
-## **Ajout d'un evenement**
+## **Arreter le serveur**
+
+=== "TypeScript"
+
+    ```typescript
+    import { BasaltSocketServer } from '@basalt-lab/basalt-socket';
+    
+    const basaltSocketServer: BasaltSocketServer = new BasaltSocketServer();
+    basaltSocketServer.listen(3000); // default verbose is true
+    basaltSocketServer.stop();
+    ```
+
+=== "JavaScript"
+
+    ```javascript
+    const { BasaltSocketServer } = require('@basalt-lab/basalt-socket');
+
+    const basaltSocketServer = new BasaltSocketServer();
+    basaltSocketServer.listen(3000); // default verbose is true
+    basaltSocketServer.stop();
+    ```
+
+<!-- termynal -->
+
+```bash
+$ node server.js
+Listening to port 3000
+```
+
+## **Ajout du CORS**
+
+=== "TypeScript"
+
+    ```typescript
+    import {
+        BasaltSocketServer,
+        BasaltSocketEvents
+    } from '@basalt-lab/basalt-socket';
+    
+    const basaltSocketServer: BasaltSocketServer = new BasaltSocketServer({
+        origins: ['yourdomain.com']
+    });
+    const basaltSocketEvents: BasaltSocketEvents = new BasaltSocketEvents();
+    basaltSocketEvents.add('test', {});
+    basaltSocketServer.use('/', basaltSocketEvents.events);
+    basaltSocketServer.listen(3000);
+    ```
+
+=== "JavaScript"
+
+    ```javascript
+    const {
+        BasaltSocketServer,
+        BasaltSocketEvents
+    } = require('@basalt-lab/basalt-socket');
+
+    const basaltSocketServer = new BasaltSocketServer({
+        origins: ['yourdomain.com']
+    });
+    const basaltSocketEvents = new BasaltSocketEvents();
+    basaltSocketEvents.add('test', {});
+    basaltSocketServer.use('/', basaltSocketEvents.events);
+    basaltSocketServer.listen(3000);
+    ```
+<!-- termynal -->
+
+```bash
+$ node server.js
+Listening to port 3000
+# example : connect to the server on the event 'test' 
+```
+![](img.png "Example")
+
+## **Evemenent**
+
+### **Ajouter un événement**
 
 === "TypeScript"
 
@@ -60,7 +135,7 @@ $ node server.js
 Listening to port 3000
 ```
 
-## **Ajout d'un evenement avec un handler**
+### **Ajouter un événement avec un handler**
 
 === "TypeScript"
 
@@ -101,12 +176,12 @@ Listening to port 3000
 ```bash
 $ node server.js
 Listening to port 3000
-# example : connect to the server on the event 'test' and client send two messages
+# example : connect to the server on the event 'test' and client transmit twice
 test
 test
 ```
 
-## **Ajout d'un evenement avec un handler et un preHandler**
+### **Ajouter un événement avec un handler et un preHandler**
 
 === "TypeScript"
 
@@ -157,14 +232,14 @@ test
 ```bash
 $ node server.js
 Listening to port 3000
-# example : connect to the server on the event 'test' and client send two messages
+# example : connect to the server on the event 'test' and client transmit twice
 preHandler 1
 test
 preHandler 1
 test
 ```
 
-## **Ajout d'un evenement avec un handler et multiple preHandler**
+### **Ajouter un événement avec un handler et plusieurs preHandler**
 
 === "TypeScript"
 
@@ -221,7 +296,7 @@ test
 ```bash
 $ node server.js
 Listening to port 3000
-# example : connect to the server on the event 'test' and client send two messages
+# example : connect to the server on the event 'test' and client transmit twice
 preHandler 1
 preHandler 2
 test
@@ -230,77 +305,7 @@ preHandler 2
 test
 ```
 
-
-## **PubSub**
-
-=== "TypeScript"
-
-    ```typescript
-    import { BasaltSocketServer, BasaltSocketEvents, IBasaltWebSocket } from '@basalt-lab/basalt-socket';
-    
-    const basaltSocketServer: BasaltSocketServer = new BasaltSocketServer();
-    const basaltSocketEvents: BasaltSocketEvents = new BasaltSocketEvents();
-    
-    basaltSocketEvents.add('health', {
-    
-        onConnectHook: (ws: IBasaltWebSocket): void => {
-            ws.subscribe('test');
-        },
-    
-        handler: (ws: IBasaltWebSocket): void => {
-            ws.publish('test', 'Hello World');
-        }
-    });
-    
-    basaltSocketServer.use('/', basaltSocketEvents.events);
-    basaltSocketServer.listen(3000);
-    ```
-
-=== "JavaScript"
-
-    ```javascript
-    const { BasaltSocketServer, BasaltSocketEvents } = require('@basalt-lab/basalt-socket');
-
-    const basaltSocketServer = new BasaltSocketServer();
-    const basaltSocketEvents = new BasaltSocketEvents();
-    
-    basaltSocketEvents.add('health', {
-    
-        onConnectHook: (ws) => {
-            ws.subscribe('test');
-        },
-    
-        handler: (ws) => {
-            ws.publish('test', 'Hello World');
-        }
-    });
-
-    basaltSocketServer.use('/', basaltSocketEvents.events);
-    basaltSocketServer.listen(3000);
-    ```
-
-<!-- termynal -->
-
-```bash
-$ node server.js
-Listening to port 3000
-```
-example : two client connect to the server on the event 'health' and client subscribe to 'test' and server publish 'Hello World'
-And client listen to 'message' event.
-<!-- termynal -->
-
-```bash
-Connected
-```
-
-<!-- termynal -->
-```bash
-Connected
-Hello World
-```
-
-
-## **Handler emit**
+### **Handler envoie un message**
 
 === "TypeScript"
 
@@ -341,11 +346,11 @@ Hello World
 ```bash
 $ node server.js
 Listening to port 3000
-
-# example : connect to the server on the event 'test' and client send message and server emit message
+# example : connect to the server on the event 'test' and client emit and server emit message 'test' to client
 ```
+![](img_1.png "Example")
 
-## **Handler get message**
+### **Handler reçoit un message**
 
 === "TypeScript"
 
@@ -387,11 +392,13 @@ Listening to port 3000
 ```bash
 $ node server.js
 Listening to port 3000
-# example : connect to the server on the event 'test' and client send message 'test' and server log message
+# example : connect to the server on the event 'test' and client send message 'test'
 test
 ```
 
-## **Global onUpgradeHook**
+## **Hooks**
+
+### **Global onUpgradeHook**
 
 === "TypeScript"
 
@@ -434,7 +441,7 @@ Listening to port 3000
 onUpgradeHook
 ```
 
-## **Event onUpgradeHook**
+### **Event onUpgradeHook**
 
 === "TypeScript"
 
@@ -478,7 +485,7 @@ Listening to port 3000
 onUpgradeHook
 ```
 
-## **Global onUpgradeHook set data in UserData**
+### **Global onUpgradeHook set data in UserData**
 
 === "TypeScript"
 
@@ -494,23 +501,146 @@ onUpgradeHook
     const basaltSocketServer: BasaltSocketServer = new BasaltSocketServer();
     const basaltSocketEvents: BasaltSocketEvents = new BasaltSocketEvents();
     
-    interface IUserData {
-        host: string;
-    }
-    
-    basaltSocketServer.onUpgradeHook = (_: IBasaltHttpResponse, req: IBasaltHttpRequest): IUserData => {
-        console.log('Upgrade hook');
-    const host: string = req.getHeader('host');
-        return {
-            host,
-        };
+    basaltSocketServer.onUpgradeHook = (_: IBasaltHttpResponse, req: IBasaltHttpRequest): unknown => {
+        const cookie: string = req.getHeader('cookie');
+        return { cookie };
     };
     
     basaltSocketEvents.add('test', {
         handler: (ws: IBasaltWebSocket): void => {
-            const userData: IUserData = ws.getUserData() as IUserData;
-            console.log(userData.host);
+            console.log(ws.getUserData());
+        }
+    });
+    basaltSocketServer.use('/', basaltSocketEvents.events);
+    basaltSocketServer.listen(3000);
+    ```
+=== "JavaScript"
+
+    ```javascript
+    const {
+        BasaltSocketServer,
+        BasaltSocketEvents
+    } = require('@basalt-lab/basalt-socket');
+
+    const basaltSocketServer = new BasaltSocketServer();
+    const basaltSocketEvents = new BasaltSocketEvents();
+    
+    basaltSocketServer.onUpgradeHook = (_, req) => {
+        const cookie = req.getHeader('cookie');
+        return { cookie };
+    };
+    
+    basaltSocketEvents.add('test', {
+        handler: (ws) => {
+            console.log(ws.getUserData());
+        }
+    });
+    basaltSocketServer.use('/', basaltSocketEvents.events);
+    basaltSocketServer.listen(3000);
+    ```
+<!-- termynal -->
+
+```bash
+$ node server.js
+Listening to port 3000
+# example : connect to the server on the event 'test' and client emit
+uWS.WebSocket {
+  cookie: 'token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c'
+}
+```
+
+### **Event onUpgradeHook set data in UserData**
+
+=== "TypeScript"
+
+    ```typescript
+    import {
+        BasaltSocketServer,
+        BasaltSocketEvents,
+        IBasaltHttpResponse,
+        IBasaltHttpRequest,
+        IBasaltWebSocket
+    } from '@basalt-lab/basalt-socket';
+    
+    const basaltSocketServer: BasaltSocketServer = new BasaltSocketServer();
+    const basaltSocketEvents: BasaltSocketEvents = new BasaltSocketEvents();
+    
+    basaltSocketEvents.add('test', {
+        onUpgradeHook: (_: IBasaltHttpResponse, req: IBasaltHttpRequest): unknown => {
+            const cookie: string = req.getHeader('cookie');
+            return { cookie };
         },
+        handler: (ws: IBasaltWebSocket): void => {
+        console.log(ws.getUserData());
+        }
+    });
+    basaltSocketServer.use('/', basaltSocketEvents.events);
+    basaltSocketServer.listen(3000);
+    ```
+=== "JavaScript"
+
+    ```javascript 
+    const {
+        BasaltSocketServer,
+        BasaltSocketEvents
+    } = require('@basalt-lab/basalt-socket');
+
+    const basaltSocketServer = new BasaltSocketServer();
+    const basaltSocketEvents = new BasaltSocketEvents();
+
+    basaltSocketEvents.add('test', {
+        onUpgradeHook: (_, req) => {
+            const cookie = req.getHeader('cookie');
+            return { cookie };
+        },
+        handler: (ws) => {
+            console.log(ws.getUserData());
+        }
+    });
+    basaltSocketServer.use('/', basaltSocketEvents.events);
+    basaltSocketServer.listen(3000);
+    ```
+
+<!-- termynal -->
+
+```bash
+$ node server.js
+Listening to port 3000
+# example : connect to the server on the event 'test' and client emit
+uWS.WebSocket {
+  cookie: 'token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c'
+}
+```
+
+### **Global and Event onUpgradeHook set data in UserData**
+
+=== "TypeScript"
+
+    ```typescript
+    import {
+        BasaltSocketServer,
+        BasaltSocketEvents,
+        IBasaltHttpResponse,
+        IBasaltHttpRequest,
+        IBasaltWebSocket
+    } from '@basalt-lab/basalt-socket';
+    
+    const basaltSocketServer: BasaltSocketServer = new BasaltSocketServer();
+    const basaltSocketEvents: BasaltSocketEvents = new BasaltSocketEvents();
+    
+    basaltSocketServer.onUpgradeHook = (_: IBasaltHttpResponse, req: IBasaltHttpRequest): unknown => {
+        const host: string = req.getHeader('host');
+        return { host };
+    };
+    
+    basaltSocketEvents.add('test', {
+        onUpgradeHook: (_: IBasaltHttpResponse, req: IBasaltHttpRequest): unknown => {
+            const cookie: string = req.getHeader('cookie');
+            return { cookie };
+        },
+        handler: (ws: IBasaltWebSocket): void => {
+            console.log(ws.getUserData());
+        }
     });
     basaltSocketServer.use('/', basaltSocketEvents.events);
     basaltSocketServer.listen(3000);
@@ -528,95 +658,20 @@ onUpgradeHook
     const basaltSocketEvents = new BasaltSocketEvents();
 
     basaltSocketServer.onUpgradeHook = (_, req) => {
-        console.log('Upgrade hook');
         const host = req.getHeader('host');
-        return {
-            host,
-        };
+        return { host };
     };
 
     basaltSocketEvents.add('test', {
-        handler: (ws) => {
-            const userData = ws.getUserData();
-            console.log(userData.host);
-        },
-    });
-    basaltSocketServer.use('/', basaltSocketEvents.events);
-    basaltSocketServer.listen(3000);
-    ```
-
-<!-- termynal -->
-
-```bash
-$ node server.js
-Listening to port 3000
-# example : connect to the server on the event 'test'
-Upgrade hook
-# example : client send message
-localhost:3000
-```
-
-## **Event onUpgradeHook set data in UserData**
-
-=== "TypeScript"
-
-    ```typescript
-    import {
-        BasaltSocketServer,
-        BasaltSocketEvents,
-        IBasaltHttpResponse,
-        IBasaltHttpRequest,
-        IBasaltWebSocket
-    } from '@basalt-lab/basalt-socket';
-    
-    const basaltSocketServer: BasaltSocketServer = new BasaltSocketServer();
-    const basaltSocketEvents: BasaltSocketEvents = new BasaltSocketEvents();
-    
-    interface IUserData {
-        host: string;
-    }
-
-    basaltSocketEvents.add('test', {
-        onUpgradeHook: (_: IBasaltHttpResponse, req: IBasaltHttpRequest): IUserData => {
-            console.log('Upgrade hook');
-            const host: string = req.getHeader('host');
-            return {
-                host,
-            };
-        },
-        handler: (ws: IBasaltWebSocket): void => {
-            const userData: IUserData = ws.getUserData() as IUserData;
-            console.log(userData.host);
-        },
-    });
-    basaltSocketServer.use('/', basaltSocketEvents.events);
-    basaltSocketServer.listen(3000);
-    ```
-
-=== "JavaScript"
-
-    ```javascript
-    const {
-        BasaltSocketServer,
-        BasaltSocketEvents
-    } = require('@basalt-lab/basalt-socket');
-
-    const basaltSocketServer = new BasaltSocketServer();
-    const basaltSocketEvents = new BasaltSocketEvents();
-
-    basaltSocketEvents.add('test', {
         onUpgradeHook: (_, req) => {
-            console.log('Upgrade hook');
-            const host: string = req.getHeader('host');
-            return {
-                host,
-            };
+            const cookie = req.getHeader('cookie');
+            return { cookie };
         },
         handler: (ws) => {
-            const userData = ws.getUserData();
-            console.log(userData.host);
-        },
+            console.log(ws.getUserData());
+        }
     });
+
     basaltSocketServer.use('/', basaltSocketEvents.events);
     basaltSocketServer.listen(3000);
     ```
@@ -626,13 +681,13 @@ localhost:3000
 ```bash
 $ node server.js
 Listening to port 3000
-# example : connect to the server on the event 'test'
-Upgrade hook
-# example : client send message
-localhost:3000
+uWS.WebSocket {
+  host: 'localhost:3000',
+  cookie: 'token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c'
+}
 ```
 
-## **Global onConnectHook**
+### **Global onConnectHook**
 
 === "TypeScript"
 
@@ -683,7 +738,7 @@ Listening to port 3000
 Client connected
 ```
 
-## **Event onConnectHook**
+### **Event onConnectHook**
 
 === "TypeScript"
 
@@ -736,7 +791,7 @@ Listening to port 3000
 Client connected
 ```
 
-## **Global onReceivedHook**
+### **Global onReceivedHook**
 
 === "TypeScript"
 
@@ -788,10 +843,10 @@ Listening to port 3000
 onReceivedHook
 ```
 
-## **Event onReceivedHook**
+### **Event onReceivedHook**
 
 === "TypeScript"
-    
+
     ```typescript
     import {
         BasaltSocketServer,
@@ -842,7 +897,7 @@ Listening to port 3000
 onReceivedHook
 ```
 
-## **Global onDisconnectHook**
+### **Global onDisconnectHook**
 
 === "TypeScript"
 
@@ -894,7 +949,7 @@ Listening to port 3000
 onDisconnectHook
 ```
 
-## **Event onDisconnectHook**
+### **Event onDisconnectHook**
 
 === "TypeScript"
 
