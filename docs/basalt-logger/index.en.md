@@ -22,7 +22,7 @@ The ease of integrating **Basalt Logger** into your TypeScript/JavaScript applic
 ## **Key Features**
 
 - **Logging Strategies**: Easily integrate various logging strategies such as console logging.
-- **Log Level Management**: Use log levels (ERROR, WARN, INFO) to filter and categorize log messages.
+- **Log Level Management**: Use log levels (LOG, DEBUG, ERROR, WARN, INFO) to filter and categorize log messages.
 - **Error Management**: Handle specific logging errors with `BasaltLoggerError`, a custom extension of the Error class.
 
 ## **Conclusion**
