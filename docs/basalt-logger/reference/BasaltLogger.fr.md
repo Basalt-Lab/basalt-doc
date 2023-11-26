@@ -7,21 +7,21 @@
 ```mermaid
 classDiagram
     class BasaltLogger {
-        -_strategies ILoggerStrategy[]
+        -_strategies Map<string, ILoggerStrategy>
         -_logStream Writable
-        +addStrategy(strategy) void
+        +addStrategy(name, strategy) void
         +addStrategies(strategies) void
-        +removeStrategy(strategy) void
-        +removeStrategies(strategies) void
+        +removeStrategy(name) void
+        +removeStrategies(names) void
         +clearStrategies() void
-        +error(message, object) void
-        +warn(message, object) void
-        +info(message, object) void
-        +debug(message, object) void
-        +log(message, object) void
-        -executeStrategies(level, message, object) void
-        -formatLogEntry(level, message, object) string
-        -out(level, message, object) void
+        +error(message, strategiesNames) void
+        +warn(message, strategiesNames) void
+        +info(message, strategiesNames) void
+        +debug(message, strategiesNames) void
+        +log(message, strategiesNames) void
+        -executeStrategies(level, message, strategiesNames) void
+        -formatLogEntry(level, message, strategiesNames) string
+        -out(level, message, strategiesNames) void
     }
 ```
 
@@ -33,40 +33,46 @@ Ci-dessous, vous trouverez les détails techniques de chaque méthode publique d
 
 ???+ info "addStrategy"
 
-    - **Description** : Ajoute une stratégie de journalisation au logger.
-    - **Signature** : `public static addStrategy(strategy: ILoggerStrategy): void`
+    - **Description** : Ajoute une stratégie de journalisation.
+    - **Signature** :
+        - `public static addStrategy(name: string, strategy: ILoggerStrategy): void`
     - **Paramètres** :
+        - `name` : Le nom de la stratégie.
         - `strategy` : La stratégie de journalisation à ajouter.
-    - **Exceptions** : Lance une erreur `BasaltLoggerError` si la stratégie est déjà ajoutée.
+    - **Exceptions** : Lance une erreur `BasaltLoggerError` si une stratégie avec le même nom existe déjà.
 
 ### `addStrategies`
 
 ???+ info "addStrategies"
 
-    - **Description** : Ajoute plusieurs stratégies de journalisation au logger.
-    - **Signature** : `public static addStrategies(strategies: ILoggerStrategy[]): void`
+    - **Description** : Ajoute plusieurs stratégies de journalisation.
+    - **Signature** :
+        - `public static addStrategies(strategies: [string, ILoggerStrategy][]): void`
     - **Paramètres** :
-        - `strategies` : Un tableau de stratégies de journalisation à ajouter.
-    - **Exceptions** : Lance une erreur `BasaltLoggerError` si une des stratégies est déjà ajoutée.
+        - `strategies` : Un tableau de stratégies.
+    - **Exceptions** : Lance une erreur `BasaltLoggerError` si une stratégie avec le même nom existe déjà.
 
 ### `removeStrategy`
 
 ???+ info "removeStrategy"
 
-    - **Description** : Supprime une stratégie de journalisation du logger.
-    - **Signature** : `public static removeStrategy(strategy: ILoggerStrategy): void`
+    - **Description** : Supprime une ou plusieurs stratégies de journalisation.
+    - **Signature** :
+        - `public static removeStrategy(name: string): void`
     - **Paramètres** :
-        - `strategy` : La stratégie de journalisation à supprimer.
+        - `name` : Le nom de la stratégie à supprimer.
     - **Exceptions** : Lance une erreur `BasaltLoggerError` si la stratégie n'est pas trouvée.
 
 ### `removeStrategies`
 
 ???+ info "removeStrategies"
 
-    - **Description** : Supprime plusieurs stratégies de journalisation du logger.
-    - **Signature** : `public static removeStrategies(strategies: ILoggerStrategy[]): void`
+    - **Description** : Supprime une ou plusieurs stratégies de journalisation.
+    - **Signature** :
+        - `public static removeStrategies(names: string[]): void`
     - **Paramètres** :
-        - `strategies` : Un tableau de stratégies de journalisation à supprimer.
+        - `names` : Les noms des stratégies à supprimer.
+    - **Exceptions** : Lance une erreur `BasaltLoggerError` si la stratégie n'est pas trouvée.
 
 ### `clearStrategies`
 
@@ -79,54 +85,54 @@ Ci-dessous, vous trouverez les détails techniques de chaque méthode publique d
 
 ???+ info "log"
 
-    - **Description** : Méthodes pour enregistrer des messages.
-    - **Signature** : `public static log(message: string, object?: unknown): void` (et similaire pour `warn`, `info`, `debug`, `error`)
+    - **Description** : Méthodes pour enregistrer des messages de différents niveaux de gravité.
+    - **Signature** : `public static log(message: string, strategiesNames: string[] = [...BasaltLogger._strategies.keys()]): void`
     - **Paramètres** :
         - `message` : Le message à enregistrer.
-        - `object` (optionnel) : Informations supplémentaires à enregistrer.
+        - `strategiesNames` : Les noms des stratégies à utiliser.
     - **Exceptions** : Lance une erreur `BasaltLoggerError` si aucune stratégie n'est ajoutée.
 
 ### `info`
 
 ???+ info "info"
 
-    - **Description** : Méthodes pour enregistrer des messages.
-    - **Signature** : `public static info(message: string, object?: unknown): void` (et similaire pour `warn`, `error`, `debug`, `log`)
+    - **Description** : Méthodes pour enregistrer des messages de différents niveaux de gravité.
+    - **Signature** : `public static info(message: string, strategiesNames: string[] = [...BasaltLogger._strategies.keys()]): void`
     - **Paramètres** :
         - `message` : Le message à enregistrer.
-        - `object` (optionnel) : Informations supplémentaires à enregistrer.
+        - `strategiesNames` : Les noms des stratégies à utiliser.
     - **Exceptions** : Lance une erreur `BasaltLoggerError` si aucune stratégie n'est ajoutée.
 
 ### `debug`
 
 ???+ info "debug"
 
-    - **Description** : Méthodes pour enregistrer des messages.
-    - **Signature** : `public static debug(message: string, object?: unknown): void` (et similaire pour `warn`, `info`, `error`, `log`)
+    - **Description** : Méthodes pour enregistrer des messages de différents niveaux de gravité.
+    - **Signature** : `public static debug(message: string, strategiesNames: string[] = [...BasaltLogger._strategies.keys()]): void`
     - **Paramètres** :
         - `message` : Le message à enregistrer.
-        - `object` (optionnel) : Informations supplémentaires à enregistrer.
+        - `strategiesNames` : Les noms des stratégies à utiliser.
     - **Exceptions** : Lance une erreur `BasaltLoggerError` si aucune stratégie n'est ajoutée.
 
 ### `warn`
 
 ???+ info "warn"
 
-    - **Description** : Méthodes pour enregistrer des messages.
-    - **Signature** : `public static warn(message: string, object?: unknown): void` (et similaire pour `error`, `info`, `debug`, `log`)
+    - **Description** : Méthodes pour enregistrer des messages de différents niveaux de gravité.
+    - **Signature** : `public static warn(message: string, strategiesNames: string[] = [...BasaltLogger._strategies.keys()]): void`
     - **Paramètres** :
         - `message` : Le message à enregistrer.
-        - `object` (optionnel) : Informations supplémentaires à enregistrer.
+        - `strategiesNames` : Les noms des stratégies à utiliser.
     - **Exceptions** : Lance une erreur `BasaltLoggerError` si aucune stratégie n'est ajoutée.
 
 ### `error`
 
 ???+ info "error"
 
-    - **Description** : Méthodes pour enregistrer des messages.
-    - **Signature** : `public static error(message: string, object?: unknown): void` (et similaire pour `warn`, `info`, `debug`, `log`)
+    - **Description** : Méthodes pour enregistrer des messages de différents niveaux de gravité.
+    - **Signature** : `public static error(message: string, strategiesNames: string[] = [...BasaltLogger._strategies.keys()]): void`
     - **Paramètres** :
         - `message` : Le message à enregistrer.
-        - `object` (optionnel) : Informations supplémentaires à enregistrer.
+        - `strategiesNames` : Les noms des stratégies à utiliser.
     - **Exceptions** : Lance une erreur `BasaltLoggerError` si aucune stratégie n'est ajoutée.
 

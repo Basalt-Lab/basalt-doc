@@ -187,6 +187,8 @@ nav:
               - Logger: basalt-logger/getting-started/example/logger.md
       - Reference:
           - BasaltLogger: basalt-logger/reference/BasaltLogger.md
+          - ConsoleLoggerStrategy: basalt-logger/reference/ConsoleLoggerStrategy.md
+          - FileLoggerStrategy: basalt-logger/reference/FileLoggerStrategy.md
       - Contribution: basalt-logger/contribution.md
       - Changelog: basalt-logger/changelog.md
       - License: basalt-logger/license.md

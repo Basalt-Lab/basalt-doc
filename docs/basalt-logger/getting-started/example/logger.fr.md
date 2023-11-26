@@ -3,10 +3,9 @@
 === "TypeScript"
 
     ```typescript
-    import { BasaltLogger } from './BasaltLogger';
-    import { ConsoleLoggerStrategy } from '@/Strategies';
-    
-    BasaltLogger.addStrategy(new ConsoleLoggerStrategy());
+    import { BasaltLogger, ConsoleLoggerStrategy } from '@basalt-lab/basalt-logger';
+
+    BasaltLogger.addStrategy('console', new ConsoleLoggerStrategy());
     
     BasaltLogger.log('hello world');
     ```
@@ -14,10 +13,10 @@
 === "JavaScript"
     
     ```javascript
-    const { BasaltLogger } = require('./BasaltLogger');
-    const { ConsoleLoggerStrategy } = require('@/Strategies');
+    const { BasaltLogger, ConsoleLoggerStrategy } = require('@basalt-lab/basalt-logger');
 
-    BasaltLogger.addStrategy(new ConsoleLoggerStrategy());
+    BasaltLogger.addStrategy('console', new ConsoleLoggerStrategy());
+    
     BasaltLogger.log('hello world');
     ```
 
@@ -25,7 +24,7 @@
 
 ```bash
 $ node example.js
-[2023-11-20 18:46:20] LOG : hello world
+[2023-11-21 00:00:00] LOG : hello world
 ```
 
 ## **Suppression d'une strategie specifique de log**
@@ -33,25 +32,21 @@ $ node example.js
 === "TypeScript"
 
     ```typescript
-    import { BasaltLogger } from './BasaltLogger';
-    import { ConsoleLoggerStrategy } from '@/Strategies';
-    
-    const consoleStrategy = new ConsoleLoggerStrategy();
-    
-    BasaltLogger.addStrategy(consoleStrategy);
-    BasaltLogger.removeStrategy(consoleStrategy);
+    import { BasaltLogger, ConsoleLoggerStrategy } from '@basalt-lab/basalt-logger';
+
+    BasaltLogger.addStrategy('console', new ConsoleLoggerStrategy());
+
+    BasaltLogger.removeStrategy('console');
     ```
 
 === "JavaScript"
 
-    ```javascript
-    const { BasaltLogger } = require('./BasaltLogger');
-    const { ConsoleLoggerStrategy } = require('@/Strategies');
+    ```javascript 
+    const { BasaltLogger, ConsoleLoggerStrategy } = require('@basalt-lab/basalt-logger');
 
-    const consoleStrategy = new ConsoleLoggerStrategy();
-
-    BasaltLogger.addStrategy(consoleStrategy);
-    BasaltLogger.removeStrategy(consoleStrategy);
+    BasaltLogger.addStrategy('console', new ConsoleLoggerStrategy());
+    
+    BasaltLogger.removeStrategy('console');
     ```
 
 ## **Suppression de toutes les strategies de log**
@@ -59,24 +54,20 @@ $ node example.js
 === "TypeScript"
 
     ```typescript
-    import { BasaltLogger } from './BasaltLogger';
-    import { ConsoleLoggerStrategy } from '@/Strategies';
+    import { BasaltLogger, ConsoleLoggerStrategy } from '@basalt-lab/basalt-logger';
     
-    const consoleStrategy = new ConsoleLoggerStrategy();
+    BasaltLogger.addStrategy('console', new ConsoleLoggerStrategy());
     
-    BasaltLogger.addStrategy(consoleStrategy);
     BasaltLogger.clearStrategies();
     ```
 
 === "JavaScript"
 
     ```javascript
-    const { BasaltLogger } = require('./BasaltLogger');
-    const { ConsoleLoggerStrategy } = require('@/Strategies');
+    const { BasaltLogger, ConsoleLoggerStrategy } = require('@basalt-lab/basalt-logger');
 
-    const consoleStrategy = new ConsoleLoggerStrategy();
+    BasaltLogger.addStrategy('console', new ConsoleLoggerStrategy());
 
-    BasaltLogger.addStrategy(consoleStrategy);
     BasaltLogger.clearStrategies();
     ```
 
@@ -86,37 +77,32 @@ $ node example.js
 
     ```typescript
     import { appendFileSync } from 'fs';
-    
-    import { BasaltLogger } from './BasaltLogger';
-    import { ILoggerStrategy } from '@/Interfaces';
-    import { LogLevels } from '@/Enums';
+    import { BasaltLogger, ILoggerStrategy, LogLevels}  from '@basalt-lab/basalt-logger';
     
     class FileLoggerStrategy implements ILoggerStrategy {
-        public log(level: LogLevels, message: string, object?: unknown): void {
+        public log(level: LogLevels, message: string): void {
             appendFileSync('./test.log', `${level}: ${message}\n`);
         }
     }
     
-    BasaltLogger.addStrategy(new FileLoggerStrategy());
-    BasaltLogger.log('hello world');
+    BasaltLogger.addStrategy('file', new FileLoggerStrategy());
+    BasaltLogger.log('Hello World');
     ```
 
 === "JavaScript"
 
     ```javascript
     const { appendFileSync } = require('fs');
+    const { BasaltLogger, LogLevels } = require('@basalt-lab/basalt-logger');
 
-    const { BasaltLogger } = require('./BasaltLogger');
-    const { LogLevels } = require('@/Enums');
-    
     class FileLoggerStrategy {
-        log(level, message, object) {
+        log(level, message) {
             appendFileSync('./test.log', `${level}: ${message}\n`);
         }
     }
-
-    BasaltLogger.addStrategy(new FileLoggerStrategy());
-    BasaltLogger.log('hello world');
+    
+    BasaltLogger.addStrategy('file', new FileLoggerStrategy());
+    BasaltLogger.log('Hello World');
     ```
 
 <!-- termynal -->
@@ -124,7 +110,7 @@ $ node example.js
 ```bash
 $ node example.js
 $ cat test.log
-[2023-11-21 20:24:00] LOG : hello world
+[2023-11-21 00:00:00] LOG : Hello World
 ```
 
 ## **Ajout de plusieurs strategies de log**
@@ -133,57 +119,36 @@ $ cat test.log
 === "TypeScript"
 
     ```typescript
-    import { appendFileSync } from 'fs';
-    
-    import { BasaltLogger } from './BasaltLogger';
-    import { ConsoleLoggerStrategy } from '@/Strategies';
-    import { ILoggerStrategy } from '@/Interfaces';
-    import { LogLevels } from '@/Enums';
-    
-    class FileLoggerStrategy implements ILoggerStrategy {
-        public log(level: LogLevels, message: string, object?: unknown): void {
-            appendFileSync('./test.log', `${level}: ${message}\n`);
-        }
-    }
+    import { BasaltLogger, ConsoleLoggerStrategy, FileLoggerStrategy}  from '@basalt-lab/basalt-logger';
     
     BasaltLogger.addStrategies([
-        new ConsoleLoggerStrategy(),
-        new FileLoggerStrategy(),
+        ['console', new ConsoleLoggerStrategy()],
+        ['file', new FileLoggerStrategy('log.txt')]
     ]);
     
-    BasaltLogger.log('hello world');
+    BasaltLogger.log('Hello World');
     ```
 
 === "JavaScript"
 
     ```javascript
-    const { appendFileSync } = require('fs');
-
-    const { BasaltLogger } = require('./BasaltLogger');
-    const { ConsoleLoggerStrategy } = require('@/Strategies');
-    const { LogLevels } = require('@/Enums');
+    const { BasaltLogger, ConsoleLoggerStrategy, FileLoggerStrategy } = require('@basalt-lab/basalt-logger');
     
-    class FileLoggerStrategy {
-        log(level, message, object) {
-            appendFileSync('./test.log', `${level}: ${message}\n`);
-        }
-    }
-
     BasaltLogger.addStrategies([
-        new ConsoleLoggerStrategy(),
-        new FileLoggerStrategy(),
+        ['console', new ConsoleLoggerStrategy()],
+        ['file', new FileLoggerStrategy('log.txt')]
     ]);
 
-    BasaltLogger.log('hello world');
+    BasaltLogger.log('Hello World');
     ```
 
 <!-- termynal -->
 
 ```bash
 $ node example.js
-[2023-11-21 20:27:06] LOG : hello world
-$ cat test.log
-[2023-11-21 20:24:00] LOG : hello world
+[2023-11-21 00:00:00] LOG : Hello World
+$ cat log.txt
+[2023-11-21 00:00:00] LOG : Hello World
 ```
 
 ## **Tout les niveaux de log**
@@ -191,10 +156,9 @@ $ cat test.log
 === "TypeScript"
 
     ```typescript
-    import { BasaltLogger } from './BasaltLogger';
-    import { ConsoleLoggerStrategy } from '@/Strategies';
+    import { BasaltLogger, ConsoleLoggerStrategy }  from '@basalt-lab/basalt-logger';
     
-    BasaltLogger.addStrategy(new ConsoleLoggerStrategy());
+    BasaltLogger.addStrategy('console', new ConsoleLoggerStrategy());
     
     BasaltLogger.log('hello world');
     BasaltLogger.info('hello world');
@@ -205,10 +169,9 @@ $ cat test.log
 === "JavaScript"
     
     ```javascript
-    const { BasaltLogger } = require('./BasaltLogger');
-    const { ConsoleLoggerStrategy } = require('@/Strategies');
+    const { BasaltLogger, ConsoleLoggerStrategy } = require('@basalt-lab/basalt-logger');
     
-    BasaltLogger.addStrategy(new ConsoleLoggerStrategy());
+    BasaltLogger.addStrategy('console', new ConsoleLoggerStrategy());
     
     BasaltLogger.log('hello world');
     BasaltLogger.info('hello world');
@@ -216,13 +179,61 @@ $ cat test.log
     BasaltLogger.warn('hello world');
     BasaltLogger.error('hello world');
     ```
+
 <!-- termynal -->
 
 ```bash
 $ node example.js
-[2023-11-20 18:49:47] LOG : hello world
-[2023-11-20 18:49:47] INFO : hello world
-[2023-11-20 18:49:47] DEBUG : hello world
-[2023-11-20 18:49:47] WARN : hello world
-[2023-11-20 18:49:47] ERROR : hello world
+[2023-11-21 00:00:00] LOG : hello world
+[2023-11-21 00:00:00] INFO : hello world
+[2023-11-21 00:00:00] DEBUG : hello world
+[2023-11-21 00:00:00] WARN : hello world
+[2023-11-21 00:00:00] ERROR : hello world
+```
+
+## **Log sur une strategie specifique**
+
+=== "TypeScript"
+
+    ```typescript
+    import { BasaltLogger, ConsoleLoggerStrategy, FileLoggerStrategy}  from '@basalt-lab/basalt-logger';
+    
+    BasaltLogger.addStrategies([
+        ['console', new ConsoleLoggerStrategy()],
+        ['file', new FileLoggerStrategy('log.txt')]
+    ]);
+    
+    BasaltLogger.log('console strategy', ['console']);
+    BasaltLogger.log('file strategy', ['file']);
+    BasaltLogger.log('console and file strategy', ['console', 'file']);
+    BasaltLogger.log('all strategies');
+    ```
+
+=== "JavaScript"
+
+    ```javascript
+    const { BasaltLogger, ConsoleLoggerStrategy, FileLoggerStrategy } = require('@basalt-lab/basalt-logger');
+    
+    BasaltLogger.addStrategies([
+        ['console', new ConsoleLoggerStrategy()],
+        ['file', new FileLoggerStrategy('log.txt')]
+    ]);
+
+    BasaltLogger.log('console strategy', ['console']);
+    BasaltLogger.log('file strategy', ['file']);
+    BasaltLogger.log('console and file strategy', ['console', 'file']);
+    BasaltLogger.log('all strategies');
+    ```
+
+<!-- termynal -->
+
+```bash
+$ node example.js
+[2023-11-21 00:00:00] LOG : console strategy
+[2023-11-21 00:00:00] LOG : console and file strategy
+[2023-11-21 00:00:00] LOG : all strategies
+$ cat log.txt
+[2023-11-21 00:00:00] LOG : file strategy
+[2023-11-24 10:58:23] LOG : console and file strategy
+[2023-11-24 10:58:23] LOG : all strategies
 ```
