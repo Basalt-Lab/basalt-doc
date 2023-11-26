@@ -16,11 +16,11 @@
         <link rel="prev" href="../getting-started/example/logger.html">
       
       
-        <link rel="next" href="../contribution.html">
+        <link rel="next" href="ConsoleLoggerStrategy.html">
       
       
       <link rel="icon" href="../../assets/logo.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.10">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.14">
     
     
       
@@ -473,6 +473,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../index.html" class="md-nav__link">
         
@@ -489,6 +490,7 @@
     
       
       
+  
   
   
   
@@ -531,6 +533,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../basalt-auth/index.html" class="md-nav__link">
         
@@ -548,6 +551,7 @@
             
               
                 
+  
   
   
   
@@ -589,6 +593,7 @@
   
   
   
+  
     
     
     
@@ -627,6 +632,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../basalt-auth/contribution.html" class="md-nav__link">
         
@@ -647,6 +653,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../basalt-auth/changelog.html" class="md-nav__link">
         
@@ -664,6 +671,7 @@
             
               
                 
+  
   
   
   
@@ -691,6 +699,7 @@
     
       
       
+  
   
   
   
@@ -733,6 +742,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../basalt-authorization/index.html" class="md-nav__link">
         
@@ -757,6 +767,7 @@
     
       
       
+  
   
   
   
@@ -799,6 +810,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../basalt-helper/index.html" class="md-nav__link">
         
@@ -816,6 +828,7 @@
             
               
                 
+  
   
   
   
@@ -854,6 +867,7 @@
             
               
                 
+  
   
   
   
@@ -905,6 +919,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../basalt-helper/contribution.html" class="md-nav__link">
         
@@ -925,6 +940,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../basalt-helper/changelog.html" class="md-nav__link">
         
@@ -942,6 +958,7 @@
             
               
                 
+  
   
   
   
@@ -969,6 +986,7 @@
     
       
       
+  
   
   
   
@@ -1011,6 +1029,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../basalt-http/index.html" class="md-nav__link">
         
@@ -1038,6 +1057,7 @@
   
   
     
+  
   
   
     
@@ -1079,6 +1099,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../index.html" class="md-nav__link">
         
@@ -1096,6 +1117,7 @@
             
               
                 
+  
   
   
   
@@ -1139,6 +1161,7 @@
     
   
   
+  
     
     
     
@@ -1175,6 +1198,7 @@
   
   
     
+  
   
   
     <li class="md-nav__item md-nav__item--active">
@@ -1349,6 +1373,48 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ConsoleLoggerStrategy.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ConsoleLoggerStrategy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="FileLoggerStrategy.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FileLoggerStrategy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1359,6 +1425,7 @@
             
               
                 
+  
   
   
   
@@ -1382,8 +1449,9 @@
   
   
   
+  
     <li class="md-nav__item">
-      <a href="../changelog.md" class="md-nav__link">
+      <a href="../changelog.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1399,6 +1467,7 @@
             
               
                 
+  
   
   
   
@@ -1426,6 +1495,7 @@
     
       
       
+  
   
   
   
@@ -1468,6 +1538,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../basalt-socket/index.html" class="md-nav__link">
         
@@ -1485,6 +1556,7 @@
             
               
                 
+  
   
   
   
@@ -1526,6 +1598,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../basalt-socket/contribution.html" class="md-nav__link">
         
@@ -1546,6 +1619,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../basalt-helper/changelog.html" class="md-nav__link">
         
@@ -1563,6 +1637,7 @@
             
               
                 
+  
   
   
   
@@ -1613,21 +1688,21 @@
 <h2 id="diagram"><strong>Diagram</strong></h2>
 <pre class="mermaid"><code>classDiagram
     class BasaltLogger {
-        -_strategies ILoggerStrategy[]
+        -_strategies Map&lt;string, ILoggerStrategy&gt;
         -_logStream Writable
-        +addStrategy(strategy) void
+        +addStrategy(name, strategy) void
         +addStrategies(strategies) void
-        +removeStrategy(strategy) void
-        +removeStrategies(strategies) void
+        +removeStrategy(name) void
+        +removeStrategies(names) void
         +clearStrategies() void
-        +error(message, object) void
-        +warn(message, object) void
-        +info(message, object) void
-        +debug(message, object) void
-        +log(message, object) void
-        -executeStrategies(level, message, object) void
-        -formatLogEntry(level, message, object) string
-        -out(level, message, object) void
+        +error(message, strategiesNames) void
+        +warn(message, strategiesNames) void
+        +info(message, strategiesNames) void
+        +debug(message, strategiesNames) void
+        +log(message, strategiesNames) void
+        -executeStrategies(level, message, strategiesNames) void
+        -formatLogEntry(level, message, strategiesNames) string
+        -out(level, message, strategiesNames) void
     }</code></pre>
 <h2 id="public-methods"><strong>Public Methods</strong></h2>
 <p>Below are the technical details of each available public method.</p>
@@ -1635,129 +1710,143 @@
 <details class="info" open="open">
 <summary>addStrategy</summary>
 <ul>
-<li><strong>Description</strong>: Adds a logging strategy to the logger.</li>
-<li><strong>Signature</strong>: <code>public static addStrategy(strategy: ILoggerStrategy): void</code></li>
-<li><strong>Parameters</strong>:<ul>
-<li><code>strategy</code>: The logging strategy to add.</li>
+<li><strong>Description</strong> : Adds one logging strategy.</li>
+<li><strong>Signature</strong> :<ul>
+<li><code>public static addStrategy(name: string, strategy: ILoggerStrategy): void</code></li>
 </ul>
 </li>
-<li><strong>Exceptions</strong>: Throws a <code>BasaltLoggerError</code> if the strategy is already added.</li>
+<li><strong>Parameters</strong> :<ul>
+<li><code>name</code> : The name of the strategy.</li>
+<li><code>strategy</code> : The logging strategy to add.</li>
+</ul>
+</li>
+<li><strong>Exceptions</strong> : Throws a <code>BasaltLoggerError</code> if a strategy with the same name already exists.</li>
 </ul>
 </details>
 <h3 id="addstrategies"><code>addStrategies</code></h3>
 <details class="info" open="open">
 <summary>addStrategies</summary>
 <ul>
-<li><strong>Description</strong>: Adds multiple logging strategies to the logger.</li>
-<li><strong>Signature</strong>: <code>public static addStrategies(strategies: ILoggerStrategy[]): void</code></li>
-<li><strong>Parameters</strong>:<ul>
-<li><code>strategies</code>: An array of logging strategies to add.</li>
+<li><strong>Description</strong> : Adds multiple logging strategies.</li>
+<li><strong>Signature</strong> :<ul>
+<li><code>public static addStrategies(strategies: [string, ILoggerStrategy][]): void</code></li>
 </ul>
 </li>
-<li><strong>Exceptions</strong>: Throws a <code>BasaltLoggerError</code> if any of the strategies are already added.</li>
+<li><strong>Parameters</strong> :<ul>
+<li><code>strategies</code> : An array of strategies.</li>
+</ul>
+</li>
+<li><strong>Exceptions</strong> : Throws a <code>BasaltLoggerError</code> if a strategy with the same name already exists.</li>
 </ul>
 </details>
 <h3 id="removestrategy"><code>removeStrategy</code></h3>
 <details class="info" open="open">
 <summary>removeStrategy</summary>
 <ul>
-<li><strong>Description</strong>: Removes a logging strategy from the logger.</li>
-<li><strong>Signature</strong>: <code>public static removeStrategy(strategy: ILoggerStrategy): void</code></li>
-<li><strong>Parameters</strong>:<ul>
-<li><code>strategy</code>: The logging strategy to remove.</li>
+<li><strong>Description</strong> : Removes one logging strategy.</li>
+<li><strong>Signature</strong> :<ul>
+<li><code>public static removeStrategy(name: string): void</code></li>
 </ul>
 </li>
-<li><strong>Exceptions</strong>: Throws a <code>BasaltLoggerError</code> if the strategy is not found.</li>
+<li><strong>Parameters</strong> :<ul>
+<li><code>name</code> : The name of the strategy to remove.</li>
+</ul>
+</li>
+<li><strong>Exceptions</strong> : Throws a <code>BasaltLoggerError</code> if the strategy is not found.</li>
 </ul>
 </details>
 <h3 id="removestrategies"><code>removeStrategies</code></h3>
 <details class="info" open="open">
 <summary>removeStrategies</summary>
 <ul>
-<li><strong>Description</strong>: Removes multiple logging strategies from the logger.</li>
-<li><strong>Signature</strong>: <code>public static removeStrategies(strategies: ILoggerStrategy[]): void</code></li>
-<li><strong>Parameters</strong>:<ul>
-<li><code>strategies</code>: An array of logging strategies to remove.</li>
+<li><strong>Description</strong> : Removes multiple logging strategies.</li>
+<li><strong>Signature</strong> :<ul>
+<li><code>public static removeStrategies(names: string[]): void</code></li>
 </ul>
 </li>
+<li><strong>Parameters</strong> :<ul>
+<li><code>names</code> : An array of strategy names to remove.</li>
+</ul>
+</li>
+<li><strong>Exceptions</strong> : Throws a <code>BasaltLoggerError</code> if the strategy is not found.</li>
 </ul>
 </details>
 <h3 id="clearstrategies"><code>clearStrategies</code></h3>
 <details class="info" open="open">
 <summary>clearStrategies</summary>
 <ul>
-<li><strong>Description</strong>: Clears all logging strategies from the logger.</li>
-<li><strong>Signature</strong>: <code>public static clearStrategies(): void</code></li>
+<li><strong>Description</strong> : Removes all logging strategies.</li>
+<li><strong>Signature</strong> : <code>public static clearStrategies(): void</code></li>
 </ul>
 </details>
 <h3 id="log"><code>log</code></h3>
 <details class="info" open="open">
 <summary>log</summary>
 <ul>
-<li><strong>Description</strong> : Methods for logging messages.</li>
-<li><strong>Signature</strong> : <code>public static log(message: string, object?: unknown): void</code> (similar for <code>warn</code>, <code>info</code>, <code>debug</code>, <code>error</code>)</li>
-<li><strong>Paramètres</strong> :<ul>
+<li><strong>Description</strong> : Methods to log messages of different severity levels.</li>
+<li><strong>Signature</strong> : <code>public static log(message: string, strategiesNames: string[] = [...BasaltLogger._strategies.keys()]): void</code></li>
+<li><strong>Parameters</strong> :<ul>
 <li><code>message</code> : The message to log.</li>
-<li><code>object</code> (optional): Additional information to log.</li>
+<li><code>strategiesNames</code> : The names of the strategies to use.</li>
 </ul>
 </li>
-<li><strong>Exceptions</strong> : Throws a <code>BasaltLoggerError</code> if no strategies are added.</li>
+<li><strong>Exceptions</strong> : Throws a <code>BasaltLoggerError</code> if no strategy is added.</li>
 </ul>
 </details>
 <h3 id="info"><code>info</code></h3>
 <details class="info" open="open">
 <summary>info</summary>
 <ul>
-<li><strong>Description</strong> : Methods for logging messages.</li>
-<li><strong>Signature</strong> : <code>public static info(message: string, object?: unknown): void</code> (similar for <code>warn</code>, <code>error</code>, <code>debug</code>, <code>log</code>)</li>
+<li><strong>Description</strong> : Methods to log messages of different severity levels.</li>
+<li><strong>Signature</strong> : <code>public static info(message: string, strategiesNames: string[] = [...BasaltLogger._strategies.keys()]): void</code></li>
 <li><strong>Parameters</strong> :<ul>
 <li><code>message</code> : The message to log.</li>
-<li><code>object</code> (optional): Additional information to log.</li>
+<li><code>strategiesNames</code> : The names of the strategies to use.</li>
 </ul>
 </li>
-<li><strong>Exceptions</strong> : Throws a <code>BasaltLoggerError</code> if no strategies are added.</li>
+<li><strong>Exceptions</strong> : Throws a <code>BasaltLoggerError</code> if no strategy is added.</li>
 </ul>
 </details>
 <h3 id="debug"><code>debug</code></h3>
 <details class="info" open="open">
 <summary>debug</summary>
 <ul>
-<li><strong>Description</strong> : Methods for logging messages.</li>
-<li><strong>Signature</strong> : <code>public static debug(message: string, object?: unknown): void</code> (similar for <code>warn</code>, <code>info</code>, <code>error</code>, <code>log</code>)</li>
+<li><strong>Description</strong> : Methods to log messages of different severity levels.</li>
+<li><strong>Signature</strong> : <code>public static debug(message: string, strategiesNames: string[] = [...BasaltLogger._strategies.keys()]): void</code></li>
 <li><strong>Parameters</strong> :<ul>
 <li><code>message</code> : The message to log.</li>
-<li><code>object</code> (optional): Additional information to log.</li>
+<li><code>strategiesNames</code> : The names of the strategies to use.</li>
 </ul>
 </li>
-<li><strong>Exceptions</strong> : Throws a <code>BasaltLoggerError</code> if no strategies are added.</li>
+<li><strong>Exceptions</strong> : Throws a <code>BasaltLoggerError</code> if no strategy is added.</li>
 </ul>
 </details>
 <h3 id="warn"><code>warn</code></h3>
 <details class="info" open="open">
 <summary>warn</summary>
 <ul>
-<li><strong>Description</strong> : Methods for logging messages.</li>
-<li><strong>Signature</strong> : <code>public static warn(message: string, object?: unknown): void</code> (similar for <code>error</code>, <code>info</code>, <code>debug</code>, <code>log</code>)</li>
+<li><strong>Description</strong> : Methods to log messages of different severity levels.</li>
+<li><strong>Signature</strong> : <code>public static warn(message: string, strategiesNames: string[] = [...BasaltLogger._strategies.keys()]): void</code></li>
 <li><strong>Parameters</strong> :<ul>
 <li><code>message</code> : The message to log.</li>
-<li><code>object</code> (optional): Additional information to log.</li>
+<li><code>strategiesNames</code> : The names of the strategies to use.</li>
 </ul>
 </li>
-<li><strong>Exceptions</strong> : Throws a <code>BasaltLoggerError</code> if no strategies are added.</li>
+<li><strong>Exceptions</strong> : Throws a <code>BasaltLoggerError</code> if no strategy is added.</li>
 </ul>
 </details>
 <h3 id="error"><code>error</code></h3>
 <details class="info" open="open">
 <summary>error</summary>
 <ul>
-<li><strong>Description</strong> : Methods for logging messages.</li>
-<li><strong>Signature</strong> : <code>public static error(message: string, object?: unknown): void</code> (similar for <code>warn</code>, <code>info</code>, <code>debug</code>, <code>log</code>)</li>
+<li><strong>Description</strong> : Methods to log messages of different severity levels.</li>
+<li><strong>Signature</strong> : <code>public static error(message: string, strategiesNames: string[] = [...BasaltLogger._strategies.keys()]): void</code></li>
 <li><strong>Parameters</strong> :<ul>
 <li><code>message</code> : The message to log.</li>
-<li><code>object</code> (optional): Additional information to log.</li>
+<li><code>strategiesNames</code> : The names of the strategies to use.</li>
 </ul>
 </li>
-<li><strong>Exceptions</strong> : Throws a <code>BasaltLoggerError</code> if no strategies are added.</li>
+<li><strong>Exceptions</strong> : Throws a <code>BasaltLoggerError</code> if no strategy is added.</li>
 </ul>
 </details>
 
@@ -1806,13 +1895,13 @@
         
         
           
-          <a href="../contribution.html" class="md-footer__link md-footer__link--next" aria-label="Next: Contribution">
+          <a href="ConsoleLoggerStrategy.html" class="md-footer__link md-footer__link--next" aria-label="Next: ConsoleLoggerStrategy">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Contribution
+                ConsoleLoggerStrategy
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1851,7 +1940,7 @@
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation", "navigation.instant.progress", "navigation.tracking", "navigation.path", "navigation.tabs", "navigation.tabs.sticky", "navigation.prune", "navigation.footer", "navigation.top", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "header.autohide", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.6c14ae12.min.js"></script>
+      <script src="../../assets/javascripts/bundle.cd18aaf1.min.js"></script>
       
         <script src="../../js/searchBar.js"></script>
       
