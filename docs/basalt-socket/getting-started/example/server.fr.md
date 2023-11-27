@@ -98,6 +98,64 @@ Listening to port 3000
 ```
 ![](img.png "Example")
 
+## **Pub Sub : Exemple Alerte**
+
+=== "TypeScript"
+
+    ```typescript
+    import { BasaltSocketServer, BasaltSocketEvents, IBasaltWebSocket } from '@basalt-lab/basalt-socket';
+    
+    const basaltSocketServer: BasaltSocketServer = new BasaltSocketServer();
+    const basaltSocketEvents: BasaltSocketEvents = new BasaltSocketEvents();
+    
+    basaltSocketEvents.add('alert', {
+        onConnectHook: (ws: IBasaltWebSocket): void => {
+            ws.subscribe('alert');
+        },
+        onDisconnectHook: (): void => {
+            // ws.unsubscribe('alert'); // This is not needed, as the unsubscribe is done automatically on disconnect, but can be used to Handler or PreHandler
+        }
+    });
+    basaltSocketServer.use('/', basaltSocketEvents.events);
+    basaltSocketServer.listen(3000);
+    
+    setInterval((): void => {
+        basaltSocketServer.publish('alert', 'Hello World!');
+    }, 1000);
+    ```
+
+=== "JavaScript"
+
+    ```javascript
+    const { BasaltSocketServer, BasaltSocketEvents } = require('@basalt-lab/basalt-socket');
+
+    const basaltSocketServer = new BasaltSocketServer();
+    const basaltSocketEvents = new BasaltSocketEvents();
+
+    basaltSocketEvents.add('alert', {
+        onConnectHook: (ws) => {
+            ws.subscribe('alert');
+        },
+        onDisconnectHook: () => {
+            // ws.unsubscribe('alert'); // This is not needed, as the unsubscribe is done automatically on disconnect, but can be used to Handler or PreHandler
+        }
+    });
+    basaltSocketServer.use('/', basaltSocketEvents.events);
+    basaltSocketServer.listen(3000);
+
+    setInterval(() => {
+        basaltSocketServer.publish('alert', 'Hello World!');
+    }, 1000);
+    ```
+<!-- termynal -->
+
+```bash
+$ node server.js
+Listening to port 3000
+# example : connect to the server on the event 'alert' and client subscribe to 'alert'
+```
+![](img_2.png "Example")
+
 ## **Evemenent**
 
 ### **Ajouter un événement**
