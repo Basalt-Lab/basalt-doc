@@ -214,7 +214,7 @@ Listening to port 3000
 ```
 
 
-## **Ajouts de plusieurs évenements dans un router d'évenements**
+### **Ajouts de plusieurs évenements dans un router d'évenements**
 
 === "TypeScript"
 
@@ -255,7 +255,7 @@ $ node server.js
 Listening to port 3000
 ```
 
-## **Ajouts de plusieurs router d'évenements**
+### **Ajouts de plusieurs router d'évenements**
 
 === "TypeScript"
 
