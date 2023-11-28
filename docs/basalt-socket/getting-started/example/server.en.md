@@ -1,4 +1,4 @@
-## **Server Listen**
+## **Server listen**
 
 === "TypeScript"
 
@@ -6,7 +6,9 @@
     import { BasaltSocketServer } from '@basalt-lab/basalt-socket';
     
     const basaltSocketServer: BasaltSocketServer = new BasaltSocketServer();
-    basaltSocketServer.listen(3000); // default verbose is true
+    basaltSocketServer.listen({
+        port: 3000
+    }); // default verbose is true
     ```
 
 === "JavaScript"
@@ -15,7 +17,9 @@
     const { BasaltSocketServer } = require('@basalt-lab/basalt-socket');
     
     const basaltSocketServer = new BasaltSocketServer();
-    basaltSocketServer.listen(3000); // default verbose is true
+    basaltSocketServer.listen({
+        port: 3000
+    }); // default verbose is true
     ```
 
 <!-- termynal -->
@@ -25,7 +29,7 @@ $ node server.js
 Listening to port 3000
 ```
 
-## **Server Stop**
+## **Server stop**
 
 === "TypeScript"
 
@@ -33,7 +37,9 @@ Listening to port 3000
     import { BasaltSocketServer } from '@basalt-lab/basalt-socket';
     
     const basaltSocketServer: BasaltSocketServer = new BasaltSocketServer();
-    basaltSocketServer.listen(3000); // default verbose is true
+    basaltSocketServer.listen({
+        port: 3000
+    }); // default verbose is true
     basaltSocketServer.stop();
     ```
 
@@ -43,7 +49,9 @@ Listening to port 3000
     const { BasaltSocketServer } = require('@basalt-lab/basalt-socket');
 
     const basaltSocketServer = new BasaltSocketServer();
-    basaltSocketServer.listen(3000); // default verbose is true
+    basaltSocketServer.listen({
+        port: 3000
+    }); // default verbose is true
     basaltSocketServer.stop();
     ```
 
@@ -69,8 +77,10 @@ Listening to port 3000
     });
     const basaltSocketEvents: BasaltSocketEvents = new BasaltSocketEvents();
     basaltSocketEvents.add('test', {});
-    basaltSocketServer.use('/', basaltSocketEvents.events);
-    basaltSocketServer.listen(3000);
+    basaltSocketServer.use('/', basaltSocketEvents);
+    basaltSocketServer.listen({
+        port: 3000
+    });
     ```
 
 === "JavaScript"
@@ -86,8 +96,10 @@ Listening to port 3000
     });
     const basaltSocketEvents = new BasaltSocketEvents();
     basaltSocketEvents.add('test', {});
-    basaltSocketServer.use('/', basaltSocketEvents.events);
-    basaltSocketServer.listen(3000);
+    basaltSocketServer.use('/', basaltSocketEvents);
+    basaltSocketServer.listen({
+        port: 3000
+    });
     ```
 <!-- termynal -->
 
@@ -98,7 +110,7 @@ Listening to port 3000
 ```
 ![](img.png "Example")
 
-## **Pub Sub : Example Alert**
+## **Pub Sub : example alert**
 
 === "TypeScript"
 
@@ -116,8 +128,10 @@ Listening to port 3000
             // ws.unsubscribe('alert'); // This is not needed, as the unsubscribe is done automatically on disconnect, but can be used to Handler or PreHandler
         }
     });
-    basaltSocketServer.use('/', basaltSocketEvents.events);
-    basaltSocketServer.listen(3000);
+    basaltSocketServer.use('/', basaltSocketEvents);
+    basaltSocketServer.listen({
+        port: 3000
+    });
     
     setInterval((): void => {
         basaltSocketServer.publish('alert', 'Hello World!');
@@ -140,8 +154,10 @@ Listening to port 3000
             // ws.unsubscribe('alert'); // This is not needed, as the unsubscribe is done automatically on disconnect, but can be used to Handler or PreHandler
         }
     });
-    basaltSocketServer.use('/', basaltSocketEvents.events);
-    basaltSocketServer.listen(3000);
+    basaltSocketServer.use('/', basaltSocketEvents);
+    basaltSocketServer.listen({
+        port: 3000
+    });
 
     setInterval(() => {
         basaltSocketServer.publish('alert', 'Hello World!');
@@ -158,7 +174,7 @@ Listening to port 3000
 
 ## **Event**
 
-### **Add an event**
+### **Add an event into events router**
 
 === "TypeScript"
 
@@ -169,8 +185,10 @@ Listening to port 3000
     const basaltSocketEvents: BasaltSocketEvents = new BasaltSocketEvents();
     
     basaltSocketEvents.add('test', {});
-    basaltSocketServer.use('/', basaltSocketEvents.events);
-    basaltSocketServer.listen(3000);
+    basaltSocketServer.use('/', basaltSocketEvents);
+    basaltSocketServer.listen({
+        port: 3000
+    });
     ```
 
 === "JavaScript"
@@ -182,8 +200,94 @@ Listening to port 3000
     const basaltSocketEvents = new BasaltSocketEvents();
 
     basaltSocketEvents.add('test', {});
-    basaltSocketServer.use('/', basaltSocketEvents.events);
-    basaltSocketServer.listen(3000);
+    basaltSocketServer.use('/', basaltSocketEvents);
+    basaltSocketServer.listen({
+        port: 3000
+    });
+    ```
+
+<!-- termynal -->
+
+```bash
+$ node server.js
+Listening to port 3000
+```
+
+## **Add multiple events into events router**
+
+=== "TypeScript"
+
+    ```typescript
+    import { BasaltSocketServer, BasaltSocketEvents } from '@basalt-lab/basalt-socket';
+
+    const basaltSocketServer: BasaltSocketServer = new BasaltSocketServer();
+    const basaltSocketEvents: BasaltSocketEvents = new BasaltSocketEvents();
+    
+    basaltSocketEvents.add('event1', {});
+    basaltSocketEvents.add('event2', {});
+    basaltSocketServer.use('/', basaltSocketEvents);
+    basaltSocketServer.listen({
+        port: 3000
+    });
+    ```
+
+=== "JavaScript"
+
+    ```javascript
+    const { BasaltSocketServer, BasaltSocketEvents } = require('@basalt-lab/basalt-socket');
+    
+    const basaltSocketServer = new BasaltSocketServer();
+    const basaltSocketEvents = new BasaltSocketEvents();
+
+    basaltSocketEvents.add('event1', {});
+    basaltSocketEvents.add('event2', {});
+    basaltSocketServer.use('/', basaltSocketEvents);
+    basaltSocketServer.listen({
+        port: 3000
+    });
+    ```
+
+<!-- termynal -->
+
+```bash
+$ node server.js
+Listening to port 3000
+```
+
+## **Add multiple events routers**
+
+=== "TypeScript"
+
+    ```typescript
+    import { BasaltSocketServer, BasaltSocketEvents } from '@basalt-lab/basalt-socket';
+
+    const basaltSocketServer: BasaltSocketServer = new BasaltSocketServer();
+    const basaltSocketEventsA: BasaltSocketEvents = new BasaltSocketEvents();
+    const basaltSocketEventsB: BasaltSocketEvents = new BasaltSocketEvents();
+    
+    basaltSocketEventsA.add('foo', {});
+    basaltSocketEventsB.add('bar', {});
+    basaltSocketServer.use('/', [basaltSocketEventsA, basaltSocketEventsB]);
+    basaltSocketServer.listen({
+        port: 3000
+    });
+    ```
+
+=== "JavaScript"
+
+    ```javascript
+    const { BasaltSocketServer, BasaltSocketEvents } = require('@basalt-lab/basalt-socket');
+    
+    const basaltSocketServer = new BasaltSocketServer();
+    const basaltSocketEventsA: BasaltSocketEvents = new BasaltSocketEvents();
+    const basaltSocketEventsB: BasaltSocketEvents = new BasaltSocketEvents();
+    
+    basaltSocketEventsA.add('foo', {});
+    basaltSocketEventsB.add('bar', {});
+    basaltSocketServer.use('/', [basaltSocketEventsA, basaltSocketEventsB]);
+    basaltSocketServer.listen({
+        port: 3000
+    });
     ```
 
 <!-- termynal -->
@@ -208,8 +312,10 @@ Listening to port 3000
             console.log('test');
         }
     });
-    basaltSocketServer.use('/', basaltSocketEvents.events);
-    basaltSocketServer.listen(3000);
+    basaltSocketServer.use('/', basaltSocketEvents);
+    basaltSocketServer.listen({
+        port: 3000
+    });
     ```
 
 === "JavaScript"
@@ -225,8 +331,10 @@ Listening to port 3000
             console.log('test');
         }
     });
-    basaltSocketServer.use('/', basaltSocketEvents.events);
-    basaltSocketServer.listen(3000);
+    basaltSocketServer.use('/', basaltSocketEvents);
+    basaltSocketServer.listen({
+        port: 3000
+    });
     ```
 
 <!-- termynal -->
@@ -259,8 +367,10 @@ test
             console.log('test');
         }
     });
-    basaltSocketServer.use('/', basaltSocketEvents.events);
-    basaltSocketServer.listen(3000);
+    basaltSocketServer.use('/', basaltSocketEvents);
+    basaltSocketServer.listen({
+        port: 3000
+    });
     ```
 
 === "JavaScript"
@@ -281,8 +391,10 @@ test
             console.log('test');
         }
     });
-    basaltSocketServer.use('/', basaltSocketEvents.events);
-    basaltSocketServer.listen(3000);
+    basaltSocketServer.use('/', basaltSocketEvents);
+    basaltSocketServer.listen({
+        port: 3000
+    });
     ```
 
 <!-- termynal -->
@@ -320,8 +432,10 @@ test
             console.log('test');
         }
     });
-    basaltSocketServer.use('/', basaltSocketEvents.events);
-    basaltSocketServer.listen(3000);
+    basaltSocketServer.use('/', basaltSocketEvents);
+    basaltSocketServer.listen({
+        port: 3000
+    });
     ```
 
 === "JavaScript"
@@ -345,8 +459,10 @@ test
             console.log('test');
         }
     });
-    basaltSocketServer.use('/', basaltSocketEvents.events);
-    basaltSocketServer.listen(3000);
+    basaltSocketServer.use('/', basaltSocketEvents);
+    basaltSocketServer.listen({
+        port: 3000
+    });
     ```
 
 <!-- termynal -->
@@ -378,8 +494,10 @@ test
             ws.send('test');
         }
     });
-    basaltSocketServer.use('/', basaltSocketEvents.events);
-    basaltSocketServer.listen(3000);
+    basaltSocketServer.use('/', basaltSocketEvents);
+    basaltSocketServer.listen({
+        port: 3000
+    });
     ```
 
 === "JavaScript"
@@ -395,8 +513,10 @@ test
             ws.send('test');
         }
     });
-    basaltSocketServer.use('/', basaltSocketEvents.events);
-    basaltSocketServer.listen(3000);
+    basaltSocketServer.use('/', basaltSocketEvents);
+    basaltSocketServer.listen({
+        port: 3000
+    });
     ```
 
 <!-- termynal -->
@@ -424,8 +544,10 @@ Listening to port 3000
             console.log(messageString);
         }
     });
-    basaltSocketServer.use('/', basaltSocketEvents.events);
-    basaltSocketServer.listen(3000);
+    basaltSocketServer.use('/', basaltSocketEvents);
+    basaltSocketServer.listen({
+        port: 3000
+    });
     ```
 
 === "JavaScript"
@@ -442,8 +564,10 @@ Listening to port 3000
             console.log(messageString);
         }
     });
-    basaltSocketServer.use('/', basaltSocketEvents.events);
-    basaltSocketServer.listen(3000);
+    basaltSocketServer.use('/', basaltSocketEvents);
+    basaltSocketServer.listen({
+        port: 3000
+    });
     ```
 <!-- termynal -->
 
@@ -470,8 +594,10 @@ test
         console.log('onUpgradeHook');
     };
     basaltSocketEvents.add('test', {});
-    basaltSocketServer.use('/', basaltSocketEvents.events);
-    basaltSocketServer.listen(3000);
+    basaltSocketServer.use('/', basaltSocketEvents);
+    basaltSocketServer.listen({
+        port: 3000
+    });
     ```
 
 === "JavaScript"
@@ -486,8 +612,10 @@ test
         console.log('onUpgradeHook');
     };
     basaltSocketEvents.add('test', {});
-    basaltSocketServer.use('/', basaltSocketEvents.events);
-    basaltSocketServer.listen(3000);
+    basaltSocketServer.use('/', basaltSocketEvents);
+    basaltSocketServer.listen({
+        port: 3000
+    });
     ```
 
 <!-- termynal -->
@@ -514,8 +642,10 @@ onUpgradeHook
             console.log('onUpgradeHook');
         }
     });
-    basaltSocketServer.use('/', basaltSocketEvents.events);
-    basaltSocketServer.listen(3000);
+    basaltSocketServer.use('/', basaltSocketEvents);
+    basaltSocketServer.listen({
+        port: 3000
+    });
     ```
 
 === "JavaScript"
@@ -531,8 +661,10 @@ onUpgradeHook
             console.log('onUpgradeHook');
         }
     });
-    basaltSocketServer.use('/', basaltSocketEvents.events);
-    basaltSocketServer.listen(3000);
+    basaltSocketServer.use('/', basaltSocketEvents);
+    basaltSocketServer.listen({
+        port: 3000
+    });
     ```
 <!-- termynal -->
 
@@ -569,8 +701,10 @@ onUpgradeHook
             console.log(ws.getUserData());
         }
     });
-    basaltSocketServer.use('/', basaltSocketEvents.events);
-    basaltSocketServer.listen(3000);
+    basaltSocketServer.use('/', basaltSocketEvents);
+    basaltSocketServer.listen({
+        port: 3000
+    });
     ```
 === "JavaScript"
 
@@ -593,8 +727,10 @@ onUpgradeHook
             console.log(ws.getUserData());
         }
     });
-    basaltSocketServer.use('/', basaltSocketEvents.events);
-    basaltSocketServer.listen(3000);
+    basaltSocketServer.use('/', basaltSocketEvents);
+    basaltSocketServer.listen({
+        port: 3000
+    });
     ```
 <!-- termynal -->
 
@@ -632,8 +768,10 @@ uWS.WebSocket {
         console.log(ws.getUserData());
         }
     });
-    basaltSocketServer.use('/', basaltSocketEvents.events);
-    basaltSocketServer.listen(3000);
+    basaltSocketServer.use('/', basaltSocketEvents);
+    basaltSocketServer.listen({
+        port: 3000
+    });
     ```
 === "JavaScript"
 
@@ -655,8 +793,10 @@ uWS.WebSocket {
             console.log(ws.getUserData());
         }
     });
-    basaltSocketServer.use('/', basaltSocketEvents.events);
-    basaltSocketServer.listen(3000);
+    basaltSocketServer.use('/', basaltSocketEvents);
+    basaltSocketServer.listen({
+        port: 3000
+    });
     ```
 
 <!-- termynal -->
@@ -700,8 +840,10 @@ uWS.WebSocket {
             console.log(ws.getUserData());
         }
     });
-    basaltSocketServer.use('/', basaltSocketEvents.events);
-    basaltSocketServer.listen(3000);
+    basaltSocketServer.use('/', basaltSocketEvents);
+    basaltSocketServer.listen({
+        port: 3000
+    });
     ```
 
 === "JavaScript"
@@ -730,8 +872,10 @@ uWS.WebSocket {
         }
     });
 
-    basaltSocketServer.use('/', basaltSocketEvents.events);
-    basaltSocketServer.listen(3000);
+    basaltSocketServer.use('/', basaltSocketEvents);
+    basaltSocketServer.listen({
+        port: 3000
+    });
     ```
 
 <!-- termynal -->
@@ -763,8 +907,10 @@ uWS.WebSocket {
     };
     
     basaltSocketEvents.add('test', {});
-    basaltSocketServer.use('/', basaltSocketEvents.events);
-    basaltSocketServer.listen(3000);
+    basaltSocketServer.use('/', basaltSocketEvents);
+    basaltSocketServer.listen({
+        port: 3000
+    });
     ```
 
 === "JavaScript"
@@ -783,8 +929,10 @@ uWS.WebSocket {
     };
 
     basaltSocketEvents.add('test', {});
-    basaltSocketServer.use('/', basaltSocketEvents.events);
-    basaltSocketServer.listen(3000);
+    basaltSocketServer.use('/', basaltSocketEvents);
+    basaltSocketServer.listen({
+        port: 3000
+    });
     ```
 
 <!-- termynal -->
@@ -815,8 +963,10 @@ Client connected
         }
     });
     
-    basaltSocketServer.use('/', basaltSocketEvents.events);
-    basaltSocketServer.listen(3000);
+    basaltSocketServer.use('/', basaltSocketEvents);
+    basaltSocketServer.listen({
+        port: 3000
+    });
     ```
 
 === "JavaScript"
@@ -836,8 +986,10 @@ Client connected
         }
     });
 
-    basaltSocketServer.use('/', basaltSocketEvents.events);
-    basaltSocketServer.listen(3000);
+    basaltSocketServer.use('/', basaltSocketEvents);
+    basaltSocketServer.listen({
+        port: 3000
+    });
     ```
 
 <!-- termynal -->
@@ -868,8 +1020,10 @@ Client connected
     };
     
     basaltSocketEvents.add('test', {}); 
-    basaltSocketServer.use('/', basaltSocketEvents.events);
-    basaltSocketServer.listen(3000);
+    basaltSocketServer.use('/', basaltSocketEvents);
+    basaltSocketServer.listen({
+        port: 3000
+    });
     ```
 
 === "JavaScript"
@@ -888,8 +1042,10 @@ Client connected
     };
 
     basaltSocketEvents.add('test', {});
-    basaltSocketServer.use('/', basaltSocketEvents.events);
-    basaltSocketServer.listen(3000);
+    basaltSocketServer.use('/', basaltSocketEvents);
+    basaltSocketServer.listen({
+        port: 3000
+    });
     ```
 
 <!-- termynal -->
@@ -921,8 +1077,10 @@ onReceivedHook
         }
     });
     
-    basaltSocketServer.use('/', basaltSocketEvents.events);
-    basaltSocketServer.listen(3000);
+    basaltSocketServer.use('/', basaltSocketEvents);
+    basaltSocketServer.listen({
+        port: 3000
+    });
     ```
 
 === "JavaScript"
@@ -942,8 +1100,10 @@ onReceivedHook
         }
     });
 
-    basaltSocketServer.use('/', basaltSocketEvents.events);
-    basaltSocketServer.listen(3000);
+    basaltSocketServer.use('/', basaltSocketEvents);
+    basaltSocketServer.listen({
+        port: 3000
+    });
     ```
 
 <!-- termynal -->
@@ -974,8 +1134,10 @@ onReceivedHook
     
     basaltSocketEvents.add('test', {});
     
-    basaltSocketServer.use('/', basaltSocketEvents.events);
-    basaltSocketServer.listen(3000);
+    basaltSocketServer.use('/', basaltSocketEvents);
+    basaltSocketServer.listen({
+        port: 3000
+    });
     ```
 
 === "JavaScript"
@@ -995,8 +1157,10 @@ onReceivedHook
 
     basaltSocketEvents.add('test', {});
 
-    basaltSocketServer.use('/', basaltSocketEvents.events);
-    basaltSocketServer.listen(3000);
+    basaltSocketServer.use('/', basaltSocketEvents);
+    basaltSocketServer.listen({
+        port: 3000
+    });
     ```
 <!-- termynal -->
 
@@ -1026,8 +1190,10 @@ onDisconnectHook
         }
     });
     
-    basaltSocketServer.use('/', basaltSocketEvents.events);
-    basaltSocketServer.listen(3000);
+    basaltSocketServer.use('/', basaltSocketEvents);
+    basaltSocketServer.listen({
+        port: 3000
+    });
     ```
 
 === "JavaScript"
@@ -1047,8 +1213,10 @@ onDisconnectHook
         }
     });
 
-    basaltSocketServer.use('/', basaltSocketEvents.events);
-    basaltSocketServer.listen(3000);
+    basaltSocketServer.use('/', basaltSocketEvents);
+    basaltSocketServer.listen({
+        port: 3000
+    });
     ```
 <!-- termynal -->
 
