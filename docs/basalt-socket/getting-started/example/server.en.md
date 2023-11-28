@@ -213,7 +213,7 @@ $ node server.js
 Listening to port 3000
 ```
 
-## **Add multiple events into events router**
+### **Add multiple events into events router**
 
 === "TypeScript"
 
@@ -254,7 +254,7 @@ $ node server.js
 Listening to port 3000
 ```
 
-## **Add multiple events routers**
+### **Add multiple events routers**
 
 === "TypeScript"
 
