@@ -9,6 +9,7 @@ classDiagram
     class BasaltLogger {
         -_strategies Map<string, ILoggerStrategy>
         -_logStream Writable
+        +get strategies() Map<string, ILoggerStrategy>
         +addStrategy(name, strategy) void
         +addStrategies(strategies) void
         +removeStrategy(name) void
@@ -28,6 +29,13 @@ classDiagram
 ## **Méthodes publiques**
 
 Ci-dessous, vous trouverez les détails techniques de chaque méthode publique disponible.
+
+### `get strategies`
+
+???+ info "get strategies"
+
+    - **Description** : Retourne les stratégies de journalisation.
+    - **Signature** : `public static get strategies(): Map<string, ILoggerStrategy>`
 
 ### `addStrategy`
 
