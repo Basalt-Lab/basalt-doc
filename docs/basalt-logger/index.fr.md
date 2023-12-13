@@ -2,7 +2,7 @@
 
 !!! warning
 
-    Basalt est actuellement à ses débuts, s'il vous plaît soyez indulgent et hésitez pas à nous faire part de vos commentaires et suggestions.
+    Basalt est actuellement à ses débuts, s'il vous plaît soyez indulgent et n'hesitez pas à faire un retour sur votre expérience par mail à [basalt-lab@proton.me](mailto:basalt-lab@proton.me).
 
 ## **Introduction**
 
