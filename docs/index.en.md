@@ -1,46 +1,46 @@
 ## **Introduction**
 
-Welcome to the **Basalt** documentation.
+Welcome to the documentation of **Basalt**.
 
-**Basalt** is a comprehensive suite of packages specifically designed for backend development in Node.js.  
-Crafted with TypeScript, each Basalt module aims to deliver essential and efficient tools, simplifying the creation of robust, high-performance backend systems.
+**Basalt** is an integrated suite of packages specially designed for backend development in Node.js. 
 
-???+ warning "Notice"
-    **Notice**: Basalt is currently under active development.
+Developed in **TypeScript**, each module of **Basalt** aims to provide essential and effective tools that simplify the creation of robust and high-performance backend systems.
 
-    Being a relatively new project, we wish to inform you that, while **Basalt** is operational and ready for use, it may not possess the maturity of other established solutions in the market.  
-    We are continuously working on enhancing **Basalt** and recommend using it in non-critical, experimental projects until it reaches a more stable state. 
-    
-    If you are seeking a more established solution, we recommend exploring options such as :
-      
-      - [Adonis](https://learn.adonisjs.com/), a mature, full-featured Node.js framework.
-    
-    We welcome and encourage feedback, bug reports, and feature suggestions to help accelerate **Basalt**'s evolution.  
-    Thank you for your support and understanding.
+???+ warning "Warning"
+
+    **Basalt** is currently under active development.  
+    Not all packages are available yet, and only certain basic modules are operational as of now.
+
+    The documentation and features will continue to evolve.
+
+    Although operational, this project may not offer the same maturity or range of features as more established solutions.
+
+    The development of **Basalt** is progressing steadily, I am also working on another project **Andesite** which uses **Basalt**. I am doing my best with the time I have.
+    It is currently recommended for experimental or non-critical projects.
+
+    Your feedback, bug reports, and suggestions are essential for the development of **Basalt** and are greatly appreciated.
 
 ## **Getting Started with Basalt**
 
-The **Basalt** package suite is designed for seamless integration and compatibility. Each module can be installed separately via NPM, allowing you to build and expand your backend with the functionalities you need.
+The **Basalt** package suite is designed for seamless integration and compatibility.
+Each module can be installed separately via NPM.
 
-Detailed documentation for each package is available to guide you through the integration and usage process, ensuring a smooth and efficient development experience.
-
-With **Basalt**, you gain access to an ecosystem of tools designed to make backend development more structured, secure, and effective.
+Detailed documentation for each package is available.
 
 ## **Contribution and Support**
 
-As an open-source project, we thrive on community support and contribution. We encourage our users to contribute to **Basalt**, whether it's through reporting bugs, suggesting improvements, or proposing new features.
+As an open-source project, **Basalt** thrives on the support and contributions of the community.  
+Your feedback, suggestions, and contributions are welcome, whether it's for reporting bugs, proposing improvements, or adding new features.
 
-By being a part of **Basalt**’s growth, you not only help improve the project but also become an integral member of a community fostering innovation, learning, and collaboration.
-
-Please refer to our contribution guidelines for more information on how to get involved.
+Feel free to check out the contribution page of the package that interests you for more information.
 
 ## **Conclusion**
 
-We thank you for exploring **Basalt** and considering it as the foundation for your backend solutions. While we are in the midst of growing and improving, your trust and patience with our tools is greatly appreciated.
+Thank you for considering **Basalt** for your backend solutions. Your trust and patience are greatly appreciated.
 
-Happy coding, and we look forward to seeing what you create with **Basalt**!
+Happy coding, and I can't wait to see what you will create with **Basalt**!
 
 !!! warning
 
-    If you see any errors, I'm really sorry I'm doing my best it's the first time I've done this.  
-    Do not hesitate if you want to discuss or participate in this project, I am open to any proposal.
+    If you notice any errors, I am truly sorry. I am doing my best as this is my first time doing this.  
+    Do not hesitate to discuss or participate in this project, I am open to all proposals.

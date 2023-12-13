@@ -1,5 +1,42 @@
 # Changelog
 
+## [1.3.2](https://github.com/Basalt-Lab/basalt-socket/compare/v1.3.1...v1.3.2) (2023-12-12)
+
+
+### Bug Fixes
+
+* change path import ([c58c04b](https://github.com/Basalt-Lab/basalt-socket/commit/c58c04b1661b64067141cded6106ec7c76000f8d))
+
+## [1.3.1](https://github.com/Basalt-Lab/basalt-socket/compare/v1.3.0...v1.3.1) (2023-12-12)
+
+
+### Code Refactoring
+
+* improvement JsDoc and folder structure ([3c5bad6](https://github.com/Basalt-Lab/basalt-socket/commit/3c5bad66a44b07a9ab9e60305dd3f5b2f7f9f99b))
+
+
+### Build System
+
+* update package versions ([ffd72f1](https://github.com/Basalt-Lab/basalt-socket/commit/ffd72f195b8e698b76da00660722576a3faa03ea))
+
+
+### Continuous Integration
+
+* update node version ([b0b1073](https://github.com/Basalt-Lab/basalt-socket/commit/b0b10733221ab793a2a89b447e1e029319a83964))
+
+## [1.3.0](https://github.com/Basalt-Lab/basalt-socket/compare/v1.2.0...v1.3.0) (2023-11-28)
+
+
+### Features
+
+* add ListenOptions and add Hostname property ([b245d8b](https://github.com/Basalt-Lab/basalt-socket/commit/b245d8b0cee2f7ad5fb6aec08820cebb4b983f39))
+* use can be take multiple events ([e4ab852](https://github.com/Basalt-Lab/basalt-socket/commit/e4ab852abc202516ede37aa107c932a81ddfc0a8))
+
+
+### Code Refactoring
+
+* simplify use ([f90719c](https://github.com/Basalt-Lab/basalt-socket/commit/f90719cfefe1a4b0f60a8b7aadda0e9593c14c16))
+
 ## [1.2.0](https://github.com/Basalt-Lab/basalt-socket/compare/v1.1.0...v1.2.0) (2023-11-26)
 
 
