@@ -2,7 +2,7 @@
 
 !!! warning
 
-    Basalt is currently in its infancy, please be indulgent and do not hesitate to give us your feedback and suggestions.
+    Basalt is currently in its early stages, please be patient and do not hesitate to provide feedback on your experience by email at [basalt-lab@proton.me](mailto:basalt-lab@proton.me).
 
 ## **Introduction**
 
