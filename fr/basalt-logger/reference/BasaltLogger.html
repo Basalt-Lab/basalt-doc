@@ -1700,19 +1700,18 @@
         -_strategies Map&lt;string, ILoggerStrategy&gt;
         -_logStream Writable
         +get strategies() Map&lt;string, ILoggerStrategy&gt;
-        +addStrategy(name, strategy) void
-        +addStrategies(strategies) void
-        +removeStrategy(name) void
-        +removeStrategies(names) void
+        +addStrategy(name: string, strategy: ILoggerStrategy) void
+        +addStrategies(strategies: [string, ILoggerStrategy][]) void
+        +removeStrategy(name: string) void
+        +removeStrategies(names: string[]) void
         +clearStrategies() void
-        +error(message, strategiesNames) void
-        +warn(message, strategiesNames) void
-        +info(message, strategiesNames) void
-        +debug(message, strategiesNames) void
-        +log(message, strategiesNames) void
-        -executeStrategies(level, message, strategiesNames) void
-        -formatLogEntry(level, message, strategiesNames) string
-        -out(level, message, strategiesNames) void
+        +error(object: unknown, strategiesNames?: string[]) void
+        +warn(object: unknown, strategiesNames?: string[]) void
+        +info(object: unknown, strategiesNames?: string[]) void
+        +debug(object: unknown, strategiesNames?: string[]) void
+        +log(object: unknown, strategiesNames?: string[]) void
+        -executeStrategies(level: LogLevels, prefixDate: string, object: unknown, strategiesNames: string[]) void
+        -out(level: LogLevels, object: unknown, strategiesNames: string[] = [...BasaltLogger._strategies.keys()]) void
     }</code></pre>
 <h2 id="methodes-publiques"><strong>Méthodes publiques</strong></h2>
 <p>Ci-dessous, vous trouverez les détails techniques de chaque méthode publique disponible.</p>
@@ -1804,7 +1803,7 @@
 <li><strong>Description</strong> : Méthodes pour enregistrer des messages de différents niveaux de gravité.</li>
 <li><strong>Signature</strong> : <code>public static log(message: string, strategiesNames: string[] = [...BasaltLogger._strategies.keys()]): void</code></li>
 <li><strong>Paramètres</strong> :<ul>
-<li><code>message</code> : Le message à enregistrer.</li>
+<li><code>object</code> : L'objet à enregistrer.</li>
 <li><code>strategiesNames</code> : Les noms des stratégies à utiliser.</li>
 </ul>
 </li>
@@ -1832,7 +1831,7 @@
 <li><strong>Description</strong> : Méthodes pour enregistrer des messages de différents niveaux de gravité.</li>
 <li><strong>Signature</strong> : <code>public static debug(message: string, strategiesNames: string[] = [...BasaltLogger._strategies.keys()]): void</code></li>
 <li><strong>Paramètres</strong> :<ul>
-<li><code>message</code> : Le message à enregistrer.</li>
+<li><code>object</code> : L'objet à enregistrer.</li>
 <li><code>strategiesNames</code> : Les noms des stratégies à utiliser.</li>
 </ul>
 </li>
@@ -1846,7 +1845,7 @@
 <li><strong>Description</strong> : Méthodes pour enregistrer des messages de différents niveaux de gravité.</li>
 <li><strong>Signature</strong> : <code>public static warn(message: string, strategiesNames: string[] = [...BasaltLogger._strategies.keys()]): void</code></li>
 <li><strong>Paramètres</strong> :<ul>
-<li><code>message</code> : Le message à enregistrer.</li>
+<li><code>object</code> : L'objet à enregistrer.</li>
 <li><code>strategiesNames</code> : Les noms des stratégies à utiliser.</li>
 </ul>
 </li>
@@ -1860,7 +1859,7 @@
 <li><strong>Description</strong> : Méthodes pour enregistrer des messages de différents niveaux de gravité.</li>
 <li><strong>Signature</strong> : <code>public static error(message: string, strategiesNames: string[] = [...BasaltLogger._strategies.keys()]): void</code></li>
 <li><strong>Paramètres</strong> :<ul>
-<li><code>message</code> : Le message à enregistrer.</li>
+<li><code>object</code> : L'objet à enregistrer.</li>
 <li><code>strategiesNames</code> : Les noms des stratégies à utiliser.</li>
 </ul>
 </li>
