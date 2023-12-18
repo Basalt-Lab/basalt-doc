@@ -10,19 +10,18 @@ classDiagram
         -_strategies Map<string, ILoggerStrategy>
         -_logStream Writable
         +get strategies() Map<string, ILoggerStrategy>
-        +addStrategy(name, strategy) void
-        +addStrategies(strategies) void
-        +removeStrategy(name) void
-        +removeStrategies(names) void
+        +addStrategy(name: string, strategy: ILoggerStrategy) void
+        +addStrategies(strategies: [string, ILoggerStrategy][]) void
+        +removeStrategy(name: string) void
+        +removeStrategies(names: string[]) void
         +clearStrategies() void
-        +error(message, strategiesNames) void
-        +warn(message, strategiesNames) void
-        +info(message, strategiesNames) void
-        +debug(message, strategiesNames) void
-        +log(message, strategiesNames) void
-        -executeStrategies(level, message, strategiesNames) void
-        -formatLogEntry(level, message, strategiesNames) string
-        -out(level, message, strategiesNames) void
+        +error(object: unknown, strategiesNames?: string[]) void
+        +warn(object: unknown, strategiesNames?: string[]) void
+        +info(object: unknown, strategiesNames?: string[]) void
+        +debug(object: unknown, strategiesNames?: string[]) void
+        +log(object: unknown, strategiesNames?: string[]) void
+        -executeStrategies(level: LogLevels, prefixDate: string, object: unknown, strategiesNames: string[]) void
+        -out(level: LogLevels, object: unknown, strategiesNames: string[] = [...BasaltLogger._strategies.keys()]) void
     }
 ```
 
@@ -96,7 +95,7 @@ Ci-dessous, vous trouverez les détails techniques de chaque méthode publique d
     - **Description** : Méthodes pour enregistrer des messages de différents niveaux de gravité.
     - **Signature** : `public static log(message: string, strategiesNames: string[] = [...BasaltLogger._strategies.keys()]): void`
     - **Paramètres** :
-        - `message` : Le message à enregistrer.
+        - `object` : L'objet à enregistrer.
         - `strategiesNames` : Les noms des stratégies à utiliser.
     - **Exceptions** : Lance une erreur `BasaltLoggerError` si aucune stratégie n'est ajoutée.
 
@@ -118,7 +117,7 @@ Ci-dessous, vous trouverez les détails techniques de chaque méthode publique d
     - **Description** : Méthodes pour enregistrer des messages de différents niveaux de gravité.
     - **Signature** : `public static debug(message: string, strategiesNames: string[] = [...BasaltLogger._strategies.keys()]): void`
     - **Paramètres** :
-        - `message` : Le message à enregistrer.
+        - `object` : L'objet à enregistrer.
         - `strategiesNames` : Les noms des stratégies à utiliser.
     - **Exceptions** : Lance une erreur `BasaltLoggerError` si aucune stratégie n'est ajoutée.
 
@@ -129,7 +128,7 @@ Ci-dessous, vous trouverez les détails techniques de chaque méthode publique d
     - **Description** : Méthodes pour enregistrer des messages de différents niveaux de gravité.
     - **Signature** : `public static warn(message: string, strategiesNames: string[] = [...BasaltLogger._strategies.keys()]): void`
     - **Paramètres** :
-        - `message` : Le message à enregistrer.
+        - `object` : L'objet à enregistrer.
         - `strategiesNames` : Les noms des stratégies à utiliser.
     - **Exceptions** : Lance une erreur `BasaltLoggerError` si aucune stratégie n'est ajoutée.
 
@@ -140,7 +139,7 @@ Ci-dessous, vous trouverez les détails techniques de chaque méthode publique d
     - **Description** : Méthodes pour enregistrer des messages de différents niveaux de gravité.
     - **Signature** : `public static error(message: string, strategiesNames: string[] = [...BasaltLogger._strategies.keys()]): void`
     - **Paramètres** :
-        - `message` : Le message à enregistrer.
+        - `object` : L'objet à enregistrer.
         - `strategiesNames` : Les noms des stratégies à utiliser.
     - **Exceptions** : Lance une erreur `BasaltLoggerError` si aucune stratégie n'est ajoutée.
 
