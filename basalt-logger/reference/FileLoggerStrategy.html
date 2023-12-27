@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../../assets/logo.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
     
     
       
@@ -1618,13 +1618,13 @@
     class FileLoggerStrategy {
         -_path string
         +constructor(path) void
-        +log(level, message) void
+        +log(level: LogLevels, date: Date, object: unknown): void
     }
     FileLoggerStrategy ..|&gt; ILoggerStrategy
 
     class ILoggerStrategy {
             &lt;&lt;interface&gt;&gt;
-        +log(level, message) void
+        +log(level: LogLevels, date: Date, object: unknown): void
     }
 </code></pre>
 <h2 id="public-methods"><strong>Public Methods</strong></h2>
@@ -1649,7 +1649,8 @@
 <li><strong>Signature</strong> : <code>public log(level: LogLevels, message: string): void</code></li>
 <li><strong>Parameter</strong> :<ul>
 <li><code>level</code> : The log level at which the message should be logged.</li>
-<li><code>message</code> : The message to log.</li>
+<li><code>prefixDate</code> : The date prefix to use for the message.</li>
+<li><code>object</code> : The object logged.</li>
 </ul>
 </li>
 <li><strong>Comportement</strong> : The message is added to the file specified in the path at construction. In case of error, an exception is thrown.</li>

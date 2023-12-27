@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../../../assets/logo.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
     
     
       
@@ -1607,13 +1607,13 @@
 <h2 id="diagramme"><strong>Diagramme</strong></h2>
 <pre class="mermaid"><code>classDiagram
     class ConsoleLoggerStrategy {
-        +log(level, message) void
+        +log(level: LogLevels, date: Date, object: unknown): void
     }
     ConsoleLoggerStrategy ..|&gt; ILoggerStrategy
 
     class ILoggerStrategy {
             &lt;&lt;interface&gt;&gt;
-        +log(level, message) void
+        +log(level: LogLevels, date: Date, object: unknown): void
     }
 </code></pre>
 <h2 id="methodes-publiques"><strong>Méthodes publiques</strong></h2>
@@ -1626,7 +1626,8 @@
 <li><strong>Signature</strong> : <code>public log(level: LogLevels, message: string): void</code></li>
 <li><strong>Paramètres</strong> :<ul>
 <li><code>level</code> : Le niveau de log auquel le message doit être enregistré.</li>
-<li><code>message</code> : Le message à enregistrer.</li>
+<li><code>date</code> : La date à utiliser comme préfixe pour le message.</li>
+<li><code>object</code> : L'objet enregistré.</li>
 </ul>
 </li>
 <li><strong>Comportement</strong> : Selon le niveau de log, le message sera enregistré dans la console en utilisant les fonctions <code>console.error</code>, <code>console.warn</code>, <code>console.info</code>, <code>console.debug</code>, ou <code>console.log</code>.</li>

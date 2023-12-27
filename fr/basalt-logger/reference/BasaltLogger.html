@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../../../assets/logo.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
     
     
       
@@ -1697,21 +1697,21 @@
 <h2 id="diagramme"><strong>Diagramme</strong></h2>
 <pre class="mermaid"><code>classDiagram
     class BasaltLogger {
-        -_strategies Map&lt;string, ILoggerStrategy&gt;
-        -_logStream Writable
-        +get strategies() Map&lt;string, ILoggerStrategy&gt;
-        +addStrategy(name: string, strategy: ILoggerStrategy) void
-        +addStrategies(strategies: [string, ILoggerStrategy][]) void
-        +removeStrategy(name: string) void
-        +removeStrategies(names: string[]) void
-        +clearStrategies() void
-        +error(object: unknown, strategiesNames?: string[]) void
-        +warn(object: unknown, strategiesNames?: string[]) void
-        +info(object: unknown, strategiesNames?: string[]) void
-        +debug(object: unknown, strategiesNames?: string[]) void
-        +log(object: unknown, strategiesNames?: string[]) void
-        -executeStrategies(level: LogLevels, prefixDate: string, object: unknown, strategiesNames: string[]) void
-        -out(level: LogLevels, object: unknown, strategiesNames: string[] = [...BasaltLogger._strategies.keys()]) void
+        -static _strategies: Map(string, ILoggerStrategy)
+        -static _logStream: Writable
+        +static strategies(): Map(string, ILoggerStrategy)
+        +static addStrategy(name: string, strategy: ILoggerStrategy): void
+        +static addStrategies(strategies: [string, ILoggerStrategy][]): void
+        +static removeStrategy(name: string): void
+        +static removeStrategies(names: string[]): void
+        +static clearStrategies(): void
+        +static error(object: unknown, strategiesNames: string[]): void
+        +static warn(object: unknown, strategiesNames: string[]): void
+        +static info(object: unknown, strategiesNames: string[]): void
+        +static debug(object: unknown, strategiesNames: string[]): void
+        +static log(object: unknown, strategiesNames: string[]): void
+        -static executeStrategies(level: LogLevels, date: Date, object: unknown, strategiesNames: string[]): void
+        -static out(level: LogLevels, object: unknown, strategiesNames: string[]): void
     }</code></pre>
 <h2 id="methodes-publiques"><strong>Méthodes publiques</strong></h2>
 <p>Ci-dessous, vous trouverez les détails techniques de chaque méthode publique disponible.</p>
