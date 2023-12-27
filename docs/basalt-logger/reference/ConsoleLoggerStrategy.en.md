@@ -7,13 +7,13 @@
 ```mermaid
 classDiagram
     class ConsoleLoggerStrategy {
-        +log(level, message) void
+        +log(level: LogLevels, date: Date, object: unknown): void
     }
     ConsoleLoggerStrategy ..|> ILoggerStrategy
     
     class ILoggerStrategy {
             <<interface>>
-        +log(level, message) void
+        +log(level: LogLevels, date: Date, object: unknown): void
     }
     
 ```
@@ -30,6 +30,7 @@ Below are the technical details of each available public method.
     - **Signature** : `public log(level: LogLevels, message: string): void`
     - **Paramètres** :
         - `level` : The log level at which the message should be logged.
-        - `message` : The message to log.
+        - `date` : The date to use as a prefix for the message.
+        - `object` : The object logged.
     - **Comportement** : Depending on the log level, the message will be logged to the console using the `console.error`, `console.warn`, `console.info`, `console.debug`, or `console.log` functions.
 

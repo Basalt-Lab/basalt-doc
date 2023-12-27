@@ -9,13 +9,13 @@ classDiagram
     class FileLoggerStrategy {
         -_path string
         +constructor(path) void
-        +log(level, message) void
+        +log(level: LogLevels, date: Date, object: unknown): void
     }
     FileLoggerStrategy ..|> ILoggerStrategy
     
     class ILoggerStrategy {
             <<interface>>
-        +log(level, message) void
+        +log(level: LogLevels, date: Date, object: unknown): void
     }
     
 ```
@@ -42,5 +42,6 @@ Ci-dessous, vous trouverez les détails techniques de chaque méthode publique d
     - **Signature** : `public log(level: LogLevels, message: string): void`
     - **Paramètres** :
         - `level` : Le niveau de log auquel le message doit être enregistré.
-        - `message` : Le message à enregistrer.
+        - `date` : The date to use as a prefix for the message.
+        - `object` : L'objet enregistré.
     - **Comportement** : Le message est ajouté au fichier spécifié dans le chemin lors de la construction. En cas d'erreur, une exception est levée.
