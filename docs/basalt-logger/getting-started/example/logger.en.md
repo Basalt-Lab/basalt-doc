@@ -80,11 +80,15 @@ $ node example.js
     import { BasaltLogger, ILoggerStrategy, LogLevels}  from '@basalt-lab/basalt-logger';
     
     class FileLoggerStrategy implements ILoggerStrategy {
-        public log(level: LogLevels, message: string): void {
-            appendFileSync('./test.log', `${level}: ${message}\n`);
+        public log(level: LogLevels, date: Date, object: unknown): void {
+            const prefixDate: string = `[${date.toISOString().replace(/T/, ' ').replace(/\..+/, '')}]`;
+            const sanitizedObject: string = typeof object === 'string' ? object : JSON.stringify(object);
+            const message: string = `${prefixDate} ${level} : ${sanitizedObject}`;
+            appendFile('./test.log', `${message}\n`, (err): void => {
+                if (err) throw err;
+            });
         }
     }
-    
     BasaltLogger.addStrategy('file', new FileLoggerStrategy());
     BasaltLogger.log('Hello World');
     ```
@@ -96,11 +100,15 @@ $ node example.js
     const { BasaltLogger, LogLevels } = require('@basalt-lab/basalt-logger');
 
     class FileLoggerStrategy {
-        log(level, message) {
-            appendFileSync('./test.log', `${level}: ${message}\n`);
+        log(level, date, object) {
+            const prefixDate = `[${date.toISOString().replace(/T/, ' ').replace(/\..+/, '')}]`;
+            const sanitizedObject = typeof object === 'string' ? object : JSON.stringify(object);
+            const message = `${prefixDate} ${level} : ${sanitizedObject}`;
+            appendFile('./test.log', `${message}\n`, (err) => {
+                if (err) throw err;
+            });
         }
     }
-    
     BasaltLogger.addStrategy('file', new FileLoggerStrategy());
     BasaltLogger.log('Hello World');
     ```
@@ -234,6 +242,6 @@ $ node example.js
 [2023-11-21 00:00:00] LOG : all strategies
 $ cat log.txt
 [2023-11-21 00:00:00] LOG : file strategy
-[2023-11-24 10:58:23] LOG : console and file strategy
-[2023-11-24 10:58:23] LOG : all strategies
+[2023-11-21 00:00:00 LOG : console and file strategy
+[2023-11-21 00:00:00 LOG : all strategies
 ```
