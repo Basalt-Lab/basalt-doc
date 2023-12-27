@@ -7,21 +7,21 @@
 ```mermaid
 classDiagram
     class BasaltLogger {
-        -_strategies Map<string, ILoggerStrategy>
-        -_logStream Writable
-        +get strategies() Map<string, ILoggerStrategy>
-        +addStrategy(name: string, strategy: ILoggerStrategy) void
-        +addStrategies(strategies: [string, ILoggerStrategy][]) void
-        +removeStrategy(name: string) void
-        +removeStrategies(names: string[]) void
-        +clearStrategies() void
-        +error(object: unknown, strategiesNames?: string[]) void
-        +warn(object: unknown, strategiesNames?: string[]) void
-        +info(object: unknown, strategiesNames?: string[]) void
-        +debug(object: unknown, strategiesNames?: string[]) void
-        +log(object: unknown, strategiesNames?: string[]) void
-        -executeStrategies(level: LogLevels, prefixDate: string, object: unknown, strategiesNames: string[]) void
-        -out(level: LogLevels, object: unknown, strategiesNames: string[] = [...BasaltLogger._strategies.keys()]) void
+        -static _strategies: Map(string, ILoggerStrategy)
+        -static _logStream: Writable
+        +static strategies(): Map(string, ILoggerStrategy)
+        +static addStrategy(name: string, strategy: ILoggerStrategy): void
+        +static addStrategies(strategies: [string, ILoggerStrategy][]): void
+        +static removeStrategy(name: string): void
+        +static removeStrategies(names: string[]): void
+        +static clearStrategies(): void
+        +static error(object: unknown, strategiesNames: string[]): void
+        +static warn(object: unknown, strategiesNames: string[]): void
+        +static info(object: unknown, strategiesNames: string[]): void
+        +static debug(object: unknown, strategiesNames: string[]): void
+        +static log(object: unknown, strategiesNames: string[]): void
+        -static executeStrategies(level: LogLevels, date: Date, object: unknown, strategiesNames: string[]): void
+        -static out(level: LogLevels, object: unknown, strategiesNames: string[]): void
     }
 ```
 
