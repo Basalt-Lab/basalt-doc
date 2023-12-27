@@ -9,13 +9,13 @@ classDiagram
     class FileLoggerStrategy {
         -_path string
         +constructor(path) void
-        +log(level, message) void
+        +log(level: LogLevels, date: Date, object: unknown): void
     }
     FileLoggerStrategy ..|> ILoggerStrategy
     
     class ILoggerStrategy {
             <<interface>>
-        +log(level, message) void
+        +log(level: LogLevels, date: Date, object: unknown): void
     }
     
 ```
@@ -42,5 +42,6 @@ Below are the technical details of each available public method.
     - **Signature** : `public log(level: LogLevels, message: string): void`
     - **Parameter** :
         - `level` : The log level at which the message should be logged.
-        - `message` : The message to log.
+        - `prefixDate` : The date prefix to use for the message.
+        - `object` : The object logged.
     - **Comportement** : The message is added to the file specified in the path at construction. In case of error, an exception is thrown.
