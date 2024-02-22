@@ -1,3 +1,0 @@
-# **Basalt Authorization**
-
-Cooming soon...
