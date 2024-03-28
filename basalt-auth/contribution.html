@@ -13,14 +13,14 @@
         <link rel="canonical" href="http://localhost:8000/basalt-auth/contribution.html">
       
       
-        <link rel="prev" href="reference/token.html">
+        <link rel="prev" href="example/authentication.html">
       
       
-        <link rel="next" href="changelog.html">
+        <link rel="next" href="../basalt-helper/index.html">
       
       
-      <link rel="icon" href="../assets/logo.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
+      <link rel="icon" href="../public/logo.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.15">
     
     
       
@@ -28,7 +28,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.50c56a3b.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e359304.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
@@ -143,7 +143,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../index.html" title="Basalt" class="md-header__button md-logo" aria-label="Basalt" data-md-component="logo">
       
-  <img src="../assets/logo.png" alt="logo">
+  <img src="../public/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -333,24 +333,6 @@
     
     
       <li class="md-tabs__item">
-        <a href="../basalt-authorization/index.html" class="md-tabs__link">
-          
-  
-  Basalt Authorization
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
         <a href="../basalt-helper/index.html" class="md-tabs__link">
           
   
@@ -369,10 +351,10 @@
     
     
       <li class="md-tabs__item">
-        <a href="../basalt-http/index.html" class="md-tabs__link">
+        <a href="../basalt-logger/index.html" class="md-tabs__link">
           
   
-  Basalt HTTP
+  Basalt Logger
 
         </a>
       </li>
@@ -387,10 +369,10 @@
     
     
       <li class="md-tabs__item">
-        <a href="../basalt-logger/index.html" class="md-tabs__link">
+        <a href="../basalt-http/index.html" class="md-tabs__link">
           
   
-  Basalt Logger
+  Basalt HTTP
 
         </a>
       </li>
@@ -448,7 +430,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../index.html" title="Basalt" class="md-nav__button md-logo" aria-label="Basalt" data-md-component="logo">
       
-  <img src="../assets/logo.png" alt="logo">
+  <img src="../public/logo.png" alt="logo">
 
     </a>
     Basalt
@@ -499,14 +481,17 @@
     
     
     
-    
-    
       
+        
+        
+      
+      
+    
+    
       
     
     <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
-        
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
@@ -557,34 +542,37 @@
   
   
   
-    
-    
-    
-    
-    
-      
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
+    <li class="md-nav__item">
+      <a href="getting-started.html" class="md-nav__link">
         
-  
-  
-    <a href="getting-started/index.html" class="md-nav__link">
-      
   
   <span class="md-ellipsis">
     Getting Started
   </span>
   
 
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
+      </a>
+    </li>
   
 
-      
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="references.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -599,9 +587,13 @@
     
     
     
+      
+      
     
     
       
+        
+        
       
     
     <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
@@ -609,11 +601,11 @@
         
   
   
-    <a href="reference/token.html" class="md-nav__link">
+    <a href="example/authentication.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
-    Reference
+    Example
   </span>
   
 
@@ -709,9 +701,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#conclusion" class="md-nav__link">
+  <a href="#acknowledgment" class="md-nav__link">
     <span class="md-ellipsis">
-      Conclusion
+      Acknowledgment
     </span>
   </a>
   
@@ -726,48 +718,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="changelog.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Changelog
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="license.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    License
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -784,153 +734,28 @@
     
     
     
-    
-    
       
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
-            
-  
-  <span class="md-ellipsis">
-    Basalt Authorization
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            Basalt Authorization
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../basalt-authorization/index.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Basalt Authorization
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
     
       
-      
-  
-  
-  
-  
-    
-    
-    
-    
-    
-      
-      
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
         
         
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
-            
+  
+  
+    <a href="../basalt-helper/index.html" class="md-nav__link">
+      
   
   <span class="md-ellipsis">
     Basalt Helper
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4">
-            <span class="md-nav__icon md-icon"></span>
-            Basalt Helper
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../basalt-helper/index.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Basalt Helper
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-    
-      
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-    <a href="../basalt-helper/getting-started/index.html" class="md-nav__link">
-      
-  
-  <span class="md-ellipsis">
-    Getting Started
-  </span>
-  
-
       
         <span class="md-nav__icon md-icon"></span>
       
@@ -941,20 +766,23 @@
     </li>
   
 
-              
-            
-              
-                
-  
-  
-  
-  
     
-    
+      
+      
+  
+  
+  
+  
     
     
     
       
+      
+    
+    
+      
+        
+        
       
     
     <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
@@ -962,247 +790,41 @@
         
   
   
-    
-  
-  
-    
-  
-  
-    <a href="../basalt-helper/reference/data/filter/BasaltKeyExclusionFilter.html" class="md-nav__link">
+    <a href="../basalt-logger/index.html" class="md-nav__link">
       
-  
-  <span class="md-ellipsis">
-    Reference
-  </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-  
-
-  
-
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../basalt-helper/contribution.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Contribution
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../basalt-helper/changelog.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Changelog
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../basalt-helper/license.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    License
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-    
-      
-      
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
-            
-  
-  <span class="md-ellipsis">
-    Basalt HTTP
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
-            <span class="md-nav__icon md-icon"></span>
-            Basalt HTTP
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../basalt-http/index.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Basalt HTTP
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-    
-      
-      
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
-        
-          
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
-            
   
   <span class="md-ellipsis">
     Basalt Logger
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6">
-            <span class="md-nav__icon md-icon"></span>
-            Basalt Logger
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../basalt-logger/index.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Basalt Logger
-  </span>
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
   
 
-      </a>
+      
     </li>
   
 
-              
-            
-              
-                
-  
-  
-  
-  
     
-    
+      
+      
+  
+  
+  
+  
     
     
     
       
+      
+    
+    
+      
+        
+        
       
     
     <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
@@ -1210,11 +832,11 @@
         
   
   
-    <a href="../basalt-logger/getting-started/index.html" class="md-nav__link">
+    <a href="../basalt-http/index.html" class="md-nav__link">
       
   
   <span class="md-ellipsis">
-    Getting Started
+    Basalt HTTP
   </span>
   
 
@@ -1228,20 +850,23 @@
     </li>
   
 
-              
-            
-              
-                
-  
-  
-  
-  
     
-    
+      
+      
+  
+  
+  
+  
     
     
     
       
+      
+    
+    
+      
+        
+        
       
     
     <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
@@ -1249,261 +874,20 @@
         
   
   
-    <a href="../basalt-logger/reference/BasaltLogger.html" class="md-nav__link">
+    <a href="../basalt-socket/index.html" class="md-nav__link">
       
-  
-  <span class="md-ellipsis">
-    Reference
-  </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../basalt-logger/contribution.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Contribution
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../basalt-logger/changelog.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Changelog
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../basalt-logger/license.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    License
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-    
-      
-      
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
-        
-          
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
-            
   
   <span class="md-ellipsis">
     Basalt Socket
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7">
-            <span class="md-nav__icon md-icon"></span>
-            Basalt Socket
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../basalt-socket/index.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Basalt Socket
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-    
-      
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-    <a href="../basalt-socket/getting-started/index.html" class="md-nav__link">
-      
-  
-  <span class="md-ellipsis">
-    Getting Started
-  </span>
-  
-
       
         <span class="md-nav__icon md-icon"></span>
       
     </a>
   
 
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../basalt-socket/contribution.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Contribution
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../basalt-helper/changelog.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Changelog
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../basalt-socket/license.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    License
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -1529,10 +913,8 @@
 
 <h1 id="contributing-to-basalt-auth"><strong>Contributing to Basalt Auth</strong></h1>
 <h2 id="introduction"><strong>Introduction</strong></h2>
-<p>Contributions are what make the open-source community an incredible place to learn, inspire, and create.<br />
-Every contribution you make is highly appreciated.</p>
-<p>Whether you're helping correct bugs, proposing new features, updating documentation, or improving coding styles, you're helping make our project stronger and more beneficial for the community.</p>
-<p>Follow the steps below to make your contribution.</p>
+<p>If you wish to contribute to <strong>Basalt Auth</strong>, it would be greatly appreciated!</p>
+<p>The following steps will guide you through the contribution process, helping you understand how you can contribute to the project.</p>
 <h2 id="contribution-process"><strong>Contribution Process</strong></h2>
 <pre class="mermaid"><code>gitGraph:
 options
@@ -1542,45 +924,41 @@ options
 }
 end
 commit
-branch new-feature
-checkout new-feature
+branch stage
+checkout stage
 commit
 branch feature
 checkout feature
 commit
 commit
-checkout new-feature
+checkout stage
 merge feature
 checkout main
-merge new-feature</code></pre>
+merge stage</code></pre>
 <ol>
 <li><strong>Fork</strong> the project<br />
-   Start by creating a fork of the repository on GitHub. This will help you create your own copy of the project on your account, allowing you to make changes to it freely.</li>
+   Start by creating a fork of the repository on GitHub. This will help you create your own copy of the project on your account, allowing you to make changes freely.</li>
 <li><strong>Create</strong> your feature branch (<code>git checkout -b feature/AmazingFeature</code>)<br />
-   Create a new branch to work on your feature.</li>
-<li><strong>Commit</strong> your changes (<code>git commit -m 'Add some AmazingFeature'</code>)<br />
-   Once you've finished your changes, you can commit them and prepare them for push.</li>
+   Create a new branch to work on your feature from the <code>stage</code> branch.</li>
+<li><strong>Commit</strong> your changes (<code>git commit -m 'feat: Add some AmazingFeature'</code>)<br />
+   Once you have finished your modifications, you can commit them and prepare them for push.
+   Please use <a href="https://www.conventionalcommits.org/en/v1.0.0/">conventional commits</a> for your commit messages, as this will automatically generate release notes.</li>
 <li><strong>Push</strong> to the branch (<code>git push origin feature/AmazingFeature</code>)<br />
-   Once you've finished your changes, you can push them to your fork.</li>
+   Once you have finished your modifications, you can push them to your fork.</li>
 <li>Open a <strong>Pull Request</strong> to the <code>stage</code> branch<br />
-   Once you've pushed your changes to your fork, you can open a Pull Request to the <code>stage</code> branch of the main repository.</li>
-<li>After your Pull Request is validated, your branch will be <strong>merged</strong> into <code>stage</code> and deleted.<br />
-   Once your Pull Request has been validated, your branch will be merged into <code>stage</code> and deleted.</li>
+   Once you have pushed your modifications to your fork, you can open a Pull Request to the <code>stage</code> branch of the main repository.</li>
+<li>After your Pull Request is approved, your branch will be <strong>merged</strong> into <code>stage</code> and deleted.<br />
+   Once your Pull Request has been approved, your branch will be merged into <code>stage</code> and deleted.</li>
 </ol>
 <div class="admonition warning">
 <p class="admonition-title">Note</p>
-<p>Be sure to always update your local branch with the <code>stage</code> branch before starting work on a new feature to ensure you're working with the latest version of the project.</p>
+<p>Make sure to always update your local branch with the <code>stage</code> branch before starting to work on a new feature to ensure you are working with the latest version of the project.</p>
 </div>
 <h2 id="additional-notes"><strong>Additional Notes</strong></h2>
-<p>Ensure you test all your changes and add tests when possible.
-Projects with a full test suite rely on contributions to maintain test coverage.</p>
-<p>Check the coding style guidelines and specific project contribution guides (if they exist) to ensure your contribution aligns with the project's expectations.</p>
-<p>Remember to update the documentation as necessary to reflect your changes, especially if you are adding or modifying features.</p>
-<p>Be open to feedback and actively engaged in discussion on your pull request if community members or maintainers have questions or concerns.</p>
-<h2 id="conclusion"><strong>Conclusion</strong></h2>
-<p>Your time and skills can greatly benefit the project and the community as a whole.</p>
-<p>We look forward to seeing your contributions and are ready to collaborate to integrate new ideas or improvements.</p>
-<p>Thank you for contributing to making <strong>Basalt Auth</strong> even better!</p>
+<p>Make sure to test all your modifications and add tests whenever possible.</p>
+<p>Be open to feedback and suggestions on your pull request.</p>
+<h2 id="acknowledgment"><strong>Acknowledgment</strong></h2>
+<p>Thank you sincerely for your interest in contributing to <strong>Basalt Auth</strong>. Your help is greatly appreciated and contributes to the improvement of the project for all users.</p>
 
 
 
@@ -1618,7 +996,7 @@ Projects with a full test suite rely on contributions to maintain test coverage.
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="reference/token.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Token">
+          <a href="example/authentication.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Authentication">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -1628,20 +1006,20 @@ Projects with a full test suite rely on contributions to maintain test coverage.
                 Previous
               </span>
               <div class="md-ellipsis">
-                Token
+                Authentication
               </div>
             </div>
           </a>
         
         
           
-          <a href="changelog.html" class="md-footer__link md-footer__link--next" aria-label="Next: Changelog">
+          <a href="../basalt-helper/index.html" class="md-footer__link md-footer__link--next" aria-label="Next: Basalt Helper">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Changelog
+                Basalt Helper
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1658,7 +1036,7 @@ Projects with a full test suite rely on contributions to maintain test coverage.
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      <div style="display: flex">Made with <div class="heart">❤️</div> with Material MkDocs</div>
+      <div style="display: flex">Made with <div class="heart">❤️
 
     </div>
   
@@ -1677,10 +1055,10 @@ Projects with a full test suite rely on contributions to maintain test coverage.
       <div class="md-progress" data-md-component="progress" role="progressbar"></div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation", "navigation.instant.progress", "navigation.tracking", "navigation.path", "navigation.tabs", "navigation.tabs.sticky", "navigation.prune", "navigation.footer", "navigation.top", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "header.autohide", "content.tabs.link"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation", "navigation.instant.progress", "navigation.tracking", "navigation.path", "navigation.tabs", "navigation.tabs.sticky", "navigation.prune", "navigation.footer", "navigation.top", "toc.follow", "toc.integrate", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "header.autohide", "content.tabs.link"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      <script src="../assets/javascripts/bundle.bd41221c.min.js"></script>
       
         <script src="../js/searchBar.js"></script>
       
