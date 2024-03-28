@@ -1,7 +1,7 @@
 site_name: Basalt
 site_url: http://localhost:8000/
 copyright: |
-  <div style="display: flex">Made with <div class="heart">❤️</div> with Material MkDocs</div>
+  <div style="display: flex">Made with <div class="heart">❤️
 
 
 site_description: Basalt is a comprehensive suite of packages specifically designed for backend development in Node.js
@@ -11,8 +11,8 @@ repo_name: Basalt
 
 theme:
   name: material
-  logo: assets/logo.png
-  favicon: assets/logo.png
+  logo: public/logo.png
+  favicon: public/logo.png
   language: en
   icon:
     admonition:
@@ -134,75 +134,38 @@ extra:
   generator: false
 nav:
   - Basalt: index.md
+  
   - Basalt Auth:
       - Basalt Auth: basalt-auth/index.md
-      - Getting Started:
-          - Getting Started: basalt-auth/getting-started/index.md
-          - Example:
-              - Token: basalt-auth/getting-started/example/token.md
-      - Reference:
-          - Token: basalt-auth/reference/token.md
+      - Getting Started: basalt-auth/getting-started.md
+      - References: basalt-auth/references.md
+      - Example:
+          - Authentication: basalt-auth/example/authentication.md
       - Contribution: basalt-auth/contribution.md
-      - Changelog: basalt-auth/changelog.md
-      - License: basalt-auth/license.md
-  - Basalt Authorization:
-      - Basalt Authorization: basalt-authorization/index.md
+
   - Basalt Helper:
       - Basalt Helper: basalt-helper/index.md
-      - Getting Started:
-          - Getting Started: basalt-helper/getting-started/index.md
-          - Example:
-              - Data:
-                  - Filter: basalt-helper/getting-started/example/data/filter.md
-                  - Transformation: basalt-helper/getting-started/example/data/transformation.md
-                  - Deep Clone: basalt-helper/getting-started/example/data/deep-clone.md
-              - Security:
-                  - Password: basalt-helper/getting-started/example/security/password.md
-      - Reference:
+      - Getting Started: basalt-helper/getting-started.md
+      - References: basalt-helper/references.md
+      - Example:
           - Data:
-              - Filters:
-                  - BasaltKeyExclusionFilter: basalt-helper/reference/data/filter/BasaltKeyExclusionFilter.md
-                  - BasaltKeyInclusionFilter: basalt-helper/reference/data/filter/BasaltKeyInclusionFilter.md
-                  - BasaltValueFilter: basalt-helper/reference/data/filter/BasaltValueFilter.md
-              - Transformations:
-                  - BasaltCamelCaseTransformer: basalt-helper/reference/data/transformation/BasaltCamelCaseTransformer.md
-                  - BasaltKebabCaseTransformer: basalt-helper/reference/data/transformation/BasaltKebabCaseTransformer.md
-                  - BasaltPascalCaseTransformer: basalt-helper/reference/data/transformation/BasaltPascalCaseTransformer.md
-                  - BasaltSnakeCaseTransformer: basalt-helper/reference/data/transformation/BasaltSnakeCaseTransformer.md
-              - Utility:
-                  - BasaltDeepCloneUtility: basalt-helper/reference/data/utility/BasaltDeepCloneUtility.md
-                  - BasaltKeyTransformerUtility: basalt-helper/reference/data/utility/BasaltKeyTransformerUtility.md
-          - Security:
-              - Password: basalt-helper/reference/security/password.md
+            - Deep-Clone: basalt-helper/example/data/deep-clone.md
+            - Filter: basalt-helper/example/data/filter.md
+            - Transform: basalt-helper/example/data/transform.md
       - Contribution: basalt-helper/contribution.md
-      - Changelog: basalt-helper/changelog.md
-      - License: basalt-helper/license.md
-  - Basalt HTTP:
-      - Basalt HTTP: basalt-http/index.md
+
   - Basalt Logger:
       - Basalt Logger: basalt-logger/index.md
-      - Getting Started:
-          - Getting Started: basalt-logger/getting-started/index.md
-          - Example:
-              - Logger: basalt-logger/getting-started/example/logger.md
-      - Reference:
-          - BasaltLogger: basalt-logger/reference/BasaltLogger.md
-          - ConsoleLoggerStrategy: basalt-logger/reference/ConsoleLoggerStrategy.md
-          - FileLoggerStrategy: basalt-logger/reference/FileLoggerStrategy.md
+      - Getting Started: basalt-logger/getting-started.md
+      - References: basalt-logger/references.md
+      - Example:
+          - Logger: basalt-logger/example/logger.md
       - Contribution: basalt-logger/contribution.md
-      - Changelog: basalt-logger/changelog.md
-      - License: basalt-logger/license.md
+
+  - Basalt HTTP:
+      - Basalt HTTP: basalt-http/index.md
+
   - Basalt Socket:
       - Basalt Socket: basalt-socket/index.md
-      - Getting Started:
-          - Getting Started: basalt-socket/getting-started/index.md
-          - Lifecycle: basalt-socket/getting-started/lifecycle.md
-          - Example:
-              - Server: basalt-socket/getting-started/example/server.md
-              - Client: basalt-socket/getting-started/example/client.md
-      - Contribution: basalt-socket/contribution.md
-      - Changelog: basalt-helper/changelog.md
-      - License: basalt-socket/license.md
-
 
 

@@ -1,4 +1,0 @@
-# **Basalt HTTP**
-
-Cooming soon...
-

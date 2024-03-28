@@ -2,12 +2,9 @@
 
 ## **Introduction**
 
-Contributions are what make the open-source community an incredible place to learn, inspire, and create.  
-Every contribution you make is highly appreciated.
+If you wish to contribute to **Basalt Logger**, it would be greatly appreciated!
 
-Whether you're helping correct bugs, proposing new features, updating documentation, or improving coding styles, you're helping make our project stronger and more beneficial for the community.
-
-Follow the steps below to make your contribution.
+The following steps will guide you through the contribution process, helping you understand how you can contribute to the project.
 
 ## **Contribution Process**
 
@@ -20,50 +17,42 @@ options
 }
 end
 commit
-branch new-feature
-checkout new-feature
+branch stage
+checkout stage
 commit
 branch feature
 checkout feature
 commit
 commit
-checkout new-feature
+checkout stage
 merge feature
 checkout main
-merge new-feature
+merge stage
 ```
 
 1. **Fork** the project  
-   Start by creating a fork of the repository on GitHub. This will help you create your own copy of the project on your account, allowing you to make changes to it freely.
+   Start by creating a fork of the repository on GitHub. This will help you create your own copy of the project on your account, allowing you to make changes freely.
 2. **Create** your feature branch (`git checkout -b feature/AmazingFeature`)  
-   Create a new branch to work on your feature.
-3. **Commit** your changes (`git commit -m 'Add some AmazingFeature'`)  
-   Once you've finished your changes, you can commit them and prepare them for push.
+   Create a new branch to work on your feature from the `stage` branch.
+3. **Commit** your changes (`git commit -m 'feat: Add some AmazingFeature'`)  
+   Once you have finished your modifications, you can commit them and prepare them for push.
+   Please use [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) for your commit messages, as this will automatically generate release notes.
 4. **Push** to the branch (`git push origin feature/AmazingFeature`)  
-   Once you've finished your changes, you can push them to your fork.
+   Once you have finished your modifications, you can push them to your fork.
 5. Open a **Pull Request** to the `stage` branch  
-   Once you've pushed your changes to your fork, you can open a Pull Request to the `stage` branch of the main repository.
-6. After your Pull Request is validated, your branch will be **merged** into `stage` and deleted.  
-   Once your Pull Request has been validated, your branch will be merged into `stage` and deleted.
+   Once you have pushed your modifications to your fork, you can open a Pull Request to the `stage` branch of the main repository.
+6. After your Pull Request is approved, your branch will be **merged** into `stage` and deleted.  
+   Once your Pull Request has been approved, your branch will be merged into `stage` and deleted.
 
 !!! warning "Note"
-    Be sure to always update your local branch with the `stage` branch before starting work on a new feature to ensure you're working with the latest version of the project.
+    Make sure to always update your local branch with the `stage` branch before starting to work on a new feature to ensure you are working with the latest version of the project.
 
 ## **Additional Notes**
 
-Ensure you test all your changes and add tests when possible.
-Projects with a full test suite rely on contributions to maintain test coverage.
+Make sure to test all your modifications and add tests whenever possible.
 
-Check the coding style guidelines and specific project contribution guides (if they exist) to ensure your contribution aligns with the project's expectations.
+Be open to feedback and suggestions on your pull request.
 
-Remember to update the documentation as necessary to reflect your changes, especially if you are adding or modifying features.
+## **Acknowledgment**
 
-Be open to feedback and actively engaged in discussion on your pull request if community members or maintainers have questions or concerns.
-
-## **Conclusion**
-
-Your time and skills can greatly benefit the project and the community as a whole.
-
-We look forward to seeing your contributions and are ready to collaborate to integrate new ideas or improvements.
-
-Thank you for contributing to making **Basalt Logger** even better!
+Thank you sincerely for your interest in contributing to **Basalt Logger**. Your help is greatly appreciated and contributes to the improvement of the project for all users.

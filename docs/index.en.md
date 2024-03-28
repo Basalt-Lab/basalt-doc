@@ -1,46 +1,29 @@
 ## **Introduction**
+    
+Welcome to the **Basalt** documentation.
 
-Welcome to the documentation of **Basalt**.
+**Basalt** is a suite of packages specifically designed for Node.js development.
 
-**Basalt** is an integrated suite of packages specially designed for backend development in Node.js. 
+Developed in **TypeScript**, each module in **Basalt** aims to provide efficient and easy-to-use tools.
 
-Developed in **TypeScript**, each module of **Basalt** aims to provide essential and effective tools that simplify the creation of robust and high-performance backend systems.
+???+ warning "Attention"
+    
+    **Basalt** is currently under active development and is subject to frequent changes.
+    Not all packages are available yet, and only some core modules are operational at this time.
 
-???+ warning "Warning"
+The documentation and features will continue to evolve.
 
-    **Basalt** is currently under active development.  
-    Not all packages are available yet, and only certain basic modules are operational as of now.
+The development of **Basalt** is progressing gradually as I work on multiple projects simultaneously, so I do my best with the time I have.
 
-    The documentation and features will continue to evolve.
+It is currently recommended for experimental or non-critical projects.
 
-    Although operational, this project may not offer the same maturity or range of features as more established solutions.
+Feel free to contact me for any questions or suggestions, or if you want to report a bug.
 
-    The development of **Basalt** is progressing steadily, I am also working on another project **Andesite** which uses **Basalt**. I am doing my best with the time I have.
-    It is currently recommended for experimental or non-critical projects.
+## **Contact**
 
-    Your feedback, bug reports, and suggestions are essential for the development of **Basalt** and are greatly appreciated.
+*You can reach me at: [basalt-lab@proton.me](mailto:basalt-lab@proton.me)*
 
-## **Getting Started with Basalt**
-
-The **Basalt** package suite is designed for seamless integration and compatibility.
-Each module can be installed separately via NPM.
-
-Detailed documentation for each package is available.
-
-## **Contribution and Support**
-
-As an open-source project, **Basalt** thrives on the support and contributions of the community.  
-Your feedback, suggestions, and contributions are welcome, whether it's for reporting bugs, proposing improvements, or adding new features.
-
-Feel free to check out the contribution page of the package that interests you for more information.
-
-## **Conclusion**
-
-Thank you for considering **Basalt** for your backend solutions. Your trust and patience are greatly appreciated.
-
-Happy coding, and I can't wait to see what you will create with **Basalt**!
-
-!!! warning
-
-    If you notice any errors, I am truly sorry. I am doing my best as this is my first time doing this.  
-    Do not hesitate to discuss or participate in this project, I am open to all proposals.
+!!! note
+        
+    If you see any errors, I apologize. I'm doing my best as this is my first time doing this.
+    Don't hesitate to reach out if you want to discuss or contribute to this project. I'm open to any suggestions.
