@@ -149,9 +149,9 @@ nav:
       - References: basalt-helper/references.md
       - Example:
           - Data:
-            - Deep-Clone: basalt-helper/example/data/deep-clone.md
-            - Filter: basalt-helper/example/data/filter.md
-            - Transform: basalt-helper/example/data/transform.md
+            - BasaltData: basalt-helper/example/data/basalt-data.md
+          - Security:
+            - BasaltSecurity: basalt-helper/example/security/basalt-security.md
       - Contribution: basalt-helper/contribution.md
 
   - Basalt Logger:
@@ -161,11 +161,5 @@ nav:
       - Example:
           - Logger: basalt-logger/example/logger.md
       - Contribution: basalt-logger/contribution.md
-
-  - Basalt HTTP:
-      - Basalt HTTP: basalt-http/index.md
-
-  - Basalt Socket:
-      - Basalt Socket: basalt-socket/index.md
 
 

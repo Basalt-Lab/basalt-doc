@@ -5,9 +5,11 @@
     ```typescript
     import { BasaltLogger, ConsoleLoggerStrategy } from '@basalt-lab/basalt-logger';
 
-    BasaltLogger.addStrategy('console', new ConsoleLoggerStrategy());
+    const logger = new BasaltLogger();
+
+    logger.addStrategy('console', new ConsoleLoggerStrategy());
     
-    BasaltLogger.log('hello world');
+    logger.log('hello world');
     ```
 
 === "JavaScript"
@@ -15,9 +17,11 @@
     ```javascript
     const { BasaltLogger, ConsoleLoggerStrategy } = require('@basalt-lab/basalt-logger');
 
-    BasaltLogger.addStrategy('console', new ConsoleLoggerStrategy());
-    
-    BasaltLogger.log('hello world');
+    const logger = new BasaltLogger();
+
+    logger.addStrategy('console', new ConsoleLoggerStrategy());
+
+    logger.log('hello world');
     ```
 
 <!-- termynal -->
@@ -34,9 +38,11 @@ $ node example.js
     ```typescript
     import { BasaltLogger, ConsoleLoggerStrategy } from '@basalt-lab/basalt-logger';
 
-    BasaltLogger.addStrategy('console', new ConsoleLoggerStrategy());
+    const logger = new BasaltLogger();
 
-    BasaltLogger.removeStrategy('console');
+    logger.addStrategy('console', new ConsoleLoggerStrategy());
+
+    logger.removeStrategy('console');
     ```
 
 === "JavaScript"
@@ -44,9 +50,11 @@ $ node example.js
     ```javascript 
     const { BasaltLogger, ConsoleLoggerStrategy } = require('@basalt-lab/basalt-logger');
 
-    BasaltLogger.addStrategy('console', new ConsoleLoggerStrategy());
+    const logger = new BasaltLogger();
+
+    logger.addStrategy('console', new ConsoleLoggerStrategy());
     
-    BasaltLogger.removeStrategy('console');
+    logger.removeStrategy('console');
     ```
 
 ## **Removing All Log Strategies**
@@ -56,9 +64,11 @@ $ node example.js
     ```typescript
     import { BasaltLogger, ConsoleLoggerStrategy } from '@basalt-lab/basalt-logger';
     
-    BasaltLogger.addStrategy('console', new ConsoleLoggerStrategy());
+    const logger = new BasaltLogger();
+
+    logger.addStrategy('console', new ConsoleLoggerStrategy());
     
-    BasaltLogger.clearStrategies();
+    logger.clearStrategies();
     ```
 
 === "JavaScript"
@@ -66,9 +76,11 @@ $ node example.js
     ```javascript
     const { BasaltLogger, ConsoleLoggerStrategy } = require('@basalt-lab/basalt-logger');
 
-    BasaltLogger.addStrategy('console', new ConsoleLoggerStrategy());
+    const logger = new BasaltLogger();
 
-    BasaltLogger.clearStrategies();
+    logger.addStrategy('console', new ConsoleLoggerStrategy());
+
+    logger.clearStrategies();
     ```
 
 ## **Creating a Log Strategy**
@@ -89,8 +101,11 @@ $ node example.js
             });
         }
     }
-    BasaltLogger.addStrategy('file', new FileLoggerStrategy());
-    BasaltLogger.log('Hello World');
+
+    const logger = new BasaltLogger();
+
+    logger.addStrategy('file', new FileLoggerStrategy());
+    logger.log('Hello World');
     ```
 
 === "JavaScript"
@@ -109,8 +124,11 @@ $ node example.js
             });
         }
     }
-    BasaltLogger.addStrategy('file', new FileLoggerStrategy());
-    BasaltLogger.log('Hello World');
+
+    const logger = new BasaltLogger();
+
+    logger.addStrategy('file', new FileLoggerStrategy());
+    logger.log('Hello World');
     ```
 
 <!-- termynal -->
@@ -129,12 +147,14 @@ $ cat test.log
     ```typescript
     import { BasaltLogger, ConsoleLoggerStrategy, FileLoggerStrategy}  from '@basalt-lab/basalt-logger';
     
-    BasaltLogger.addStrategies([
+    const logger = new BasaltLogger();
+
+    logger.addStrategies([
         ['console', new ConsoleLoggerStrategy()],
         ['file', new FileLoggerStrategy('log.txt')]
     ]);
     
-    BasaltLogger.log('Hello World');
+    logger.log('Hello World');
     ```
 
 === "JavaScript"
@@ -142,12 +162,14 @@ $ cat test.log
     ```javascript
     const { BasaltLogger, ConsoleLoggerStrategy, FileLoggerStrategy } = require('@basalt-lab/basalt-logger');
     
-    BasaltLogger.addStrategies([
+    const logger = new BasaltLogger();
+
+    logger.addStrategies([
         ['console', new ConsoleLoggerStrategy()],
         ['file', new FileLoggerStrategy('log.txt')]
     ]);
 
-    BasaltLogger.log('Hello World');
+    logger.log('Hello World');
     ```
 
 <!-- termynal -->
@@ -166,26 +188,31 @@ $ cat log.txt
     ```typescript
     import { BasaltLogger, ConsoleLoggerStrategy }  from '@basalt-lab/basalt-logger';
     
-    BasaltLogger.addStrategy('console', new ConsoleLoggerStrategy());
+    const logger = new BasaltLogger();
+
+    logger.addStrategy('console', new ConsoleLoggerStrategy());
     
-    BasaltLogger.log('hello world');
-    BasaltLogger.info('hello world');
-    BasaltLogger.debug('hello world');
-    BasaltLogger.warn('hello world');
-    BasaltLogger.error('hello world');
+    logger.log('hello world');
+    logger.info('hello world');
+    logger.debug('hello world');
+    logger.warn('hello world');
+    logger.error('hello world');
     ```
+
 === "JavaScript"
 
     ```javascript
     const { BasaltLogger, ConsoleLoggerStrategy } = require('@basalt-lab/basalt-logger');
-    
-    BasaltLogger.addStrategy('console', new ConsoleLoggerStrategy());
-    
-    BasaltLogger.log('hello world');
-    BasaltLogger.info('hello world');
-    BasaltLogger.debug('hello world');
-    BasaltLogger.warn('hello world');
-    BasaltLogger.error('hello world');
+
+    const logger = new BasaltLogger();
+
+    logger.addStrategy('console', new ConsoleLoggerStrategy());
+
+    logger.log('hello world');
+    logger.info('hello world');
+    logger.debug('hello world');
+    logger.warn('hello world');
+    logger.error('hello world');
     ```
 
 <!-- termynal -->
@@ -206,15 +233,17 @@ $ node example.js
     ```typescript
     import { BasaltLogger, ConsoleLoggerStrategy, FileLoggerStrategy}  from '@basalt-lab/basalt-logger';
     
-    BasaltLogger.addStrategies([
+    const logger = new BasaltLogger();
+
+    logger.addStrategies([
         ['console', new ConsoleLoggerStrategy()],
         ['file', new FileLoggerStrategy('log.txt')]
     ]);
     
-    BasaltLogger.log('console strategy', ['console']);
-    BasaltLogger.log('file strategy', ['file']);
-    BasaltLogger.log('console and file strategy', ['console', 'file']);
-    BasaltLogger.log('all strategies');
+    logger.log('console strategy', ['console']);
+    logger.log('file strategy', ['file']);
+    logger.log('console and file strategy', ['console', 'file']);
+    logger.log('all strategies');
     ```
 
 === "JavaScript"
@@ -222,15 +251,17 @@ $ node example.js
     ```javascript
     const { BasaltLogger, ConsoleLoggerStrategy, FileLoggerStrategy } = require('@basalt-lab/basalt-logger');
     
-    BasaltLogger.addStrategies([
+    const logger = new BasaltLogger();
+
+    logger.addStrategies([
         ['console', new ConsoleLoggerStrategy()],
         ['file', new FileLoggerStrategy('log.txt')]
     ]);
 
-    BasaltLogger.log('console strategy', ['console']);
-    BasaltLogger.log('file strategy', ['file']);
-    BasaltLogger.log('console and file strategy', ['console', 'file']);
-    BasaltLogger.log('all strategies');
+    logger.log('console strategy', ['console']);
+    logger.log('file strategy', ['file']);
+    logger.log('console and file strategy', ['console', 'file']);
+    logger.log('all strategies');
     ```
 
 <!-- termynal -->
@@ -245,3 +276,14 @@ $ cat log.txt
 [2023-11-21 00:00:00 LOG : console and file strategy
 [2023-11-21 00:00:00 LOG : all strategies
 ```
+
+<script data-name="BMC-Widget"
+    data-cfasync="false"
+    src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
+    data-id="necrelox"
+    data-description="Support me on Buy me a coffee!"
+    data-message="Thank you for visiting!"
+    data-color="#5F7FFF"
+    data-position="Right"
+    data-x_margin="18"
+    data-y_margin="22" />
