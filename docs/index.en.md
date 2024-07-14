@@ -9,8 +9,8 @@ Each module in **Basalt** aims to provide efficient and easy-to-use tools.
 
 ???+ warning "Attention"
 
-**Basalt** is currently under development and is subject to frequent changes.
-Not all packages are available yet, and only some core modules are operational at this time.
+    **Basalt** is currently under development and is subject to frequent changes.
+    Not all packages are available yet, and only some core modules are operational at this time.
 
 The documentation and features will continue to evolve.
 
@@ -26,8 +26,8 @@ Feel free to contact me for any questions or suggestions, or even if you want to
 
 !!! note
 
-If you see any errors, I apologize, I'm doing my best as this is my first time doing this.
-Don't hesitate to reach out if you want to discuss or contribute to this project, I'm open to any proposals.
+    If you see any errors, I apologize, I'm doing my best as this is my first time doing this.
+    Don't hesitate to reach out if you want to discuss or contribute to this project, I'm open to any proposals.
 
 <script data-name="BMC-Widget"
     data-cfasync="false"
