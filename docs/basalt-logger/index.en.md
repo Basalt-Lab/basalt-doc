@@ -1,8 +1,10 @@
+![logo](../public/ts.png){width="30", loading=lazy, align=right}
+![logo](../public/esm.png){width="30", loading=lazy, align=right}
 # **[Basalt Logger](https://www.npmjs.com/package/@basalt-lab/basalt-logger)**
 
 !!! warning
 
-    Basalt is currently in its early stages, so please be patient and feel free to provide feedback on your experience via email: [basalt-lab@proton.me](mailto:basalt-lab@proton.me).
+    Basalt is currently in its early stages, so please be patient and feel free to provide feedback on your experience via email: [basalt-lab@proton.me](mailto:basalt-lab@proton.me) or on Discord `necrelox`.
 
 ## **Introduction**
 
@@ -17,3 +19,14 @@ The ease of integration of **Basalt Logger** into your TypeScript/JavaScript app
 - **Extensibility**: Allows the addition of custom logging strategies, such as logging to the console or to files. You can also create your own logging strategies to meet specific needs.
 - **Ease of use**: Designed to be intuitive, with a simple API and code examples for quick start.
 - **Performance and Non-Blocking**: Designed to be lightweight and efficient, **Basalt Logger** ensures fast and non-blocking logging, minimizing the impact on application performance.
+
+<script data-name="BMC-Widget"
+    data-cfasync="false"
+    src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
+    data-id="necrelox"
+    data-description="Support me on Buy me a coffee!"
+    data-message="Thank you for visiting!"
+    data-color="#5F7FFF"
+    data-position="Right"
+    data-x_margin="18"
+    data-y_margin="22" />

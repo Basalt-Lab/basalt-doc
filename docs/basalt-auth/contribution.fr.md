@@ -56,4 +56,15 @@ Soyez ouvert aux retours et aux suggestions sur votre pull request.
 
 ## **Remerciement**
 
-Je vous remercie sincèrement pour votre intérêt à contribuer à **Basalt Auth**. Votre aide est grandement appréciée et contribue à l'amélioration du projet pour tous les utilisateurs.
+Je vous remercie sincèrement pour votre intérêt à contribuer à **Basalt Auth**. Votre aide est grandement appréciée et contribue à l'amélioration du projet.
+
+<script data-name="BMC-Widget"
+    data-cfasync="false"
+    src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
+    data-id="necrelox"
+    data-description="Support me on Buy me a coffee!"
+    data-message="Merci de votre visite!"
+    data-color="#5F7FFF"
+    data-position="Right"
+    data-x_margin="18"
+    data-y_margin="22" />

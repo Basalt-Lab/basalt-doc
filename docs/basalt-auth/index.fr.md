@@ -1,8 +1,10 @@
+![logo](../public/ts.png){width="30", loading=lazy, align=right}
+![logo](../public/esm.png){width="30", loading=lazy, align=right}
 # **[Basalt Auth](https://www.npmjs.com/package/@basalt-lab/basalt-auth)**
 
 !!! warning
 
-    Basalt est actuellement à ses débuts, s'il vous plaît soyez indulgent et n'hesitez pas à faire un retour sur votre expérience par mail : [basalt-lab@proton.me](mailto:basalt-lab@proton.me).
+    Basalt est actuellement à ses débuts, s'il vous plaît soyez indulgent et n'hesitez pas à faire un retour sur votre expérience par mail : [basalt-lab@proton.me](mailto:basalt-lab@proton.me) ou par Discord `necrelox`.
 
 ## **Introduction**
 
@@ -28,5 +30,17 @@ Il est important de noter que la sécurité est une discipline évolutive, et le
 
 ## **Polyvalence et Compatibilité**
 
-**Basalt Auth** est conçu pour être utilisé dans des contextes variés, que ce soit backend ou frontend.  
-Sa nature indépendante facilite son incorporation dans différents projets, sans nécessiter de composants externes spécifiques.
+**Basalt Auth** est conçu pour être utilisé dans un context backend.
+Il n'a pas de dépendances, ce qui le rend facile à intégrer dans n'importe quel projet Node.js.
+
+
+<script data-name="BMC-Widget"
+    data-cfasync="false"
+    src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
+    data-id="necrelox"
+    data-description="Support me on Buy me a coffee!"
+    data-message="Merci de votre visite!"
+    data-color="#5F7FFF"
+    data-position="Right"
+    data-x_margin="18"
+    data-y_margin="22" />

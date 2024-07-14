@@ -1,3 +1,0 @@
-# **Basalt HTTP**
-
-Cooming soon...
