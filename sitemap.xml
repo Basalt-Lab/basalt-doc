@@ -2,296 +2,240 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     <url>
         <loc>http://localhost:8000/index.html</loc>
-        <lastmod>2024-03-28</lastmod>
+        <lastmod>2024-07-14</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8000/index.html"/>
         <xhtml:link rel="alternate" hreflang="fr" href="http://localhost:8000/fr/index.html"/>
     </url>
     <url>
         <loc>http://localhost:8000/basalt-auth/contribution.html</loc>
-        <lastmod>2024-03-28</lastmod>
+        <lastmod>2024-07-14</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8000/basalt-auth/contribution.html"/>
         <xhtml:link rel="alternate" hreflang="fr" href="http://localhost:8000/fr/basalt-auth/contribution.html"/>
     </url>
     <url>
         <loc>http://localhost:8000/basalt-auth/getting-started.html</loc>
-        <lastmod>2024-03-28</lastmod>
+        <lastmod>2024-07-14</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8000/basalt-auth/getting-started.html"/>
         <xhtml:link rel="alternate" hreflang="fr" href="http://localhost:8000/fr/basalt-auth/getting-started.html"/>
     </url>
     <url>
         <loc>http://localhost:8000/basalt-auth/index.html</loc>
-        <lastmod>2024-03-28</lastmod>
+        <lastmod>2024-07-14</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8000/basalt-auth/index.html"/>
         <xhtml:link rel="alternate" hreflang="fr" href="http://localhost:8000/fr/basalt-auth/index.html"/>
     </url>
     <url>
         <loc>http://localhost:8000/basalt-auth/references.html</loc>
-        <lastmod>2024-03-28</lastmod>
+        <lastmod>2024-07-14</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8000/basalt-auth/references.html"/>
         <xhtml:link rel="alternate" hreflang="fr" href="http://localhost:8000/fr/basalt-auth/references.html"/>
     </url>
     <url>
         <loc>http://localhost:8000/basalt-auth/example/authentication.html</loc>
-        <lastmod>2024-03-28</lastmod>
+        <lastmod>2024-07-14</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8000/basalt-auth/example/authentication.html"/>
         <xhtml:link rel="alternate" hreflang="fr" href="http://localhost:8000/fr/basalt-auth/example/authentication.html"/>
     </url>
     <url>
         <loc>http://localhost:8000/basalt-helper/contribution.html</loc>
-        <lastmod>2024-03-28</lastmod>
+        <lastmod>2024-07-14</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8000/basalt-helper/contribution.html"/>
         <xhtml:link rel="alternate" hreflang="fr" href="http://localhost:8000/fr/basalt-helper/contribution.html"/>
     </url>
     <url>
         <loc>http://localhost:8000/basalt-helper/getting-started.html</loc>
-        <lastmod>2024-03-28</lastmod>
+        <lastmod>2024-07-14</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8000/basalt-helper/getting-started.html"/>
         <xhtml:link rel="alternate" hreflang="fr" href="http://localhost:8000/fr/basalt-helper/getting-started.html"/>
     </url>
     <url>
         <loc>http://localhost:8000/basalt-helper/index.html</loc>
-        <lastmod>2024-03-28</lastmod>
+        <lastmod>2024-07-14</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8000/basalt-helper/index.html"/>
         <xhtml:link rel="alternate" hreflang="fr" href="http://localhost:8000/fr/basalt-helper/index.html"/>
     </url>
     <url>
         <loc>http://localhost:8000/basalt-helper/references.html</loc>
-        <lastmod>2024-03-28</lastmod>
+        <lastmod>2024-07-14</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8000/basalt-helper/references.html"/>
         <xhtml:link rel="alternate" hreflang="fr" href="http://localhost:8000/fr/basalt-helper/references.html"/>
     </url>
     <url>
-        <loc>http://localhost:8000/basalt-helper/example/data/deep-clone.html</loc>
-        <lastmod>2024-03-28</lastmod>
+        <loc>http://localhost:8000/basalt-helper/example/data/basalt-data.html</loc>
+        <lastmod>2024-07-14</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8000/basalt-helper/example/data/deep-clone.html"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="http://localhost:8000/fr/basalt-helper/example/data/deep-clone.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8000/basalt-helper/example/data/basalt-data.html"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="http://localhost:8000/fr/basalt-helper/example/data/basalt-data.html"/>
     </url>
     <url>
-        <loc>http://localhost:8000/basalt-helper/example/data/filter.html</loc>
-        <lastmod>2024-03-28</lastmod>
+        <loc>http://localhost:8000/basalt-helper/example/security/basalt-security.html</loc>
+        <lastmod>2024-07-14</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8000/basalt-helper/example/data/filter.html"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="http://localhost:8000/fr/basalt-helper/example/data/filter.html"/>
-    </url>
-    <url>
-        <loc>http://localhost:8000/basalt-helper/example/data/transform.html</loc>
-        <lastmod>2024-03-28</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8000/basalt-helper/example/data/transform.html"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="http://localhost:8000/fr/basalt-helper/example/data/transform.html"/>
-    </url>
-    <url>
-        <loc>http://localhost:8000/basalt-helper/example/security/password.html</loc>
-        <lastmod>2024-03-28</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8000/basalt-helper/example/security/password.html"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="http://localhost:8000/fr/basalt-helper/example/security/password.html"/>
-    </url>
-    <url>
-        <loc>http://localhost:8000/basalt-http/index.html</loc>
-        <lastmod>2024-03-28</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8000/basalt-http/index.html"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="http://localhost:8000/fr/basalt-http/index.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8000/basalt-helper/example/security/basalt-security.html"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="http://localhost:8000/fr/basalt-helper/example/security/basalt-security.html"/>
     </url>
     <url>
         <loc>http://localhost:8000/basalt-logger/contribution.html</loc>
-        <lastmod>2024-03-28</lastmod>
+        <lastmod>2024-07-14</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8000/basalt-logger/contribution.html"/>
         <xhtml:link rel="alternate" hreflang="fr" href="http://localhost:8000/fr/basalt-logger/contribution.html"/>
     </url>
     <url>
         <loc>http://localhost:8000/basalt-logger/getting-started.html</loc>
-        <lastmod>2024-03-28</lastmod>
+        <lastmod>2024-07-14</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8000/basalt-logger/getting-started.html"/>
         <xhtml:link rel="alternate" hreflang="fr" href="http://localhost:8000/fr/basalt-logger/getting-started.html"/>
     </url>
     <url>
         <loc>http://localhost:8000/basalt-logger/index.html</loc>
-        <lastmod>2024-03-28</lastmod>
+        <lastmod>2024-07-14</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8000/basalt-logger/index.html"/>
         <xhtml:link rel="alternate" hreflang="fr" href="http://localhost:8000/fr/basalt-logger/index.html"/>
     </url>
     <url>
         <loc>http://localhost:8000/basalt-logger/references.html</loc>
-        <lastmod>2024-03-28</lastmod>
+        <lastmod>2024-07-14</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8000/basalt-logger/references.html"/>
         <xhtml:link rel="alternate" hreflang="fr" href="http://localhost:8000/fr/basalt-logger/references.html"/>
     </url>
     <url>
         <loc>http://localhost:8000/basalt-logger/example/logger.html</loc>
-        <lastmod>2024-03-28</lastmod>
+        <lastmod>2024-07-14</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8000/basalt-logger/example/logger.html"/>
         <xhtml:link rel="alternate" hreflang="fr" href="http://localhost:8000/fr/basalt-logger/example/logger.html"/>
     </url>
     <url>
-        <loc>http://localhost:8000/basalt-socket/index.html</loc>
-        <lastmod>2024-03-28</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8000/basalt-socket/index.html"/>
-        <xhtml:link rel="alternate" hreflang="fr" href="http://localhost:8000/fr/basalt-socket/index.html"/>
-    </url>
-    <url>
         <loc>http://localhost:8000/fr/index.html</loc>
-        <lastmod>2024-03-28</lastmod>
+        <lastmod>2024-07-14</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="fr" href="http://localhost:8000/fr/index.html"/>
         <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8000/index.html"/>
     </url>
     <url>
         <loc>http://localhost:8000/fr/basalt-auth/contribution.html</loc>
-        <lastmod>2024-03-28</lastmod>
+        <lastmod>2024-07-14</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="fr" href="http://localhost:8000/fr/basalt-auth/contribution.html"/>
         <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8000/basalt-auth/contribution.html"/>
     </url>
     <url>
         <loc>http://localhost:8000/fr/basalt-auth/getting-started.html</loc>
-        <lastmod>2024-03-28</lastmod>
+        <lastmod>2024-07-14</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="fr" href="http://localhost:8000/fr/basalt-auth/getting-started.html"/>
         <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8000/basalt-auth/getting-started.html"/>
     </url>
     <url>
         <loc>http://localhost:8000/fr/basalt-auth/index.html</loc>
-        <lastmod>2024-03-28</lastmod>
+        <lastmod>2024-07-14</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="fr" href="http://localhost:8000/fr/basalt-auth/index.html"/>
         <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8000/basalt-auth/index.html"/>
     </url>
     <url>
         <loc>http://localhost:8000/fr/basalt-auth/references.html</loc>
-        <lastmod>2024-03-28</lastmod>
+        <lastmod>2024-07-14</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="fr" href="http://localhost:8000/fr/basalt-auth/references.html"/>
         <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8000/basalt-auth/references.html"/>
     </url>
     <url>
         <loc>http://localhost:8000/fr/basalt-auth/example/authentication.html</loc>
-        <lastmod>2024-03-28</lastmod>
+        <lastmod>2024-07-14</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="fr" href="http://localhost:8000/fr/basalt-auth/example/authentication.html"/>
         <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8000/basalt-auth/example/authentication.html"/>
     </url>
     <url>
         <loc>http://localhost:8000/fr/basalt-helper/contribution.html</loc>
-        <lastmod>2024-03-28</lastmod>
+        <lastmod>2024-07-14</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="fr" href="http://localhost:8000/fr/basalt-helper/contribution.html"/>
         <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8000/basalt-helper/contribution.html"/>
     </url>
     <url>
         <loc>http://localhost:8000/fr/basalt-helper/getting-started.html</loc>
-        <lastmod>2024-03-28</lastmod>
+        <lastmod>2024-07-14</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="fr" href="http://localhost:8000/fr/basalt-helper/getting-started.html"/>
         <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8000/basalt-helper/getting-started.html"/>
     </url>
     <url>
         <loc>http://localhost:8000/fr/basalt-helper/index.html</loc>
-        <lastmod>2024-03-28</lastmod>
+        <lastmod>2024-07-14</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="fr" href="http://localhost:8000/fr/basalt-helper/index.html"/>
         <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8000/basalt-helper/index.html"/>
     </url>
     <url>
         <loc>http://localhost:8000/fr/basalt-helper/references.html</loc>
-        <lastmod>2024-03-28</lastmod>
+        <lastmod>2024-07-14</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="fr" href="http://localhost:8000/fr/basalt-helper/references.html"/>
         <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8000/basalt-helper/references.html"/>
     </url>
     <url>
-        <loc>http://localhost:8000/fr/basalt-helper/example/data/deep-clone.html</loc>
-        <lastmod>2024-03-28</lastmod>
+        <loc>http://localhost:8000/fr/basalt-helper/example/data/basalt-data.html</loc>
+        <lastmod>2024-07-14</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="fr" href="http://localhost:8000/fr/basalt-helper/example/data/deep-clone.html"/>
-        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8000/basalt-helper/example/data/deep-clone.html"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="http://localhost:8000/fr/basalt-helper/example/data/basalt-data.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8000/basalt-helper/example/data/basalt-data.html"/>
     </url>
     <url>
-        <loc>http://localhost:8000/fr/basalt-helper/example/data/filter.html</loc>
-        <lastmod>2024-03-28</lastmod>
+        <loc>http://localhost:8000/fr/basalt-helper/example/security/basalt-security.html</loc>
+        <lastmod>2024-07-14</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="fr" href="http://localhost:8000/fr/basalt-helper/example/data/filter.html"/>
-        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8000/basalt-helper/example/data/filter.html"/>
-    </url>
-    <url>
-        <loc>http://localhost:8000/fr/basalt-helper/example/data/transform.html</loc>
-        <lastmod>2024-03-28</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="fr" href="http://localhost:8000/fr/basalt-helper/example/data/transform.html"/>
-        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8000/basalt-helper/example/data/transform.html"/>
-    </url>
-    <url>
-        <loc>http://localhost:8000/fr/basalt-helper/example/security/password.html</loc>
-        <lastmod>2024-03-28</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="fr" href="http://localhost:8000/fr/basalt-helper/example/security/password.html"/>
-        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8000/basalt-helper/example/security/password.html"/>
-    </url>
-    <url>
-        <loc>http://localhost:8000/fr/basalt-http/index.html</loc>
-        <lastmod>2024-03-28</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="fr" href="http://localhost:8000/fr/basalt-http/index.html"/>
-        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8000/basalt-http/index.html"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="http://localhost:8000/fr/basalt-helper/example/security/basalt-security.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8000/basalt-helper/example/security/basalt-security.html"/>
     </url>
     <url>
         <loc>http://localhost:8000/fr/basalt-logger/contribution.html</loc>
-        <lastmod>2024-03-28</lastmod>
+        <lastmod>2024-07-14</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="fr" href="http://localhost:8000/fr/basalt-logger/contribution.html"/>
         <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8000/basalt-logger/contribution.html"/>
     </url>
     <url>
         <loc>http://localhost:8000/fr/basalt-logger/getting-started.html</loc>
-        <lastmod>2024-03-28</lastmod>
+        <lastmod>2024-07-14</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="fr" href="http://localhost:8000/fr/basalt-logger/getting-started.html"/>
         <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8000/basalt-logger/getting-started.html"/>
     </url>
     <url>
         <loc>http://localhost:8000/fr/basalt-logger/index.html</loc>
-        <lastmod>2024-03-28</lastmod>
+        <lastmod>2024-07-14</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="fr" href="http://localhost:8000/fr/basalt-logger/index.html"/>
         <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8000/basalt-logger/index.html"/>
     </url>
     <url>
         <loc>http://localhost:8000/fr/basalt-logger/references.html</loc>
-        <lastmod>2024-03-28</lastmod>
+        <lastmod>2024-07-14</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="fr" href="http://localhost:8000/fr/basalt-logger/references.html"/>
         <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8000/basalt-logger/references.html"/>
     </url>
     <url>
         <loc>http://localhost:8000/fr/basalt-logger/example/logger.html</loc>
-        <lastmod>2024-03-28</lastmod>
+        <lastmod>2024-07-14</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="fr" href="http://localhost:8000/fr/basalt-logger/example/logger.html"/>
         <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8000/basalt-logger/example/logger.html"/>
-    </url>
-    <url>
-        <loc>http://localhost:8000/fr/basalt-socket/index.html</loc>
-        <lastmod>2024-03-28</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="fr" href="http://localhost:8000/fr/basalt-socket/index.html"/>
-        <xhtml:link rel="alternate" hreflang="en" href="http://localhost:8000/basalt-socket/index.html"/>
     </url>
 </urlset>
