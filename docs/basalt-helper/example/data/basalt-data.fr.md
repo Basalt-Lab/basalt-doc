@@ -3,7 +3,7 @@
 === "TypeScript"
 
     ```typescript
-    import { basaltData } from '@basalt-lab/basalt-helper';
+    import { deepClone } from '@basalt-lab/basalt-helper';
 
     const data1: { test: { test: string } } = {
         test: {
@@ -25,10 +25,10 @@
         }
     ];
 
-    const clonedData1: { test: { test: string } } = basaltData.deepClone(data1);
-    const clonedData2: number[][] = basaltData.deepClone(data2);
-    const clonedData3: { test: { test: number[] } } = basaltData.deepClone(data3);
-    const clonedData4: Array<{ test: number[] }> = basaltData.deepClone(data4);
+    const clonedData1: { test: { test: string } } = deepClone(data1);
+    const clonedData2: number[][] = deepClone(data2);
+    const clonedData3: { test: { test: number[] } } = deepClone(data3);
+    const clonedData4: Array<{ test: number[] }> = deepClone(data4);
 
     console.log(clonedData1 === data1);
     console.log(clonedData2 === data2);
@@ -39,7 +39,7 @@
 === "JavaScript"
 
     ```javascript
-    const { basaltData } = require('@basalt-lab/basalt-helper');
+    const { deepClone } = require('@basalt-lab/basalt-helper');
 
     const data1 = {
         test: {
@@ -61,10 +61,10 @@
         }
     ];
 
-    const clonedData1 = basaltData.deepClone(data1);
-    const clonedData2 = basaltData.deepClone(data2);
-    const clonedData3 = basaltData.deepClone(data3);
-    const clonedData4 = basaltData.deepClone(data4);
+    const clonedData1 = deepClone(data1);
+    const clonedData2 = deepClone(data2);
+    const clonedData3 = deepClone(data3);
+    const clonedData4 = deepClone(data4);
 
     console.log(clonedData1 === data1);
     console.log(clonedData2 === data2);
@@ -87,7 +87,7 @@ false
 === "TypeScript"
 
     ```typescript
-    import { basaltData } from '@basalt-lab/basalt-helper';
+    import { filterByKeyInclusion } from '@basalt-lab/basalt-helper';
             
     const data: { a: string; b: string; c: string; d: string } = {
         a: 'a',
@@ -96,14 +96,14 @@ false
         d: 'd',
     };
 
-    const filteredData = basaltData.filterByKeyInclusion(data, ['a', 'b', 'c']);
+    const filteredData = filterByKeyInclusion(data, ['a', 'b', 'c']);
     console.log(filteredData);
     ```
 
 === "JavaScript"
 
     ```javascript
-    const { basaltData } = require('@basalt-lab/basalt-helper');
+    const { filterByKeyInclusion } = require('@basalt-lab/basalt-helper');
 
     const data = {
         a: 'a',
@@ -112,7 +112,7 @@ false
         d: 'd',
     };
 
-    const filteredData = basaltData.filterByKeyInclusion(data, ['a', 'b', 'c']);
+    const filteredData = filterByKeyInclusion(data, ['a', 'b', 'c']);
     console.log(filteredData);
     ```
 
@@ -128,7 +128,7 @@ $ node example.js
 === "TypeScript"
 
     ```typescript
-    import { basaltData } from '@basalt-lab/basalt-helper';
+    import { filterByKeyInclusion } from '@basalt-lab/basalt-helper';
 
     const data: { a: string; b: undefined; c: null; d: string } = {
         a: 'a',
@@ -137,14 +137,14 @@ $ node example.js
         d: 'd',
     };
 
-    const filteredData = basaltData.filterByKeyInclusion(data, ['a', 'b', 'c'], true);
+    const filteredData = filterByKeyInclusion(data, ['a', 'b', 'c'], true);
     console.log(filteredData);
     ```
 
 === "JavaScript"
 
     ```javascript
-    const { basaltData } = require('@basalt-lab/basalt-helper');
+    const { filterByKeyInclusion } = require('@basalt-lab/basalt-helper');
 
     const data = {
         a: 'a',
@@ -153,7 +153,7 @@ $ node example.js
         d: 'd',
     };
 
-    const filteredData = basaltData.filterByKeyInclusion(data, ['a', 'b', 'c'], true);
+    const filteredData = filterByKeyInclusion(data, ['a', 'b', 'c'], true);
     console.log(filteredData);
     ```
 
@@ -170,7 +170,7 @@ $ node example.js
 === "TypeScript"
 
     ```typescript
-    import { basaltData } from '@basalt-lab/basalt-helper';
+    import { filterByKeyExclusion } from '@basalt-lab/basalt-helper';
         
     const data: { a: string; b: string; c: string; d: string } = {
         a: 'a',
@@ -179,14 +179,14 @@ $ node example.js
         d: 'd',
     };
 
-    const filteredData = basaltData.filterByKeyExclusion(data, ['a', 'b']);
+    const filteredData = filterByKeyExclusion(data, ['a', 'b']);
     console.log(filteredData);
     ```
 
 === "JavaScript"
 
     ```javascript
-    const { basaltData } = require('@basalt-lab/basalt-helper');
+    const { filterByKeyExclusion } = require('@basalt-lab/basalt-helper');
 
     const data = {
         a: 'a',
@@ -195,7 +195,7 @@ $ node example.js
         d: 'd',
     };
 
-    const filteredData = basaltData.filterByKeyExclusion(data, ['a', 'b']);
+    const filteredData = filterByKeyExclusion(data, ['a', 'b']);
     console.log(filteredData);
     ```
 
@@ -211,7 +211,7 @@ $ node example.js
 === "TypeScript"
 
     ```typescript
-    import { basaltData } from '@basalt-lab/basalt-helper';
+    import { filterByKeyExclusion } from '@basalt-lab/basalt-helper';
         
     const data: { a: string; b: null; c: undefined; d: string } = {
         a: 'a',
@@ -220,14 +220,14 @@ $ node example.js
         d: 'd',
     };
 
-    const filteredData = basaltData.filterByKeyExclusion(data, ['a'], true);
+    const filteredData = filterByKeyExclusion(data, ['a'], true);
     console.log(filteredData);
     ```
 
 === "JavaScript"
 
     ```javascript
-    const { basaltData } = require('@basalt-lab/basalt-helper');
+    const { filterByKeyExclusion } = require('@basalt-lab/basalt-helper');
 
     const data = {
         a: 'a',
@@ -236,7 +236,7 @@ $ node example.js
         d: 'd',
     };
 
-    const filteredData = basaltData.filterByKeyExclusion(data, ['a'], true);
+    const filteredData = filterByKeyExclusion(data, ['a'], true);
     console.log(filteredData);
     ```
 
@@ -252,7 +252,7 @@ $ node example.js
 === "TypeScript"
 
     ```typescript
-    import { basaltData } from '@basalt-lab/basalt-helper';
+    import { filterByValue } from '@basalt-lab/basalt-helper';
         
     const data: { a: string; b: string; c: string; d: string } = {
         a: 'a',
@@ -261,14 +261,14 @@ $ node example.js
         d: 'd',
     };
 
-    const filteredData = basaltData.filterByValue(data, (value: string): boolean => value === 'a' || value === 'b');
+    const filteredData = filterByValue(data, (value: string): boolean => value === 'a' || value === 'b');
     console.log(filteredData);
     ```
 
 === "JavaScript"
 
     ```javascript
-    const { basaltData } = require('@basalt-lab/basalt-helper');
+    const { filterByValue } = require('@basalt-lab/basalt-helper');
 
     const data = {
         a: 'a',
@@ -277,7 +277,7 @@ $ node example.js
         d: 'd',
     };
 
-    const filteredData = basaltData.filterByValue(data, (value) => value === 'a' || value === 'b');
+    const filteredData = filterByValue(data, (value) => value === 'a' || value === 'b');
     console.log(filteredData);
     ```
 
@@ -293,7 +293,7 @@ $ node example.js
 === "TypeScript"
 
     ```typescript
-    import { basaltData } from '@basalt-lab/basalt-helper';
+    import { filterByValue } from '@basalt-lab/basalt-helper';
         
     const data: { a: string; b: string; c: string; d: string } = {
         a: 'a',
@@ -302,14 +302,14 @@ $ node example.js
         d: 'd',
     };
 
-    const filteredData = basaltData.filterByValue(data, (value: string): boolean => value !== 'a' && value !== 'b');
+    const filteredData = filterByValue(data, (value: string): boolean => value !== 'a' && value !== 'b');
     console.log(filteredData);
     ```
 
 === "JavaScript"
 
     ```javascript
-    const { basaltData } = require('@basalt-lab/basalt-helper');
+    const { filterByValue } = require('@basalt-lab/basalt-helper');
 
     const data = {
         a: 'a',
@@ -318,7 +318,7 @@ $ node example.js
         d: 'd',
     };
 
-    const filteredData = basaltData.filterByValue(data, (value) => value !== 'a' && value !== 'b');
+    const filteredData = filterByValue(data, (value) => value !== 'a' && value !== 'b');
     console.log(filteredData);
     ```
 
@@ -334,7 +334,7 @@ $ node example.js
 === "TypeScript"
 
     ```typescript
-    import { basaltData } from '@basalt-lab/basalt-helper';
+    import { filterByValue } from '@basalt-lab/basalt-helper';
 
     const data: { a: string; b: null; c: undefined; d: string } = {
         a: 'a',
@@ -343,14 +343,14 @@ $ node example.js
         d: 'd',
     };
 
-    const filteredData = basaltData.filterByValue(data, (value: unknown): boolean => value !== 'a', true);
+    const filteredData = filterByValue(data, (value: unknown): boolean => value !== 'a', true);
     console.log(filteredData);
     ```
 
 === "JavaScript"
 
     ```javascript
-    const { basaltData } = require('@basalt-lab/basalt-helper');
+    const { filterByValue } = require('@basalt-lab/basalt-helper');
 
     const data = {
         a: 'a',
@@ -359,7 +359,7 @@ $ node example.js
         d: 'd',
     };
 
-    const filteredData = basaltData.filterByValue(data, (value) => value !== 'a', true);
+    const filteredData = filterByValue(data, (value) => value !== 'a', true);
     console.log(filteredData);
     ```
 
@@ -375,7 +375,7 @@ $ node example.js
 === "TypeScript"
 
     ```typescript
-    import { basaltData, BasaltCamelCaseTransformer } from '@basalt-lab/basalt-helper';
+    import { transformKeys, BasaltCamelCaseTransformer } from '@basalt-lab/basalt-helper';
 
     const data = {
         'camelCase': undefined,
@@ -384,13 +384,13 @@ $ node example.js
         'snake_case': undefined
     };
 
-    console.log(basaltData.transformKeys(data, new BasaltCamelCaseTransformer()));
+    console.log(transformKeys(data, new BasaltCamelCaseTransformer()));
     ```
 
 === "JavaScript"
 
     ```javascript
-    const { basaltData, BasaltCamelCaseTransformer } = require('@basalt-lab/basalt-helper');
+    const { transformKeys, BasaltCamelCaseTransformer } = require('@basalt-lab/basalt-helper');
 
     const data = {
         'camelCase': undefined,
@@ -399,7 +399,7 @@ $ node example.js
         'snake_case': undefined
     };
 
-    console.log(basaltData.transformKeys(data, new BasaltCamelCaseTransformer()));
+    console.log(transformKeys(data, new BasaltCamelCaseTransformer()));
     ```
 
 <!-- termynal -->
@@ -419,7 +419,7 @@ $ node example.js
 === "TypeScript"
 
     ```typescript
-    import { basaltData, BasaltPascalCaseTransformer } from '@basalt-lab/basalt-helper';
+    import { transformKeys, BasaltPascalCaseTransformer } from '@basalt-lab/basalt-helper';
 
     const data = {
         'camelCase': undefined,
@@ -428,13 +428,13 @@ $ node example.js
         'snake_case': undefined
     };
 
-    console.log(basaltData.transformKeys(data, new BasaltPascalCaseTransformer()));
+    console.log(transformKeys(data, new BasaltPascalCaseTransformer()));
     ```
 
 === "JavaScript"
 
     ```javascript
-    const { basaltData, BasaltPascalCaseTransformer } = require('@basalt-lab/basalt-helper');
+    const { transformKeys, BasaltPascalCaseTransformer } = require('@basalt-lab/basalt-helper');
 
     const data = {
         'camelCase': undefined,
@@ -443,7 +443,7 @@ $ node example.js
         'snake_case': undefined
     };
 
-    console.log(basaltData.transformKeys(data, new BasaltPascalCaseTransformer()));
+    console.log(transformKeys(data, new BasaltPascalCaseTransformer()));
     ```
 
 <!-- termynal -->
@@ -463,7 +463,7 @@ $ node example.js
 === "TypeScript"
 
     ```typescript
-    import { basaltData, BasaltKebabCaseTransformer } from '@basalt-lab/basalt-helper';
+    import { transformKeys, BasaltKebabCaseTransformer } from '@basalt-lab/basalt-helper';
 
     const data = {
         'camelCase': undefined,
@@ -472,13 +472,13 @@ $ node example.js
         'snake_case': undefined
     };
 
-    console.log(basaltData.transformKeys(data, new BasaltKebabCaseTransformer()));
+    console.log(transformKeys(data, new BasaltKebabCaseTransformer()));
     ```
 
 === "JavaScript"
 
     ```javascript
-    const { basaltData, BasaltKebabCaseTransformer } = require('@basalt-lab/basalt-helper');
+    const { transformKeys, BasaltKebabCaseTransformer } = require('@basalt-lab/basalt-helper');
 
     const data = {
         'camelCase': undefined,
@@ -487,7 +487,7 @@ $ node example.js
         'snake_case': undefined
     };
 
-    console.log(basaltData.transformKeys(data, new BasaltKebabCaseTransformer()));
+    console.log(transformKeys(data, new BasaltKebabCaseTransformer()));
     ```
 
 <!-- termynal -->
@@ -507,7 +507,7 @@ $ node example.js
 === "TypeScript"
 
     ```typescript
-    import { basaltData, BasaltSnakeCaseTransformer } from '@basalt-lab/basalt-helper';
+    import { transformKeys, BasaltSnakeCaseTransformer } from '@basalt-lab/basalt-helper';
 
     const data = {
         'camelCase': undefined,
@@ -516,13 +516,13 @@ $ node example.js
         'snake_case': undefined
     };
 
-    console.log(basaltData.transformKeys(data, new BasaltSnakeCaseTransformer()));
+    console.log(transformKeys(data, new BasaltSnakeCaseTransformer()));
     ```
 
 === "JavaScript"
 
     ```javascript
-    const { basaltData, BasaltSnakeCaseTransformer } = require('@basalt-lab/basalt-helper');
+    const { transformKeys, BasaltSnakeCaseTransformer } = require('@basalt-lab/basalt-helper');
 
     const data = {
         'camelCase': undefined,
@@ -531,7 +531,7 @@ $ node example.js
         'snake_case': undefined
     };
 
-    console.log(basaltData.transformKeys(data, new BasaltSnakeCaseTransformer()));
+    console.log(transformKeys(data, new BasaltSnakeCaseTransformer()));
     ```
 
 <!-- termynal -->

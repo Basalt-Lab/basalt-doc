@@ -152,6 +152,8 @@ nav:
             - BasaltData: basalt-helper/example/data/basalt-data.md
           - Security:
             - BasaltSecurity: basalt-helper/example/security/basalt-security.md
+          - Utility:
+            - BasaltUtility: basalt-helper/example/utility/basalt-utility.md
       - Contribution: basalt-helper/contribution.md
 
   - Basalt Logger:

@@ -1,0 +1,72 @@
+## **Enregistrement d'une class et récupération d'une instance**
+
+=== "TypeScript"
+
+    ```typescript
+    import { SingletonManager } from '@basalt-lab/basalt-helper';
+
+    class ExampleSingleton {
+        private static _count = 0;
+        private readonly _id: number;
+        
+        public constructor() {
+            ExampleSingleton._count += 1;
+            this._id = ExampleSingleton._count;
+            console.log(`ExampleSingleton created with ID: ${this._id}`);
+        }
+
+        public sayHello(): void {
+            console.log(`Hello from instance ${this._id}!`);
+        }
+    }
+
+    SingletonManager.register('ExampleSingleton', ExampleSingleton);
+    SingletonManager.get<ExampleSingleton>('ExampleSingleton').sayHello();
+    SingletonManager.get<ExampleSingleton>('ExampleSingleton').sayHello();
+    ```
+
+=== "JavaScript"
+
+    ```javascript
+    const { SingletonManager } = require('@basalt-lab/basalt-helper');
+
+    class ExampleSingleton {
+        static _count = 0;
+        _id;
+        
+        constructor() {
+            ExampleSingleton._count += 1;
+            this._id = ExampleSingleton._count;
+            console.log(`ExampleSingleton created with ID: ${this._id}`);
+        }
+
+        sayHello() {
+            console.log(`Hello from instance ${this._id}!`);
+        }
+    }
+
+    SingletonManager.register('ExampleSingleton', ExampleSingleton);
+    SingletonManager.get('ExampleSingleton').sayHello();
+    SingletonManager.get('ExampleSingleton').sayHello();
+    ```
+
+
+<!-- termynal -->
+
+```bash
+$ node example.js
+ExampleSingleton created with ID: 1
+Hello from instance 1!
+Hello from instance 1!
+```
+
+<script data-name="BMC-Widget"
+    data-cfasync="false"
+    src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
+    data-id="necrelox"
+    data-description="Support me on Buy me a coffee!"
+    data-message="Merci de votre visite!"
+    data-color="#5F7FFF"
+    data-position="Right"
+    data-x_margin="18"
+    data-y_margin="22" />
