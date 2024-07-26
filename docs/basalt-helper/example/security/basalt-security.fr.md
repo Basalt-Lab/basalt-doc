@@ -3,20 +3,20 @@
 === "TypeScript"
 
     ```typescript
-    import { basaltPassword } from '@basalt-lab/basalt-core';
+    import { hashPassword } from '@basalt-lab/basalt-helper';
 
     const password: string = 'password';
-    const hashedPassword: string = await basaltPassword.hashPassword(password);
+    const hashedPassword: string = await hashPassword(password);
     console.log(hashedPassword);
     ```
 
 === "JavaScript"
 
     ```javascript
-    const { basaltPassword } = require('@basalt-lab/basalt-core');
+    const { hashPassword } = require('@basalt-lab/basalt-helper');
 
     const password = 'password';
-    const hashedPassword = await basaltPassword.hashPassword(password);
+    const hashedPassword = await hashPassword(password);
     console.log(hashedPassword);
     ```
 
@@ -32,21 +32,21 @@ $argon2id$v=19$m=65536,t=3,p=20$W1Qv4XJ+jaVDI04sLFukTYXI/7FYuyeavMLNUXnnrPQ$JfQg
 === "TypeScript"
 
     ```typescript
-    import { basaltPassword } from '@basalt-lab/basalt-core';
+    import { hashPassword, verifyPassword } from '@basalt-lab/basalt-helper';
 
     const password: string = 'password';
-    const hashedPassword: string = await basaltPassword.hashPassword(password);
-    const isPasswordValid: boolean = await basaltPassword.verifyPassword(password, hashedPassword);
+    const hashedPassword: string = await hashPassword(password);
+    const isPasswordValid: boolean = await verifyPassword(password, hashedPassword);
     console.log(isPasswordValid);
     ```
 === "JavaScript"
 
     ```javascript
-    const { basaltPassword } = require('@basalt-lab/basalt-core');
+    const { hashPassword, verifyPassword } = require('@basalt-lab/basalt-helper');
 
     const password = 'password';
-    const hashedPassword = await basaltPassword.hashPassword(password);
-    const isPasswordValid = await basaltPassword.verifyPassword(password, hashedPassword);
+    const hashedPassword = await hashPassword(password);
+    const isPasswordValid = await verifyPassword(password, hashedPassword);
     console.log(isPasswordValid);
     ```
 <!-- termynal -->
