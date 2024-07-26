@@ -1,4 +1,4 @@
-## **Enregistrement d'une class et récupération d'une instance**
+## **Enregistrement d'une class, récupération d'une instance et desenregistrement d'une instance**
 
 === "TypeScript"
 
@@ -23,6 +23,7 @@
     SingletonManager.register('ExampleSingleton', ExampleSingleton);
     SingletonManager.get<ExampleSingleton>('ExampleSingleton').sayHello();
     SingletonManager.get<ExampleSingleton>('ExampleSingleton').sayHello();
+    SingletonManager.unregister('ExampleSingleton');
     ```
 
 === "JavaScript"
@@ -48,6 +49,7 @@
     SingletonManager.register('ExampleSingleton', ExampleSingleton);
     SingletonManager.get('ExampleSingleton').sayHello();
     SingletonManager.get('ExampleSingleton').sayHello();
+    SingletonManager.unregister('ExampleSingleton');
     ```
 
 
