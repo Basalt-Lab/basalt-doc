@@ -1,3 +1,7 @@
+* {
+    transition: background-color 0.5s, color 0.04s;
+}
+
 @keyframes shake-head {
     0%, 100% {
         transform: rotate(0deg);

@@ -9,7 +9,7 @@ Each module in **Basalt** aims to provide efficient and easy-to-use tools.
 
 ???+ warning "Attention"
 
-    **Basalt** is currently under development and is subject to frequent changes.
+    **Basalt** is currently under development and is subject to frequent changes.  
     Not all packages are available yet, and only some core modules are operational at this time.
 
 The documentation and features will continue to evolve.
