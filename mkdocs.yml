@@ -1,8 +1,9 @@
 site_name: Basalt
 site_url: http://localhost:8000/
 copyright: |
-  <div style="display: flex">Made with <div class="heart">❤️
-
+  <div style="display: flex">Made with <div class="heart">❤️</div>
+  <i>(Thank you to the love of my life N for believing in me every day)</i>
+  </div>
 
 site_description: Basalt is a comprehensive suite of packages specifically designed for backend development in Node.js
 repo_url: https://github.com/Basalt-Lab
@@ -148,12 +149,10 @@ nav:
       - Getting Started: basalt-helper/getting-started.md
       - References: basalt-helper/references.md
       - Example:
-          - Data:
-            - BasaltData: basalt-helper/example/data/basalt-data.md
-          - Security:
-            - BasaltSecurity: basalt-helper/example/security/basalt-security.md
-          - Utility:
-            - BasaltUtility: basalt-helper/example/utility/basalt-utility.md
+          - Cryptography: basalt-helper/example/cryptography/basalt-security.md
+          - Data: basalt-helper/example/data/basalt-data.md
+          - FileSystem: basalt-helper/example/filesystem/basalt-filesystem.md
+          - Utility: basalt-helper/example/utility/basalt-utility.md
       - Contribution: basalt-helper/contribution.md
 
   - Basalt Logger:
