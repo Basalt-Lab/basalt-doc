@@ -89,9 +89,9 @@ $ node example.js
 
     ```typescript
     import { appendFileSync } from 'fs';
-    import { BasaltLogger, ILoggerStrategy, LogLevels}  from '@basalt-lab/basalt-logger';
+    import { BasaltLogger, LoggerStrategy, LogLevels}  from '@basalt-lab/basalt-logger';
     
-    class FileLoggerStrategy implements ILoggerStrategy {
+    class FileLoggerStrategy implements LoggerStrategy {
         public log(level: LogLevels, date: Date, object: unknown): void {
             const prefixDate: string = `[${date.toISOString().replace(/T/, ' ').replace(/\..+/, '')}]`;
             const sanitizedObject: string = typeof object === 'string' ? object : JSON.stringify(object);

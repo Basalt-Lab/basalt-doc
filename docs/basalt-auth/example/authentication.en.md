@@ -3,10 +3,10 @@
 === "TypeScript"
 
     ```typescript
-    import { BasaltToken, type IBasaltTokenSignResult } from '@basalt-lab/basalt-auth';
+    import { BasaltToken, type BasaltTokenSignResult } from '@basalt-lab/basalt-auth';
 
     const basaltToken: BasaltToken = new BasaltToken();
-    const tokenSignResult: IBasaltTokenSignResult = basaltToken.sign({});
+    const tokenSignResult: BasaltTokenSignResult = basaltToken.sign({});
     console.log(tokenSignResult.token);
     ```
 
@@ -33,10 +33,10 @@ eyJ1dWlkIjoiZDk4MTcwMjgtM2EzZS00YWYyLTgwNzYtOTExZGFlZThiMGIzIiwiZXhwIjoiMjAyNC0w
 === "TypeScript"
 
     ```typescript
-    import { BasaltToken, type IBasaltTokenSignResult } from '@basalt-lab/basalt-auth';
+    import { BasaltToken, type BasaltTokenSignResult } from '@basalt-lab/basalt-auth';
 
     const basaltToken: BasaltToken = new BasaltToken();
-    const tokenSignResult: IBasaltTokenSignResult = basaltToken.sign({
+    const tokenSignResult: BasaltTokenSignResult = basaltToken.sign({
         usename: 'User1',
     });
     console.log(tokenSignResult.token);
@@ -67,11 +67,11 @@ eyJ1dWlkIjoiMzAzNjQ2ODMtYWYxMC00NjcyLTkwNTQtMmY2YWNmM2E1ZGNlIiwiZXhwIjoiMjAyNC0w
 === "TypeScript"
 
     ```typescript
-    import { BasaltToken, type IBasaltTokenSignResult, BasaltTokenExpiry } from '@basalt-lab/basalt-auth';
+    import { BasaltToken, type BasaltTokenSignResult, BasaltTokenExpiry } from '@basalt-lab/basalt-auth';
 
     const basaltToken: BasaltToken = new BasaltToken();
     // you can use enum or number (default is 1 hour)
-    const tokenSignResult: IBasaltTokenSignResult = basaltToken.sign({}, BasaltTokenExpiry.ONE_DAY);
+    const tokenSignResult: BasaltTokenSignResult = basaltToken.sign({}, BasaltTokenExpiry.ONE_DAY);
     console.log(tokenSignResult.token);
     ```
 
@@ -99,11 +99,11 @@ eyJ1dWlkIjoiZTg5YjYzYTAtMjY0NS00ZjQwLWE5YzYtOGM1Yzg0NmIwNzNlIiwiZXhwIjoiMjAyNC0w
 === "TypeScript"
 
     ```typescript
-    import { BasaltToken, type IBasaltTokenSignResult, BasaltTokenExpiry } from '@basalt-lab/basalt-auth';
+    import { BasaltToken, type BasaltTokenSignResult, BasaltTokenExpiry } from '@basalt-lab/basalt-auth';
 
     const basaltToken: BasaltToken = new BasaltToken();
     // default issuer is 'Basalt-Issuer' and default audience is 'Basalt-Audience'
-    const tokenSignResult: IBasaltTokenSignResult = basaltToken.sign(
+    const tokenSignResult: BasaltTokenSignResult = basaltToken.sign(
         {}, BasaltTokenExpiry.ONE_HOUR, 'Basalt-issuer', 'Basalt-audience'
     );
     console.log(tokenSignResult.token);
@@ -135,10 +135,10 @@ eyJ1dWlkIjoiNzBmYTFiZDEtOWEwNy00Mzk5LWI4Y2YtZTg3ZTNkNDVhNzU2IiwiZXhwIjoiMjAyNC0w
 === "TypeScript"
 
     ```typescript
-    import { BasaltToken, type IBasaltTokenSignResult } from '@basalt-lab/basalt-auth';
+    import { BasaltToken, type BasaltTokenSignResult } from '@basalt-lab/basalt-auth';
 
     const basaltToken: BasaltToken = new BasaltToken();
-    const tokenSignResult: IBasaltTokenSignResult = basaltToken.sign({});
+    const tokenSignResult: BasaltTokenSignResult = basaltToken.sign({});
 
     try {
         basaltToken.verify(tokenSignResult.token, tokenSignResult.publicKey)
@@ -176,10 +176,10 @@ Token is valid
 === "TypeScript"
 
     ```typescript
-    import { BasaltToken, type IBasaltTokenSignResult } from '@basalt-lab/basalt-auth';
+    import { BasaltToken, type BasaltTokenSignResult } from '@basalt-lab/basalt-auth';
 
     const basaltToken: BasaltToken = new BasaltToken();
-    const tokenSignResult: IBasaltTokenSignResult = basaltToken.sign({});
+    const tokenSignResult: BasaltTokenSignResult = basaltToken.sign({});
 
     console.log(basaltToken.getTokenUuid(tokenSignResult.token));
     ```
@@ -207,10 +207,10 @@ c4a198c4-2717-470d-886f-bc2921badd8f
 === "TypeScript"
 
     ```typescript
-    import { BasaltToken, type IBasaltTokenSignResult } from '@basalt-lab/basalt-auth';
+    import { BasaltToken, type BasaltTokenSignResult } from '@basalt-lab/basalt-auth';
 
     const basaltToken: BasaltToken = new BasaltToken();
-    const tokenSignResult: IBasaltTokenSignResult = basaltToken.sign({});
+    const tokenSignResult: BasaltTokenSignResult = basaltToken.sign({});
 
     console.log(basaltToken.getExpirationDate(tokenSignResult.token));
     ```
@@ -237,10 +237,10 @@ $ node example.js
 === "TypeScript"
 
     ```typescript
-    import { BasaltToken, type IBasaltTokenSignResult } from '@basalt-lab/basalt-auth';
+    import { BasaltToken, type BasaltTokenSignResult } from '@basalt-lab/basalt-auth';
 
     const basaltToken: BasaltToken = new BasaltToken();
-    const tokenSignResult: IBasaltTokenSignResult = basaltToken.sign({});
+    const tokenSignResult: BasaltTokenSignResult = basaltToken.sign({});
 
     console.log(basaltToken.getAudience(tokenSignResult.token));
     ```
@@ -268,10 +268,10 @@ Basalt-Audience
 === "TypeScript"
 
     ```typescript
-    import { BasaltToken, type IBasaltTokenSignResult } from '@basalt-lab/basalt-auth';
+    import { BasaltToken, type BasaltTokenSignResult } from '@basalt-lab/basalt-auth';
 
     const basaltToken: BasaltToken = new BasaltToken();
-    const tokenSignResult: IBasaltTokenSignResult = basaltToken.sign({});
+    const tokenSignResult: BasaltTokenSignResult = basaltToken.sign({});
 
     console.log(basaltToken.getIssuer(tokenSignResult.token));
     ```
@@ -299,10 +299,10 @@ Basalt-Issuer
 === "TypeScript"
 
     ```typescript
-    import { BasaltToken, type IBasaltTokenSignResult, type IBasaltTokenHeader } from '@basalt-lab/basalt-auth';
+    import { BasaltToken, type BasaltTokenSignResult, type IBasaltTokenHeader } from '@basalt-lab/basalt-auth';
 
     const basaltToken: BasaltToken = new BasaltToken();
-    const tokenSignResult: IBasaltTokenSignResult = basaltToken.sign({});
+    const tokenSignResult: BasaltTokenSignResult = basaltToken.sign({});
 
     const tokenHeader: IBasaltTokenHeader = basaltToken.getHeader(tokenSignResult.token);
     console.log(tokenHeader);
@@ -340,10 +340,10 @@ $ node example.js
 === "TypeScript"
 
     ```typescript
-    import { BasaltToken, type IBasaltTokenSignResult } from '@basalt-lab/basalt-auth';
+    import { BasaltToken, type BasaltTokenSignResult } from '@basalt-lab/basalt-auth';
 
     const basaltToken: BasaltToken = new BasaltToken();
-    const tokenSignResult: IBasaltTokenSignResult = basaltToken.sign({
+    const tokenSignResult: BasaltTokenSignResult = basaltToken.sign({
         username: 'user1'
     });
     const tokenPayload: { username: string } = basaltToken.getPayload(tokenSignResult.token);
@@ -375,10 +375,10 @@ $ node example.js
 === "TypeScript"
 
     ```typescript
-    import { BasaltToken, type IBasaltTokenSignResult } from '@basalt-lab/basalt-auth';
+    import { BasaltToken, type BasaltTokenSignResult } from '@basalt-lab/basalt-auth';
 
     const basaltToken: BasaltToken = new BasaltToken();
-    const tokenSignResult: IBasaltTokenSignResult = basaltToken.sign({});
+    const tokenSignResult: BasaltTokenSignResult = basaltToken.sign({});
     console.log(basaltToken.isExpired(tokenSignResult.token));
     ```
 
