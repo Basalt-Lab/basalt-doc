@@ -12,7 +12,7 @@
 
 The uniqueness of **Basalt Auth** lies in its key pair system: each token is associated with its own pair, a feature that sets it apart from standard [JWT](https://jwt.io/) tokens.
 
-It is a combination of OAT and JWT, where both tokens and public keys need to be stored on the server side for verification.
+It is a combination of OAT and JWT, where both tokens and public keys need to be stored on the server side for verification.  
 For this, I recommend using a store like [Redis](https://redis.io/) or [DragonFly](https://www.dragonflydb.io/).
 
 ## **Why Basalt Auth?**
