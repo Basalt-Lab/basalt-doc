@@ -17,35 +17,35 @@ options
 }
 end
 commit
-branch stage
-checkout stage
+branch develop
+checkout develop
 commit
 branch feature
 checkout feature
 commit
 commit
-checkout stage
+checkout develop
 merge feature
 checkout main
-merge stage
+merge develop
 ```
 
 1. **Fork** the project  
    Start by creating a fork of the repository on GitHub. This will help you create your own copy of the project on your account, allowing you to make changes freely.
 2. **Create** your feature branch (`git checkout -b feature/AmazingFeature`)  
-   Create a new branch to work on your feature from the `stage` branch.
+   Create a new branch to work on your feature from the `develop` branch.
 3. **Commit** your changes (`git commit -m 'feat: Add some AmazingFeature'`)  
    Once you have finished your modifications, you can commit them and prepare them for push.
    Please use [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) for your commit messages, as this will automatically generate release notes.
 4. **Push** to the branch (`git push origin feature/AmazingFeature`)  
    Once you have finished your modifications, you can push them to your fork.
-5. Open a **Pull Request** to the `stage` branch  
-   Once you have pushed your modifications to your fork, you can open a Pull Request to the `stage` branch of the main repository.
-6. After your Pull Request is approved, your branch will be **merged** into `stage` and deleted.  
-   Once your Pull Request has been approved, your branch will be merged into `stage` and deleted.
+5. Open a **Pull Request** to the `develop` branch  
+   Once you have pushed your modifications to your fork, you can open a Pull Request to the `develop` branch of the main repository.
+6. After your Pull Request is approved, your branch will be **merged** into `develop` and deleted.  
+   Once your Pull Request has been approved, your branch will be merged into `develop` and deleted.
 
 !!! warning "Note"
-    Make sure to always update your local branch with the `stage` branch before starting to work on a new feature to ensure you are working with the latest version of the project.
+    Make sure to always update your local branch with the `develop` branch before starting to work on a new feature to ensure you are working with the latest version of the project.
 
 ## **Additional Notes**
 
