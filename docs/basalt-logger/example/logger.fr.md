@@ -1,155 +1,102 @@
-## **Ajout d'une strategie de log**
+## **BasaltLogger**
 
-=== "TypeScript"
+`BasaltLogger` est une classe qui vous permettra d'enregistrer des stratégies de log pour votre application ainsi de loguer des messages.
+
+??? example "Ajout d'une strategie de log"
 
     ```typescript
     import { BasaltLogger, ConsoleLoggerStrategy } from '@basalt-lab/basalt-logger';
 
     const logger = new BasaltLogger();
 
-    logger.addStrategy('console', new ConsoleLoggerStrategy());
+    logger.registerStrategy('console', new ConsoleLoggerStrategy());
     
     logger.log('hello world');
     ```
 
-=== "JavaScript"
+    <!-- termynal -->
 
-    ```javascript
-    const { BasaltLogger, ConsoleLoggerStrategy } = require('@basalt-lab/basalt-logger');
-
-    const logger = new BasaltLogger();
-
-    logger.addStrategy('console', new ConsoleLoggerStrategy());
-
-    logger.log('hello world');
+    ```bash
+    $ node example.js
+    [2023-11-21 00:00:00] LOG : hello world
     ```
 
-<!-- termynal -->
-
-```bash
-$ node example.js
-[2023-11-21 00:00:00] LOG : hello world
-```
-
-## **Suppression d'une strategie specifique de log**
-
-=== "TypeScript"
+??? example "Suppression d'une strategie specifique de log"
 
     ```typescript
     import { BasaltLogger, ConsoleLoggerStrategy } from '@basalt-lab/basalt-logger';
 
     const logger = new BasaltLogger();
 
-    logger.addStrategy('console', new ConsoleLoggerStrategy());
+    logger.registerStrategy('console', new ConsoleLoggerStrategy());
 
-    logger.removeStrategy('console');
+    logger.unregisterStrategy('console');
     ```
 
-=== "JavaScript"
+    <!-- termynal -->
 
-    ```javascript 
-    const { BasaltLogger, ConsoleLoggerStrategy } = require('@basalt-lab/basalt-logger');
-
-    const logger = new BasaltLogger();
-
-    logger.addStrategy('console', new ConsoleLoggerStrategy());
-    
-    logger.removeStrategy('console');
+    ```bash
+    $ node example.js
     ```
 
-## **Suppression de toutes les strategies de log**
 
-=== "TypeScript"
+??? example "Suppression de toutes les strategies de log"
 
     ```typescript
     import { BasaltLogger, ConsoleLoggerStrategy } from '@basalt-lab/basalt-logger';
     
     const logger = new BasaltLogger();
 
-    logger.addStrategy('console', new ConsoleLoggerStrategy());
+    logger.registerStrategy('console', new ConsoleLoggerStrategy());
     
     logger.clearStrategies();
     ```
 
-=== "JavaScript"
+    <!-- termynal -->
 
-    ```javascript
-    const { BasaltLogger, ConsoleLoggerStrategy } = require('@basalt-lab/basalt-logger');
-
-    const logger = new BasaltLogger();
-
-    logger.addStrategy('console', new ConsoleLoggerStrategy());
-
-    logger.clearStrategies();
+    ```bash
+    $ node example.js
     ```
 
-## **Création d'une strategie de log**
 
-=== "TypeScript"
+
+??? example "Création d'une strategie de log"
 
     ```typescript
-    import { appendFileSync } from 'fs';
+    import { appendFile } from 'fs/promises';
     import { BasaltLogger, LoggerStrategy, LogLevels}  from '@basalt-lab/basalt-logger';
     
     class FileLoggerStrategy implements LoggerStrategy {
-        public log(level: LogLevels, date: Date, object: unknown): void {
-            const prefixDate: string = `[${date.toISOString().replace(/T/, ' ').replace(/\..+/, '')}]`;
-            const sanitizedObject: string = typeof object === 'string' ? object : JSON.stringify(object);
-            const message: string = `${prefixDate} ${level} : ${sanitizedObject}`;
-            appendFile('./test.log', `${message}\n`, (err): void => {
-                if (err) throw err;
-            });
-        }
-    }
-
-    const logger = new BasaltLogger();
-
-    logger.addStrategy('file', new FileLoggerStrategy());
-    logger.log('Hello World');
-    ```
-
-=== "JavaScript"
-
-    ```javascript
-    const { appendFileSync } = require('fs');
-    const { BasaltLogger, LogLevels } = require('@basalt-lab/basalt-logger');
-
-    class FileLoggerStrategy {
-        log(level, date, object) {
+            public log(level: LogLevels, date: Date, object: unknown): void {
             const prefixDate = `[${date.toISOString().replace(/T/, ' ').replace(/\..+/, '')}]`;
-            const sanitizedObject = typeof object === 'string' ? object : JSON.stringify(object);
+            const sanitizedObject: string = typeof object === 'string' ? object : JSON.stringify(object);
             const message = `${prefixDate} ${level} : ${sanitizedObject}`;
-            appendFile('./test.log', `${message}\n`, (err) => {
-                if (err) throw err;
-            });
+            await appendFile(this._path, `${message}\n`);
         }
     }
 
     const logger = new BasaltLogger();
 
-    logger.addStrategy('file', new FileLoggerStrategy());
+    logger.registerStrategy('file', new FileLoggerStrategy());
     logger.log('Hello World');
     ```
 
-<!-- termynal -->
+    <!-- termynal -->
 
-```bash
-$ node example.js
-$ cat test.log
-[2023-11-21 00:00:00] LOG : Hello World
-```
+    ```bash
+    $ node example.js
+    $ cat test.log
+    [2023-11-21 00:00:00] LOG : Hello World
+    ```
 
-## **Ajout de plusieurs strategies de log**
-
-
-=== "TypeScript"
+??? example "Ajout de plusieurs strategies de log"
 
     ```typescript
     import { BasaltLogger, ConsoleLoggerStrategy, FileLoggerStrategy}  from '@basalt-lab/basalt-logger';
     
     const logger = new BasaltLogger();
 
-    logger.addStrategies([
+    logger.registerStrategies([
         ['console', new ConsoleLoggerStrategy()],
         ['file', new FileLoggerStrategy('log.txt')]
     ]);
@@ -157,40 +104,23 @@ $ cat test.log
     logger.log('Hello World');
     ```
 
-=== "JavaScript"
+    <!-- termynal -->
 
-    ```javascript
-    const { BasaltLogger, ConsoleLoggerStrategy, FileLoggerStrategy } = require('@basalt-lab/basalt-logger');
-    
-    const logger = new BasaltLogger();
-
-    logger.addStrategies([
-        ['console', new ConsoleLoggerStrategy()],
-        ['file', new FileLoggerStrategy('log.txt')]
-    ]);
-
-    logger.log('Hello World');
+    ```bash
+    $ node example.js
+    [2023-11-21 00:00:00] LOG : Hello World
+    $ cat log.txt
+    [2023-11-21 00:00:00] LOG : Hello World
     ```
 
-<!-- termynal -->
-
-```bash
-$ node example.js
-[2023-11-21 00:00:00] LOG : Hello World
-$ cat log.txt
-[2023-11-21 00:00:00] LOG : Hello World
-```
-
-## **Tout les niveaux de log**
-
-=== "TypeScript"
+??? example "Tout les niveaux de log"
 
     ```typescript
     import { BasaltLogger, ConsoleLoggerStrategy }  from '@basalt-lab/basalt-logger';
     
     const logger = new BasaltLogger();
 
-    logger.addStrategy('console', new ConsoleLoggerStrategy());
+    logger.registerStrategy('console', new ConsoleLoggerStrategy());
     
     logger.log('hello world');
     logger.info('hello world');
@@ -199,43 +129,25 @@ $ cat log.txt
     logger.error('hello world');
     ```
 
-=== "JavaScript"
+    <!-- termynal -->
 
-    ```javascript
-    const { BasaltLogger, ConsoleLoggerStrategy } = require('@basalt-lab/basalt-logger');
-
-    const logger = new BasaltLogger();
-
-    logger.addStrategy('console', new ConsoleLoggerStrategy());
-
-    logger.log('hello world');
-    logger.info('hello world');
-    logger.debug('hello world');
-    logger.warn('hello world');
-    logger.error('hello world');
+    ```bash
+    $ node example.js
+    [2023-11-21 00:00:00] LOG : hello world
+    [2023-11-21 00:00:00] INFO : hello world
+    [2023-11-21 00:00:00] DEBUG : hello world
+    [2023-11-21 00:00:00] WARN : hello world
+    [2023-11-21 00:00:00] ERROR : hello world
     ```
 
-<!-- termynal -->
-
-```bash
-$ node example.js
-[2023-11-21 00:00:00] LOG : hello world
-[2023-11-21 00:00:00] INFO : hello world
-[2023-11-21 00:00:00] DEBUG : hello world
-[2023-11-21 00:00:00] WARN : hello world
-[2023-11-21 00:00:00] ERROR : hello world
-```
-
-## **Log sur une strategie specifique**
-
-=== "TypeScript"
+??? example "Log sur une strategie specifique"
 
     ```typescript
     import { BasaltLogger, ConsoleLoggerStrategy, FileLoggerStrategy}  from '@basalt-lab/basalt-logger';
     
     const logger = new BasaltLogger();
 
-    logger.addStrategies([
+    logger.registerStrategies([
         ['console', new ConsoleLoggerStrategy()],
         ['file', new FileLoggerStrategy('log.txt')]
     ]);
@@ -246,36 +158,19 @@ $ node example.js
     logger.log('all strategies');
     ```
 
-=== "JavaScript"
 
-    ```javascript
-    const { BasaltLogger, ConsoleLoggerStrategy, FileLoggerStrategy } = require('@basalt-lab/basalt-logger');
-    
-    const logger = new BasaltLogger();
+    <!-- termynal -->
 
-    logger.addStrategies([
-        ['console', new ConsoleLoggerStrategy()],
-        ['file', new FileLoggerStrategy('log.txt')]
-    ]);
-
-    logger.log('console strategy', ['console']);
-    logger.log('file strategy', ['file']);
-    logger.log('console and file strategy', ['console', 'file']);
-    logger.log('all strategies');
+    ```bash
+    $ node example.js
+    [2023-11-21 00:00:00] LOG : console strategy
+    [2023-11-21 00:00:00] LOG : console and file strategy
+    [2023-11-21 00:00:00] LOG : all strategies
+    $ cat log.txt
+    [2023-11-21 00:00:00] LOG : file strategy
+    [2023-11-21 00:00:00 LOG : console and file strategy
+    [2023-11-21 00:00:00 LOG : all strategies
     ```
-
-<!-- termynal -->
-
-```bash
-$ node example.js
-[2023-11-21 00:00:00] LOG : console strategy
-[2023-11-21 00:00:00] LOG : console and file strategy
-[2023-11-21 00:00:00] LOG : all strategies
-$ cat log.txt
-[2023-11-21 00:00:00] LOG : file strategy
-[2023-11-21 00:00:00 LOG : console and file strategy
-[2023-11-21 00:00:00 LOG : all strategies
-```
 
 <script data-name="BMC-Widget"
     data-cfasync="false"

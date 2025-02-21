@@ -1,18 +1,20 @@
-## **Singleton Management: Registration, Retrieval, and Unregistration**
+## **Singleton Management**
 
-=== "TypeScript"
+`SingletonManager` is a utility class that allows registering, retrieving, and unregistering singletons.
 
+??? example "Registration, Retrieval, and Unregistration (without arguments)"
     ```typescript
-    import { SingletonManager } from '@basalt-lab/basalt-helper';
+    import { SingletonManager } from '@basalt-lab/basalt-helper/util';
 
-    class ExampleSingleton {
+    // Example class with a static counter allow to see the number of instances created of this class
+    class Example {
         private static _count = 0;
         private readonly _id: number;
         
         public constructor() {
-            ExampleSingleton._count += 1;
-            this._id = ExampleSingleton._count;
-            console.log(`ExampleSingleton created with ID: ${this._id}`);
+            Example._count += 1;
+            this._id = Example._count;
+            console.log(`Example created with ID: ${this._id}`);
         }
 
         public sayHello(): void {
@@ -20,62 +22,40 @@
         }
     }
 
-    SingletonManager.register('ExampleSingleton', ExampleSingleton);
-    SingletonManager.get<ExampleSingleton>('ExampleSingleton').sayHello();
-    SingletonManager.get<ExampleSingleton>('ExampleSingleton').sayHello();
-    SingletonManager.unregister('ExampleSingleton');
+    // allows to register the class Example as a singleton
+    SingletonManager.register('Example', Example);
+
+    // Get the singleton instance of Example
+    SingletonManager.get<Example>('Example').sayHello();
+    SingletonManager.get<Example>('Example').sayHello();
+
+    // allows to unregister the class Example as a singleton
+    SingletonManager.unregister('Example');
     ```
 
-=== "JavaScript"
+    <!-- termynal -->
 
-    ```javascript
-    const { SingletonManager } = require('@basalt-lab/basalt-helper');
-
-    class ExampleSingleton {
-        static _count = 0;
-        _id;
-        
-        constructor() {
-            ExampleSingleton._count += 1;
-            this._id = ExampleSingleton._count;
-            console.log(`ExampleSingleton created with ID: ${this._id}`);
-        }
-
-        sayHello() {
-            console.log(`Hello from instance ${this._id}!`);
-        }
-    }
-
-    SingletonManager.register('ExampleSingleton', ExampleSingleton);
-    SingletonManager.get('ExampleSingleton').sayHello();
-    SingletonManager.get('ExampleSingleton').sayHello();
-    SingletonManager.unregister('ExampleSingleton');
+    ```bash
+    $ node example.js
+    ExampleSingleton created with ID: 1
+    Hello from instance 1!
+    Hello from instance 1!
     ```
 
-<!-- termynal -->
-
-```bash
-$ node example.js
-ExampleSingleton created with ID: 1
-Hello from instance 1!
-Hello from instance 1!
-```
-
-## **Singleton Management: Registration, Retrieval, and Unregistration (with arguments)**
-
-=== "TypeScript"
+??? example "Registration, Retrieval, and Unregistration (with arguments)"
 
     ```typescript
-    import { SingletonManager } from '@basalt-lab/basalt-helper';
+    import { SingletonManager } from '@basalt-lab/basalt-helper/util';
 
-    class ExampleSingleton {
+    // Example class with a static counter allow to see the number of instances created of this class
+    class Example {
         private static _count = 0;
         private readonly _id: number;
         
         public constructor(name: string) {
-            ExampleSingleton._count += 1;
-            this._id = ExampleSingleton._count;
-            console.log(`ExampleSingleton created with ID: ${this._id} and name: ${name}`);
+            Example._count += 1;
+            this._id = Example._count;
+            console.log(`Example created with ID: ${this._id} and name: ${name}`);
         }
 
         public sayHello(): void {
@@ -83,46 +63,25 @@ Hello from instance 1!
         }
     }
 
-    SingletonManager.register('ExampleSingleton', ExampleSingleton, 'John Doe');
-    SingletonManager.get<ExampleSingleton>('ExampleSingleton').sayHello();
-    SingletonManager.get<ExampleSingleton>('ExampleSingleton').sayHello();
-    SingletonManager.unregister('ExampleSingleton');
+    // allows to register the class Example as a singleton
+    SingletonManager.register('Example', Example, 'John Doe');
+
+    // Get the singleton instance of Example
+    SingletonManager.get<Example>('Example').sayHello();
+    SingletonManager.get<Example>('Example').sayHello();
+
+    // allows to unregister the class Example as a singleton
+    SingletonManager.unregister('Example');
     ```
 
-=== "JavaScript"
+    <!-- termynal -->
 
-    ```javascript
-    const { SingletonManager } = require('@basalt-lab/basalt-helper');
-
-    class ExampleSingleton {
-        static _count = 0;
-        _id;
-        
-        constructor(name) {
-            ExampleSingleton._count += 1;
-            this._id = ExampleSingleton._count;
-            console.log(`ExampleSingleton created with ID: ${this._id} and name: ${name}`);
-        }
-
-        sayHello() {
-            console.log(`Hello from instance ${this._id}!`);
-        }
-    }
-
-    SingletonManager.register('ExampleSingleton', ExampleSingleton, 'John Doe');
-    SingletonManager.get('ExampleSingleton').sayHello();
-    SingletonManager.get('ExampleSingleton').sayHello();
-    SingletonManager.unregister('ExampleSingleton');
+    ```bash
+    $ node example.js
+    ExampleSingleton created with ID: 1 and name: John Doe
+    Hello from instance 1!
+    Hello from instance 1!
     ```
-
-<!-- termynal -->
-
-```bash
-$ node example.js
-ExampleSingleton created with ID: 1 and name: John Doe
-Hello from instance 1!
-Hello from instance 1!
-```
 
 <script data-name="BMC-Widget"
     data-cfasync="false"
@@ -134,3 +93,4 @@ Hello from instance 1!
     data-position="Right"
     data-x_margin="18"
     data-y_margin="22" />
+

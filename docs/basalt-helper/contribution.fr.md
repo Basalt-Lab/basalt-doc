@@ -1,33 +1,43 @@
-# **Contribuer à Basalt Helper**
+# **📚 Contribuer à Basalt Helper**
 
-## **Introduction**
+## **🏗️ Introduction**
 
 Si vous souhaiter contribuer à **Basalt Helper**, ce serait avec plaisir !
 
 Les étapes suivantes vous guideront à travers le processus de contribution, en vous aidant à comprendre comment vous pouvez apporter votre aide au projet.
 
-## **Processus de contribution**
+## **🛠️ Installation de Bun**
+
+=== "Linux & MacOS"
+
+    ```bash
+    curl -fsSL https://bun.sh/install | bash
+    ```
+
+=== "Windows"
+
+    ```powershell
+    powershell -c "irm bun.sh/install.ps1 | iex"
+    ```
+
+Vous pouvez également consulter le [site officiel de Bun](https://bun.sh).
+
+
+## **🔄 Processus de contribution**
 
 ```mermaid
-gitGraph:
-options
-{
-    "nodeSpacing": 150,
-    "nodeRadius": 10
-}
-end
-commit
-branch develop
-checkout develop
-commit
-branch feature
-checkout feature
-commit
-commit
-checkout develop
-merge feature
-checkout main
-merge develop
+gitGraph
+    commit
+    branch develop
+    checkout develop
+    branch feature/id
+    checkout feature/id
+    commit id: "feat(🚀): add some feature"
+    commit id: "test(🧪): add some tests"
+    checkout develop
+    merge feature/id id:"Merge branch 'feature/id' into develop" tag:"v1.0.0-canary-19971212-ee94487"
+    checkout main
+    merge develop id:"Merge branch 'develop' into main" tag:"v1.0.0"
 ```
 
 1. **Fork** le projet  
@@ -36,7 +46,7 @@ merge develop
     Créez une nouvelle branche pour travailler sur votre fonctionnalité à partir de la branche `develop`.
 3. **Committez** vos changements (`git commit -m 'feat: Add some AmazingFeature'`)  
     Une fois que vous avez terminé vos modifications, vous pouvez les commiter et les préparer pour le push.
-    Veuillez utiliser des [conventionnal commits](https://www.conventionalcommits.org/en/v1.0.0/) pour vos messages de commit, cela permettra de générer automatiquement les notes de version.
+    Veuillez utiliser des [conventionnal commits](https://www.conventionalcommits.org/en/v1.0.0/) pour vos messages de commit, cela permettra de générer automatiquement les notes de version en plus de permettre l'incrémentation automatique de la version.
 4. **Push** vers la branche (`git push origin feature/AmazingFeature`)  
     Une fois que vous avez terminé vos modifications, vous pouvez les pousser vers votre fork.
 5. Ouvrez une **Pull Request** vers la branche `develop`  
@@ -48,13 +58,13 @@ merge develop
 !!! warning "Note"
     Assurez-vous de toujours mettre à jour votre branche locale avec la branche `develop` avant de commencer à travailler sur une nouvelle fonctionnalité pour vous assurer que vous travaillez avec la dernière version du projet.
 
-## **Notes supplémentaires**
+## **📝 Notes supplémentaires**
 
 Assurez-vous de tester toutes vos modifications et d'ajouter des tests lorsque cela est possible.  
 
 Soyez ouvert aux retours et aux suggestions sur votre pull request.
 
-## **Remerciement**
+## **🙏 Remerciement**
 
 Je vous remercie sincèrement pour votre intérêt à contribuer à **Basalt Helper**. Votre aide est grandement appréciée et contribue à l'amélioration du projet.
 
