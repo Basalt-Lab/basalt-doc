@@ -1,381 +1,212 @@
-## **Deep Clone**
+## **Filter keys by inclusion**
 
-=== "TypeScript"
+`filterByKeyInclusion` is a function that filters an object by including only the specified keys.
 
-    ```typescript
-    import { deepClone } from '@basalt-lab/basalt-helper';
-
-    const data1: { test: { test: string } } = {
-        test: {
-            test: 'test'
-        }
-    };
-    const data2: number[][] = [[1, 2, 3], [4, 5, 6]];
-    const data3: { test: { test: number[] } } = {
-        test: {
-            test: [1, 2, 3]
-        }
-    };
-    const data4: Array<{ test: number[] }> = [
-        {
-            test: [1, 2, 3]
-        },
-        {
-            test: [4, 5, 6]
-        }
-    ];
-
-    const clonedData1: { test: { test: string } } = deepClone(data1);
-    const clonedData2: number[][] = deepClone(data2);
-    const clonedData3: { test: { test: number[] } } = deepClone(data3);
-    const clonedData4: Array<{ test: number[] }> = deepClone(data4);
-
-    console.log(clonedData1 === data1);
-    console.log(clonedData2 === data2);
-    console.log(clonedData3 === data3);
-    console.log(clonedData4 === data4);
-    ```
-
-=== "JavaScript"
-
-    ```javascript
-    const { deepClone } = require('@basalt-lab/basalt-helper');
-
-    const data1 = {
-        test: {
-            test: 'test'
-        }
-    };
-    const data2 = [[1, 2, 3], [4, 5, 6]];
-    const data3 = {
-        test: {
-            test: [1, 2, 3]
-        }
-    };
-    const data4 = [
-        {
-            test: [1, 2, 3]
-        },
-        {
-            test: [4, 5, 6]
-        }
-    ];
-
-    const clonedData1 = deepClone(data1);
-    const clonedData2 = deepClone(data2);
-    const clonedData3 = deepClone(data3);
-    const clonedData4 = deepClone(data4);
-
-    console.log(clonedData1 === data1);
-    console.log(clonedData2 === data2);
-    console.log(clonedData3 === data3);
-    console.log(clonedData4 === data4);
-    ```
-
-<!-- termynal -->
-
-```bash
-$ node example.js
-false
-false
-false
-false
-```
-
-## **Include only certain keys**
-
-=== "TypeScript"
+??? example "Include only specific keys"
 
     ```typescript
-    import { filterByKeyInclusion } from '@basalt-lab/basalt-helper';
+    import { filterByKeyInclusion } from '@basalt-lab/basalt-helper/data';
             
-    const data: { a: string; b: string; c: string; d: string } = {
-        a: 'a',
-        b: 'b',
-        c: 'c',
-        d: 'd',
-    };
-
-    const filteredData = filterByKeyInclusion(data, ['a', 'b', 'c']);
-    console.log(filteredData);
-    ```
-
-=== "JavaScript"
-
-    ```javascript
-    const { filterByKeyInclusion } = require('@basalt-lab/basalt-helper');
-
     const data = {
         a: 'a',
         b: 'b',
         c: 'c',
         d: 'd',
-    };
+    } as const;
 
     const filteredData = filterByKeyInclusion(data, ['a', 'b', 'c']);
     console.log(filteredData);
     ```
 
-<!-- termynal -->
+    <!-- termynal -->
 
-```bash
-$ node example.js
-{ a: 'a', b: 'b', c: 'c' }
-```
-
-## **Include only certain keys and only if they have a value**
-
-=== "TypeScript"
-
-    ```typescript
-    import { filterByKeyInclusion } from '@basalt-lab/basalt-helper';
-
-    const data: { a: string; b: undefined; c: null; d: string } = {
-        a: 'a',
-        b: undefined,
-        c: null,
-        d: 'd',
-    };
-
-    const filteredData = filterByKeyInclusion(data, ['a', 'b', 'c'], true);
-    console.log(filteredData);
+    ```bash
+    $ bun example.ts
+    { a: 'a', b: 'b', c: 'c' }
     ```
 
-=== "JavaScript"
+??? example "Include only specific keys and only if they have a value"
 
-    ```javascript
-    const { filterByKeyInclusion } = require('@basalt-lab/basalt-helper');
+    ```typescript
+    import { filterByKeyInclusion } from '@basalt-lab/basalt-helper/data';
 
     const data = {
         a: 'a',
         b: undefined,
         c: null,
         d: 'd',
-    };
+    } as const;
 
     const filteredData = filterByKeyInclusion(data, ['a', 'b', 'c'], true);
     console.log(filteredData);
     ```
 
-<!-- termynal -->
+    <!-- termynal -->
 
-```bash
-$ node example.js
-{ a: 'a' }
-```
-
-
-## **Exclude certain keys**
-
-=== "TypeScript"
-
-    ```typescript
-    import { filterByKeyExclusion } from '@basalt-lab/basalt-helper';
-        
-    const data: { a: string; b: string; c: string; d: string } = {
-        a: 'a',
-        b: 'b',
-        c: 'c',
-        d: 'd',
-    };
-
-    const filteredData = filterByKeyExclusion(data, ['a', 'b']);
-    console.log(filteredData);
+    ```bash
+    $ bun example.ts
+    { a: 'a' }
     ```
 
-=== "JavaScript"
+## **Filter keys by exclusion**
 
-    ```javascript
-    const { filterByKeyExclusion } = require('@basalt-lab/basalt-helper');
+`filterByKeyExclusion` is a function that filters an object by excluding specified keys.
 
+??? example "Exclude specific keys"
+
+    ```typescript
+    import { filterByKeyExclusion } from '@basalt-lab/basalt-helper/data';
+        
     const data = {
         a: 'a',
         b: 'b',
         c: 'c',
         d: 'd',
-    };
+    } as const;
 
     const filteredData = filterByKeyExclusion(data, ['a', 'b']);
     console.log(filteredData);
     ```
 
-<!-- termynal -->
+    <!-- termynal -->
 
-```bash
-$ node example.js
-{ c: 'c', d: 'd' }
-```
-
-## **Exclude certain keys and exclude those that have no value**
-
-=== "TypeScript"
-
-    ```typescript
-    import { filterByKeyExclusion } from '@basalt-lab/basalt-helper';
-        
-    const data: { a: string; b: null; c: undefined; d: string } = {
-        a: 'a',
-        b: null,
-        c: undefined,
-        d: 'd',
-    };
-
-    const filteredData = filterByKeyExclusion(data, ['a'], true);
-    console.log(filteredData);
+    ```bash
+    $ bun example.ts
+    { c: 'c', d: 'd' }
     ```
 
-=== "JavaScript"
+??? example "Exclude specific keys and those without values"
 
-    ```javascript
-    const { filterByKeyExclusion } = require('@basalt-lab/basalt-helper');
-
+    ```typescript
+    import { filterByKeyExclusion } from '@basalt-lab/basalt-helper/data';
+        
     const data = {
         a: 'a',
         b: null,
         c: undefined,
         d: 'd',
-    };
+    } as const;
 
     const filteredData = filterByKeyExclusion(data, ['a'], true);
     console.log(filteredData);
     ```
 
-<!-- termynal -->
+    <!-- termynal -->
 
-```bash
-$ node example.js
-{ d: 'd' }
-```
+    ```bash
+    $ bun example.ts
+    { d: 'd' }
+    ```
 
-## **Include keys based on a pattern**
+## **Include keys by pattern**
 
-=== "TypeScript"
+`filterByKey` is a function that filters an object by including keys according to a pattern.
+
+??? example "Include keys by pattern"
 
     ```typescript
-    import { filterByValue } from '@basalt-lab/basalt-helper';
+    import { filterByValue } from '@basalt-lab/basalt-helper/data';
         
-    const data: { a: string; b: string; c: string; d: string } = {
+    const data = {
         a: 'a',
         b: 'b',
         c: 'c',
         d: 'd',
-    };
+    } as const;
 
     const filteredData = filterByValue(data, (value: string): boolean => value === 'a' || value === 'b');
     console.log(filteredData);
     ```
 
-=== "JavaScript"
+    <!-- termynal -->
 
-    ```javascript
-    const { filterByValue } = require('@basalt-lab/basalt-helper');
+    ```bash
+    $ bun example.ts
+    { a: 'a', b: 'b' }
+    ```
 
+??? example "Include keys by pattern and only if they have a value"
+
+    ```typescript
+    import { filterByValue } from '@basalt-lab/basalt-helper/data';
+
+    const data = {
+        a: 'a',
+        b: undefined,
+        c: null,
+        d: 'd',
+    } as const;
+
+    const filteredData = filterByValue(data, (value: unknown): boolean => value === 'a', true);
+    console.log(filteredData);
+    ```
+
+    <!-- termynal -->
+
+    ```bash
+    $ bun example.ts
+    { a: 'a' }
+    ```
+
+## **Exclude keys by pattern**
+
+`filterByValue` is a function that filters an object by excluding keys according to a pattern.
+
+??? example "Exclude keys by pattern"
+
+    ```typescript
+    import { filterByValue } from '@basalt-lab/basalt-helper/data';
+        
     const data = {
         a: 'a',
         b: 'b',
         c: 'c',
         d: 'd',
-    };
-
-    const filteredData = filterByValue(data, (value) => value === 'a' || value === 'b');
-    console.log(filteredData);
-    ```
-
-<!-- termynal -->
-
-```bash
-$ node example.js
-{ a: 'a', b: 'b' }
-```
-
-## **Exclude keys based on a pattern**
-
-=== "TypeScript"
-
-    ```typescript
-    import { filterByValue } from '@basalt-lab/basalt-helper';
-        
-    const data: { a: string; b: string; c: string; d: string } = {
-        a: 'a',
-        b: 'b',
-        c: 'c',
-        d: 'd',
-    };
+    } as const;
 
     const filteredData = filterByValue(data, (value: string): boolean => value !== 'a' && value !== 'b');
     console.log(filteredData);
     ```
 
-=== "JavaScript"
+    <!-- termynal -->
 
-    ```javascript
-    const { filterByValue } = require('@basalt-lab/basalt-helper');
-
-    const data = {
-        a: 'a',
-        b: 'b',
-        c: 'c',
-        d: 'd',
-    };
-
-    const filteredData = filterByValue(data, (value) => value !== 'a' && value !== 'b');
-    console.log(filteredData);
+    ```bash
+    $ bun example.ts
+    { c: 'c', d: 'd' }
     ```
 
-<!-- termynal -->
-
-```bash
-$ node example.js
-{ c: 'c', d: 'd' }
-```
-
-## **Exclude keys based on a pattern and exclude those that have no value**
-
-=== "TypeScript"
+??? example "Exclude keys by pattern and those without values"
 
     ```typescript
-    import { filterByValue } from '@basalt-lab/basalt-helper';
+    import { filterByValue } from '@basalt-lab/basalt-helper/data';
 
-    const data: { a: string; b: null; c: undefined; d: string } = {
+    const data = {
         a: 'a',
         b: null,
         c: undefined,
         d: 'd',
-    };
+    } as const;
 
     const filteredData = filterByValue(data, (value: unknown): boolean => value !== 'a', true);
     console.log(filteredData);
     ```
 
-=== "JavaScript"
+    <!-- termynal -->
 
-    ```javascript
-    const { filterByValue } = require('@basalt-lab/basalt-helper');
-
-    const data = {
-        a: 'a',
-        b: null,
-        c: undefined,
-        d: 'd',
-    };
-
-    const filteredData = filterByValue(data, (value) => value !== 'a', true);
-    console.log(filteredData);
+    ```bash
+    $ bun example.ts
+    { d: 'd' }
     ```
 
-<!-- termynal -->
+## **Transform object keys**
 
-```bash
-$ node example.js
-{ d: 'd' }
-```
+`transformKeys` is a function that transforms object keys according to a specified transformer.
 
-## **Transforming object keys to camelCase**
-
-=== "TypeScript"
+??? example "Transform object keys to camelCase"
 
     ```typescript
-    import { transformKeys, BasaltCamelCaseTransformer } from '@basalt-lab/basalt-helper';
+    import { transformKeys } from '@basalt-lab/basalt-helper/data';
+    import { BasaltCamelCaseTransformer } from '@basalt-lab/basalt-helper/data/transformer';
 
     const data = {
         'camelCase': undefined,
@@ -387,39 +218,23 @@ $ node example.js
     console.log(transformKeys(data, new BasaltCamelCaseTransformer()));
     ```
 
-=== "JavaScript"
+    <!-- termynal -->
 
-    ```javascript
-    const { transformKeys, BasaltCamelCaseTransformer } = require('@basalt-lab/basalt-helper');
-
-    const data = {
-        'camelCase': undefined,
-        'PascalCase': undefined,
-        'kebab-case': undefined,
-        'snake_case': undefined
-    };
-
-    console.log(transformKeys(data, new BasaltCamelCaseTransformer()));
+    ```bash
+    $ bun example.ts
+    {
+    camelCase: undefined,
+    pascalCase: undefined,
+    kebabCase: undefined,
+    snakeCase: undefined
+    }
     ```
 
-<!-- termynal -->
-
-```bash
-$ node example.js
-{
-  camelCase: undefined,
-  pascalCase: undefined,
-  kebabCase: undefined,
-  snakeCase: undefined
-}
-```
-
-## **Transforming object keys to PascalCase**
-
-=== "TypeScript"
+??? example "Transform object keys to PascalCase"
 
     ```typescript
-    import { transformKeys, BasaltPascalCaseTransformer } from '@basalt-lab/basalt-helper';
+    import { transformKeys } from '@basalt-lab/basalt-helper/data';
+    import { BasaltPascalCaseTransformer } from '@basalt-lab/basalt-helper/data/transformer';
 
     const data = {
         'camelCase': undefined,
@@ -431,39 +246,23 @@ $ node example.js
     console.log(transformKeys(data, new BasaltPascalCaseTransformer()));
     ```
 
-=== "JavaScript"
+    <!-- termynal -->
 
-    ```javascript
-    const { transformKeys, BasaltPascalCaseTransformer } = require('@basalt-lab/basalt-helper');
-
-    const data = {
-        'camelCase': undefined,
-        'PascalCase': undefined,
-        'kebab-case': undefined,
-        'snake_case': undefined
-    };
-
-    console.log(transformKeys(data, new BasaltPascalCaseTransformer()));
+    ```bash
+    $ bun example.ts
+    {
+    CamelCase: undefined,
+    PascalCase: undefined,
+    KebabCase: undefined,
+    SnakeCase: undefined
+    }
     ```
 
-<!-- termynal -->
-
-```bash
-$ node example.js
-{
-  CamelCase: undefined,
-  PascalCase: undefined,
-  KebabCase: undefined,
-  SnakeCase: undefined
-}
-```
-
-## **Transforming object keys to kebab-case**
-
-=== "TypeScript"
+??? example "Transform object keys to kebab-case"
 
     ```typescript
-    import { transformKeys, BasaltKebabCaseTransformer } from '@basalt-lab/basalt-helper';
+    import { transformKeys } from '@basalt-lab/basalt-helper/data';
+    import { BasaltKebabCaseTransformer } from '@basalt-lab/basalt-helper/data/transformer';
 
     const data = {
         'camelCase': undefined,
@@ -475,39 +274,23 @@ $ node example.js
     console.log(transformKeys(data, new BasaltKebabCaseTransformer()));
     ```
 
-=== "JavaScript"
+    <!-- termynal -->
 
-    ```javascript
-    const { transformKeys, BasaltKebabCaseTransformer } = require('@basalt-lab/basalt-helper');
-
-    const data = {
-        'camelCase': undefined,
-        'PascalCase': undefined,
-        'kebab-case': undefined,
-        'snake_case': undefined
-    };
-
-    console.log(transformKeys(data, new BasaltKebabCaseTransformer()));
+    ```bash
+    $ bun example.ts
+    {
+    'camel-case': undefined,
+    'pascal-case': undefined,
+    'kebab-case': undefined,
+    'snake-case': undefined
+    }
     ```
 
-<!-- termynal -->
-
-```bash
-$ node example.js
-{
-  'camel-case': undefined,
-  'pascal-case': undefined,
-  'kebab-case': undefined,
-  'snake-case': undefined
-}
-```
-
-## **Transforming object keys to snake_case**
-
-=== "TypeScript"
+??? example "Transform object keys to snake_case"
 
     ```typescript
-    import { transformKeys, BasaltSnakeCaseTransformer } from '@basalt-lab/basalt-helper';
+    import { transformKeys } from '@basalt-lab/basalt-helper/data';
+    import { BasaltSnakeCaseTransformer } from '@basalt-lab/basalt-helper/data/transformer';
 
     const data = {
         'camelCase': undefined,
@@ -519,41 +302,25 @@ $ node example.js
     console.log(transformKeys(data, new BasaltSnakeCaseTransformer()));
     ```
 
-=== "JavaScript"
+    <!-- termynal -->
 
-    ```javascript
-    const { transformKeys, BasaltSnakeCaseTransformer } = require('@basalt-lab/basalt-helper');
-
-    const data = {
-        'camelCase': undefined,
-        'PascalCase': undefined,
-        'kebab-case': undefined,
-        'snake_case': undefined
-    };
-
-    console.log(transformKeys(data, new BasaltSnakeCaseTransformer()));
+    ```bash
+    $ bun example.ts
+    {
+    camel_case: undefined,
+    pascal_case: undefined,
+    kebab_case: undefined,
+    snake_case: undefined
+    }
     ```
-
-<!-- termynal -->
-
-```bash
-$ node example.js
-{
-  camel_case: undefined,
-  pascal_case: undefined,
-  kebab_case: undefined,
-  snake_case: undefined
-}
-```
 
 <script data-name="BMC-Widget"
-    data-cfasync="false"
-    src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
-    data-id="necrelox"
-    data-description="Support me on Buy me a coffee!"
-    data-message="Thank you for visiting!"
-    data-color="#5F7FFF"
-    data-position="Right"
-    data-x_margin="18"
-    data-y_margin="22" />
-
+        data-cfasync="false"
+        src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
+        data-id="necrelox"
+        data-description="Support me on Buy me a coffee!"
+        data-message="Thank you for your visit!"
+        data-color="#5F7FFF"
+        data-position="Right"
+        data-x_margin="18"
+        data-y_margin="22" />

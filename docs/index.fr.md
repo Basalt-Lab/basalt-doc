@@ -4,15 +4,14 @@
     
 Bienvenue dans la documentation de **Basalt**.
 
-**Basalt** est une suite de packages spécialement conçue pour le développement en Node.js et développée en **TypeScript** et en **ESM**.
+**Basalt** est une mini suite de packages spécialement conçue pour le développement avec **Bun** et développée en **TypeScript** et en **ESM**.
 
-Chaque module de **Basalt** vise à fournir des outils efficaces et faciles à utiliser.
+Chaque module de **Basalt** vise à fournir des outils efficaces et faciles à utiliser, de plus je met un point d'honneur à fournir des packages avec 0 dépendances.
 
 
 ???+ warning "Attention"
     
-    **Basalt** est actuellement en développement, et est sujet à des changements fréquents.  
-    Tous les packages ne sont pas encore disponibles, et seuls certains modules de base sont opérationnels à ce jour.
+    **Basalt** est actuellement en développement, et est sujet à des changements fréquents.
 
 
 La documentation et les fonctionnalités continueront d'évoluer.
