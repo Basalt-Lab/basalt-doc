@@ -5,10 +5,9 @@ copyright: |
   <i>(Thank you to love of my life N for believing in me every day)</i>
   </div>
 
-site_description: Basalt is a comprehensive suite of packages specifically designed for backend development in Node.js
+site_description: Basalt is a mini suite of packages specially designed for development with Bun and developed in TypeScript and ESM
 repo_url: https://github.com/Basalt-Lab
 repo_name: Basalt
-
 
 theme:
   name: material
@@ -36,6 +35,7 @@ theme:
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode
+  
     - scheme: default
       primary: black
       accent: indigo
@@ -62,6 +62,16 @@ theme:
     - header.autohide
     - content.tabs.link
 
+extra_css:
+  - asset/css/extra.css
+  - https://cdn.jsdelivr.net/npm/driver.js@latest/dist/driver.css
+extra_javascript:
+  - asset/js/searchBar.js
+  - asset/js/driver.js.iife.js
+  - asset/js/driver.js
+extra:
+  generator: false
+
 plugins:
   - search
   - offline
@@ -78,6 +88,7 @@ plugins:
           build: true
           default: false
   - termynal
+
 markdown_extensions:
   - admonition
   - pymdownx.details
@@ -92,7 +103,7 @@ markdown_extensions:
       pygments_lang_class: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
-  - pymdownx.superfences
+  # - pymdownx.superfences
 
   - pymdownx.tabbed:
       alternate_style: true
@@ -122,41 +133,27 @@ markdown_extensions:
       custom_checkbox: true
   - abbr
 
-extra_css:
-  - stylesheets/extra.css
-  - https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.css
-extra_javascript:
-  - js/searchBar.js
-  - js/driver.js.iife.js
-  - js/driver.js
-
-
-extra:
-  generator: false
 nav:
   - Basalt: index.md
   
-  - Basalt Auth:
-      - Basalt Auth: basalt-auth/index.md
-      - Getting Started: basalt-auth/getting-started.md
-      - References: basalt-auth/references.md
-      - Example:
-          - Authentication: basalt-auth/example/authentication.md
-      - Contribution: basalt-auth/contribution.md
+  # - Basalt Auth:
+  #     - Basalt Auth: basalt-auth/index.md
+  #     - Getting Started: basalt-auth/getting-started.md
+  #     - References: basalt-auth/references.md
+  #     - Example:
+  #         - Authentication: basalt-auth/example/authentication.md
+  #     - Contribution: basalt-auth/contribution.md
 
   - Basalt Helper:
       - Basalt Helper: basalt-helper/index.md
-      - Getting Started: basalt-helper/getting-started.md
       - References: basalt-helper/references.md
       - Example:
-          - Cryptography: basalt-helper/example/cryptography/basalt-security.md
           - Data: basalt-helper/example/data/basalt-data.md
           - Utility: basalt-helper/example/utility/basalt-utility.md
       - Contribution: basalt-helper/contribution.md
 
   - Basalt Logger:
       - Basalt Logger: basalt-logger/index.md
-      - Getting Started: basalt-logger/getting-started.md
       - References: basalt-logger/references.md
       - Example:
           - Logger: basalt-logger/example/logger.md
